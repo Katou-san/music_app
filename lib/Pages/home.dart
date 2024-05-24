@@ -9,7 +9,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Color(0xFF0D0D0D),
+        color: const Color(0xFF0D0D0D),
         borderRadius: BorderRadius.circular(32),
       ),
       child: Column(
@@ -17,13 +17,13 @@ class Home extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 24),
+            margin: const EdgeInsets.fromLTRB(0, 0, 0, 24),
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0x1F000000),
               ),
               child: Container(
-                padding: EdgeInsets.fromLTRB(16, 14, 16, 2),
+                padding: const EdgeInsets.fromLTRB(16, 14, 16, 2),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,15 +33,15 @@ class Home extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          margin: EdgeInsets.fromLTRB(0, 6, 8, 6),
+                          margin: const EdgeInsets.fromLTRB(0, 6, 8, 6),
                           child: Opacity(
                             opacity: 0.5,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: Color(0xFFFFFFFF),
+                                color: const Color(0xFFFFFFFF),
                                 borderRadius: BorderRadius.circular(2),
                               ),
-                              child: Container(
+                              child: const SizedBox(
                                 width: 4,
                                 height: 4,
                               ),
@@ -56,14 +56,14 @@ class Home extends StatelessWidget {
                               'Roboto',
                               fontWeight: FontWeight.w500,
                               fontSize: 14,
-                              color: Color(0xFFFFFFFF),
+                              color: const Color(0xFFFFFFFF),
                             ),
                           ),
                         ),
                       ],
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(0, 2, 0, 2),
+                      margin: const EdgeInsets.fromLTRB(0, 2, 0, 2),
                       child: SizedBox(
                         width: 52,
                         child: Row(
@@ -104,7 +104,7 @@ class Home extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(24, 0, 24, 24),
+            margin: const EdgeInsets.fromLTRB(24, 0, 24, 24),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -114,7 +114,7 @@ class Home extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      margin: EdgeInsets.fromLTRB(0, 0, 0, 4),
+                      margin: const EdgeInsets.fromLTRB(0, 0, 0, 4),
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: Text(
@@ -124,7 +124,7 @@ class Home extends StatelessWidget {
                             fontWeight: FontWeight.w300,
                             fontSize: 16,
                             height: 1.3,
-                            color: Color(0xBFFFFFFF),
+                            color: const Color(0xBFFFFFFF),
                           ),
                         ),
                       ),
@@ -136,7 +136,7 @@ class Home extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         fontSize: 20,
                         height: 1.2,
-                        color: Color(0xBFFFFFFF),
+                        color: const Color(0xBFFFFFFF),
                       ),
                     ),
                   ],
@@ -148,7 +148,7 @@ class Home extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        margin: EdgeInsets.fromLTRB(0, 8, 16, 8),
+                        margin: const EdgeInsets.fromLTRB(0, 8, 16, 8),
                         child: SizedBox(
                           width: 32,
                           height: 32,
@@ -160,14 +160,14 @@ class Home extends StatelessWidget {
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
-                          image: DecorationImage(
+                          image: const DecorationImage(
                             fit: BoxFit.cover,
                             image: AssetImage(
                               'assets/images/unsplashd_2_msduj_jl_2_g.jpeg',
                             ),
                           ),
                         ),
-                        child: Container(
+                        child: const SizedBox(
                           width: 48,
                           height: 48,
                         ),
@@ -179,9 +179,9 @@ class Home extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 24),
+            margin: const EdgeInsets.fromLTRB(0, 0, 0, 24),
             child: Container(
-              padding: EdgeInsets.fromLTRB(24, 0, 0, 0),
+              padding: const EdgeInsets.fromLTRB(24, 0, 0, 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -191,14 +191,14 @@ class Home extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
+                        margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
                         child: Container(
                           decoration: BoxDecoration(
-                            color: Color(0x1FFFFFFF),
+                            color: const Color(0x1FFFFFFF),
                             borderRadius: BorderRadius.circular(25),
                           ),
                           child: Container(
-                            padding: EdgeInsets.fromLTRB(16, 8, 17.3, 8),
+                            padding: const EdgeInsets.fromLTRB(16, 8, 17.3, 8),
                             child: Text(
                               'For you',
                               style: GoogleFonts.getFont(
@@ -206,14 +206,14 @@ class Home extends StatelessWidget {
                                 fontWeight: FontWeight.w500,
                                 fontSize: 16,
                                 height: 1.3,
-                                color: Color(0x80FFFFFF),
+                                color: const Color(0x80FFFFFF),
                               ),
                             ),
                           ),
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.fromLTRB(0, 8, 0, 8),
+                        margin: const EdgeInsets.fromLTRB(0, 8, 0, 8),
                         child: Text(
                           'Relax',
                           style: GoogleFonts.getFont(
@@ -221,14 +221,14 @@ class Home extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                             fontSize: 16,
                             height: 1.3,
-                            color: Color(0x80FFFFFF),
+                            color: const Color(0x80FFFFFF),
                           ),
                         ),
                       ),
                     ],
                   ),
                   Container(
-                    margin: EdgeInsets.fromLTRB(0, 8, 0, 8),
+                    margin: const EdgeInsets.fromLTRB(0, 8, 0, 8),
                     child: Text(
                       'Workout',
                       style: GoogleFonts.getFont(
@@ -236,12 +236,12 @@ class Home extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         fontSize: 16,
                         height: 1.3,
-                        color: Color(0x80FFFFFF),
+                        color: const Color(0x80FFFFFF),
                       ),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.fromLTRB(0, 8, 0, 8),
+                    margin: const EdgeInsets.fromLTRB(0, 8, 0, 8),
                     child: Text(
                       'Travel',
                       style: GoogleFonts.getFont(
@@ -249,12 +249,12 @@ class Home extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         fontSize: 16,
                         height: 1.3,
-                        color: Color(0x80FFFFFF),
+                        color: const Color(0x80FFFFFF),
                       ),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.fromLTRB(0, 8, 0, 8),
+                    margin: const EdgeInsets.fromLTRB(0, 8, 0, 8),
                     child: Text(
                       'Focus',
                       style: GoogleFonts.getFont(
@@ -262,12 +262,12 @@ class Home extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         fontSize: 16,
                         height: 1.3,
-                        color: Color(0x80FFFFFF),
+                        color: const Color(0x80FFFFFF),
                       ),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.fromLTRB(0, 8, 0, 8),
+                    margin: const EdgeInsets.fromLTRB(0, 8, 0, 8),
                     child: Text(
                       'Energize',
                       style: GoogleFonts.getFont(
@@ -275,7 +275,7 @@ class Home extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         fontSize: 16,
                         height: 1.3,
-                        color: Color(0x80FFFFFF),
+                        color: const Color(0x80FFFFFF),
                       ),
                     ),
                   ),
@@ -284,13 +284,14 @@ class Home extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 24),
+            margin: const EdgeInsets.fromLTRB(0, 0, 0, 24),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+// ======================================================================== Hàng 1
                 Container(
-                  margin: EdgeInsets.fromLTRB(24, 0, 24, 16),
+                  margin: const EdgeInsets.fromLTRB(24, 0, 24, 16),
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: Text(
@@ -300,23 +301,24 @@ class Home extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         fontSize: 24,
                         height: 1.2,
-                        color: Color(0xBFFFFFFF),
+                        color: const Color(0xBFFFFFFF),
                       ),
                     ),
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.fromLTRB(24, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(24, 0, 0, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      // ======================================================================== cột (ITEM)
                       Expanded(
                         child: Container(
-                          margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
+                          margin: const EdgeInsets.fromLTRB(0, 0, 16, 0),
                           child: Container(
                             decoration: BoxDecoration(
-                              color: Color(0x1FFFFFFF),
+                              color: const Color(0x1FFFFFFF),
                               borderRadius: BorderRadius.circular(16),
                             ),
                             child: Stack(
@@ -329,7 +331,7 @@ class Home extends StatelessWidget {
                                   child: Container(
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(15),
-                                      gradient: LinearGradient(
+                                      gradient: const LinearGradient(
                                         begin: Alignment(-1, 0),
                                         end: Alignment(1, 0),
                                         colors: <Color>[
@@ -338,21 +340,22 @@ class Home extends StatelessWidget {
                                         ],
                                         stops: <double>[0.279, 1],
                                       ),
-                                      image: DecorationImage(
+                                      image: const DecorationImage(
                                         fit: BoxFit.cover,
                                         image: AssetImage(
                                           'assets/images/unsplash_yrt_flr_lo_2_dq_3.png',
                                         ),
                                       ),
                                     ),
-                                    child: Container(
+                                    child: const SizedBox(
                                       width: 280,
                                       height: 140,
                                     ),
                                   ),
                                 ),
                                 Container(
-                                  padding: EdgeInsets.fromLTRB(16, 28, 16, 16),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(16, 28, 16, 16),
                                   child: RichText(
                                     text: TextSpan(
                                       style: GoogleFonts.getFont(
@@ -360,7 +363,7 @@ class Home extends StatelessWidget {
                                         fontWeight: FontWeight.w700,
                                         fontSize: 24,
                                         height: 1.2,
-                                        color: Color(0xBFFFFFFF),
+                                        color: const Color(0xBFFFFFFF),
                                       ),
                                       children: [
                                         TextSpan(
@@ -382,7 +385,7 @@ class Home extends StatelessWidget {
                                           ),
                                         ),
                                         TextSpan(
-                                          text: 'ENGLISH SONGS',
+                                          text: 'ENGLISH SONGS 222222',
                                           style: GoogleFonts.getFont(
                                             'Inter',
                                             fontWeight: FontWeight.w700,
@@ -399,611 +402,29 @@ class Home extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Color(0x1FFFFFFF),
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                left: -16,
-                                right: -16,
-                                top: -28,
-                                bottom: -16,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15),
-                                    gradient: LinearGradient(
-                                      begin: Alignment(-0.975, 0),
-                                      end: Alignment(1, 0),
-                                      colors: <Color>[
-                                        Color(0xBF000000),
-                                        Color(0x00000000)
-                                      ],
-                                      stops: <double>[0, 0.509],
-                                    ),
-                                    image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: AssetImage(
-                                        'assets/images/unsplash_yrt_flr_lo_2_dq_1.jpeg',
-                                      ),
-                                    ),
-                                  ),
-                                  child: Container(
-                                    width: 280,
-                                    height: 140,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 280,
-                                child: Container(
-                                  padding: EdgeInsets.fromLTRB(16, 28, 16, 16),
-                                  child: Stack(
-                                    clipBehavior: Clip.none,
-                                    children: [
-                                      RichText(
-                                        text: TextSpan(
-                                          style: GoogleFonts.getFont(
-                                            'Inter',
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 24,
-                                            height: 1.2,
-                                            color: Color(0xBFFFFFFF),
-                                          ),
-                                          children: [
-                                            TextSpan(
-                                              text: 'New',
-                                              style: GoogleFonts.getFont(
-                                                'Inter',
-                                                fontWeight: FontWeight.w700,
-                                                fontSize: 16,
-                                                height: 1.3,
-                                              ),
-                                            ),
-                                            TextSpan(
-                                              text: ' ',
-                                              style: GoogleFonts.getFont(
-                                                'Inter',
-                                                fontWeight: FontWeight.w700,
-                                                fontSize: 24,
-                                                height: 1.3,
-                                              ),
-                                            ),
-                                            TextSpan(
-                                              text: 'ENGLISH SONGS',
-                                              style: GoogleFonts.getFont(
-                                                'Inter',
-                                                fontWeight: FontWeight.w700,
-                                                fontSize: 24,
-                                                height: 1.3,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      Positioned(
-                                        left: -16,
-                                        right: -16,
-                                        top: -28,
-                                        bottom: -16,
-                                        child: Stack(
-                                          children: [
-                                            Positioned(
-                                              left: -16,
-                                              right: -16,
-                                              top: -42,
-                                              bottom: -34,
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(15),
-                                                  gradient: LinearGradient(
-                                                    begin: Alignment(-1, 0),
-                                                    end: Alignment(1, 0),
-                                                    colors: <Color>[
-                                                      Color(0xBF000000),
-                                                      Color(0x00000000)
-                                                    ],
-                                                    stops: <double>[0.219, 1],
-                                                  ),
-                                                  image: DecorationImage(
-                                                    fit: BoxFit.cover,
-                                                    image: AssetImage(
-                                                      'assets/images/unsplash_yrt_flr_lo_2_dq_4.png',
-                                                    ),
-                                                  ),
-                                                ),
-                                                child: Container(
-                                                  width: 280,
-                                                  height: 140,
-                                                ),
-                                              ),
-                                            ),
-                                            Container(
-                                              width: 280,
-                                              height: 140,
-                                              padding: EdgeInsets.fromLTRB(
-                                                  16, 42, 16, 34),
-                                              child: RichText(
-                                                text: TextSpan(
-                                                  style: GoogleFonts.getFont(
-                                                    'Inter',
-                                                    fontWeight: FontWeight.w700,
-                                                    fontSize: 24,
-                                                    height: 1.2,
-                                                    color: Color(0xBFFFFFFF),
-                                                  ),
-                                                  children: [
-                                                    TextSpan(
-                                                      text: 'Weekly',
-                                                      style:
-                                                          GoogleFonts.getFont(
-                                                        'Inter',
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        fontSize: 16,
-                                                        height: 1.3,
-                                                      ),
-                                                    ),
-                                                    TextSpan(
-                                                      text: '',
-                                                      style:
-                                                          GoogleFonts.getFont(
-                                                        'Inter',
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        fontSize: 24,
-                                                        height: 1.3,
-                                                      ),
-                                                    ),
-                                                    TextSpan(
-                                                      text: 'TOP 20',
-                                                      style:
-                                                          GoogleFonts.getFont(
-                                                        'Inter',
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        fontSize: 24,
-                                                        height: 1.3,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Color(0x1FFFFFFF),
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                left: 0,
-                                right: 0,
-                                top: 0,
-                                bottom: 0,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15),
-                                    gradient: LinearGradient(
-                                      begin: Alignment(-0.975, 0),
-                                      end: Alignment(1, 0),
-                                      colors: <Color>[
-                                        Color(0xBF000000),
-                                        Color(0x00000000)
-                                      ],
-                                      stops: <double>[0, 0.509],
-                                    ),
-                                    image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: AssetImage(
-                                        'assets/images/unsplash_yrt_flr_lo_2_dq_1.jpeg',
-                                      ),
-                                    ),
-                                  ),
-                                  child: Container(
-                                    width: 280,
-                                    height: 140,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                width: 280,
-                                height: 140,
-                                child: Stack(
-                                  children: [
-                                    Positioned(
-                                      left: 0,
-                                      right: 0,
-                                      top: 0,
-                                      bottom: 0,
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                          gradient: LinearGradient(
-                                            begin: Alignment(-1, 0),
-                                            end: Alignment(1, 0),
-                                            colors: <Color>[
-                                              Color(0xBF000000),
-                                              Color(0x00000000)
-                                            ],
-                                            stops: <double>[0.274, 1],
-                                          ),
-                                          image: DecorationImage(
-                                            fit: BoxFit.cover,
-                                            image: AssetImage(
-                                              'assets/images/unsplash_yrt_flr_lo_2_dq_5.png',
-                                            ),
-                                          ),
-                                        ),
-                                        child: Container(
-                                          width: 280,
-                                          height: 140,
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 280,
-                                      height: 140,
-                                      child: Positioned(
-                                        left: 16,
-                                        bottom: -16,
-                                        child: SizedBox(
-                                          height: 128,
-                                          child: RichText(
-                                            text: TextSpan(
-                                              style: GoogleFonts.getFont(
-                                                'Inter',
-                                                fontWeight: FontWeight.w700,
-                                                fontSize: 24,
-                                                height: 1.2,
-                                                color: Color(0xBFFFFFFF),
-                                              ),
-                                              children: [
-                                                TextSpan(
-                                                  text: 'SING ALONG WITH',
-                                                  style: GoogleFonts.getFont(
-                                                    'Inter',
-                                                    fontWeight: FontWeight.w700,
-                                                    fontSize: 16,
-                                                    height: 1.3,
-                                                  ),
-                                                ),
-                                                TextSpan(
-                                                  text: '',
-                                                  style: GoogleFonts.getFont(
-                                                    'Inter',
-                                                    fontWeight: FontWeight.w700,
-                                                    fontSize: 24,
-                                                    height: 1.3,
-                                                  ),
-                                                ),
-                                                TextSpan(
-                                                  text: 'THE CHAINSMOKERS',
-                                                  style: GoogleFonts.getFont(
-                                                    'Inter',
-                                                    fontWeight: FontWeight.w700,
-                                                    fontSize: 24,
-                                                    height: 1.3,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Color(0x1FFFFFFF),
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                left: -16,
-                                right: -16,
-                                top: -28,
-                                bottom: -16,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15),
-                                    gradient: LinearGradient(
-                                      begin: Alignment(-0.975, 0),
-                                      end: Alignment(1, 0),
-                                      colors: <Color>[
-                                        Color(0xBF000000),
-                                        Color(0x00000000)
-                                      ],
-                                      stops: <double>[0, 0.509],
-                                    ),
-                                    image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: AssetImage(
-                                        'assets/images/unsplash_yrt_flr_lo_2_dq_1.jpeg',
-                                      ),
-                                    ),
-                                  ),
-                                  child: Container(
-                                    width: 280,
-                                    height: 140,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 280,
-                                child: Container(
-                                  padding: EdgeInsets.fromLTRB(16, 28, 16, 16),
-                                  child: Stack(
-                                    clipBehavior: Clip.none,
-                                    children: [
-                                      RichText(
-                                        text: TextSpan(
-                                          style: GoogleFonts.getFont(
-                                            'Inter',
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 24,
-                                            height: 1.2,
-                                            color: Color(0xBFFFFFFF),
-                                          ),
-                                          children: [
-                                            TextSpan(
-                                              text: 'New',
-                                              style: GoogleFonts.getFont(
-                                                'Inter',
-                                                fontWeight: FontWeight.w700,
-                                                fontSize: 16,
-                                                height: 1.3,
-                                              ),
-                                            ),
-                                            TextSpan(
-                                              text: ' ',
-                                              style: GoogleFonts.getFont(
-                                                'Inter',
-                                                fontWeight: FontWeight.w700,
-                                                fontSize: 24,
-                                                height: 1.3,
-                                              ),
-                                            ),
-                                            TextSpan(
-                                              text: 'ENGLISH SONGS',
-                                              style: GoogleFonts.getFont(
-                                                'Inter',
-                                                fontWeight: FontWeight.w700,
-                                                fontSize: 24,
-                                                height: 1.3,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      Positioned(
-                                        left: -16,
-                                        right: -16,
-                                        top: -28,
-                                        bottom: -16,
-                                        child: Stack(
-                                          children: [
-                                            Positioned(
-                                              left: -16,
-                                              right: -16,
-                                              top: -28,
-                                              bottom: -16,
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(15),
-                                                  gradient: LinearGradient(
-                                                    begin: Alignment(-1, 0),
-                                                    end: Alignment(1, 0),
-                                                    colors: <Color>[
-                                                      Color(0xBF000000),
-                                                      Color(0x00000000)
-                                                    ],
-                                                    stops: <double>[0.29, 1],
-                                                  ),
-                                                  image: DecorationImage(
-                                                    fit: BoxFit.cover,
-                                                    image: AssetImage(
-                                                      'assets/images/unsplash_yrt_flr_lo_2_dq_2.png',
-                                                    ),
-                                                  ),
-                                                ),
-                                                child: Container(
-                                                  width: 280,
-                                                  height: 140,
-                                                ),
-                                              ),
-                                            ),
-                                            Container(
-                                              width: 280,
-                                              height: 140,
-                                              padding: EdgeInsets.fromLTRB(
-                                                  16, 28, 16, 16),
-                                              child: RichText(
-                                                text: TextSpan(
-                                                  style: GoogleFonts.getFont(
-                                                    'Inter',
-                                                    fontWeight: FontWeight.w700,
-                                                    fontSize: 24,
-                                                    height: 1.2,
-                                                    color: Color(0xBFFFFFFF),
-                                                  ),
-                                                  children: [
-                                                    TextSpan(
-                                                      text: 'All New from',
-                                                      style:
-                                                          GoogleFonts.getFont(
-                                                        'Inter',
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        fontSize: 16,
-                                                        height: 1.3,
-                                                      ),
-                                                    ),
-                                                    TextSpan(
-                                                      text: ' ',
-                                                      style:
-                                                          GoogleFonts.getFont(
-                                                        'Inter',
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        fontSize: 24,
-                                                        height: 1.3,
-                                                      ),
-                                                    ),
-                                                    TextSpan(
-                                                      text: 'TAMIL TRENDING',
-                                                      style:
-                                                          GoogleFonts.getFont(
-                                                        'Inter',
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        fontSize: 24,
-                                                        height: 1.3,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Stack(
-                        children: [
-                          Positioned(
-                            left: -16,
-                            right: -16,
-                            top: -28,
-                            bottom: -16,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                gradient: LinearGradient(
-                                  begin: Alignment(-1, 0),
-                                  end: Alignment(1, 0),
-                                  colors: <Color>[
-                                    Color(0xBF000000),
-                                    Color(0x00000000)
-                                  ],
-                                  stops: <double>[0.279, 1],
-                                ),
-                                image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage(
-                                    'assets/images/unsplash_yrt_flr_lo_2_dq.png',
-                                  ),
-                                ),
-                              ),
-                              child: Container(
-                                width: 280,
-                                height: 140,
-                              ),
-                            ),
-                          ),
-                          Container(
-                            width: 280,
-                            padding: EdgeInsets.fromLTRB(16, 28, 16, 16),
-                            child: RichText(
-                              text: TextSpan(
-                                style: GoogleFonts.getFont(
-                                  'Inter',
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 24,
-                                  height: 1.2,
-                                  color: Color(0xBFFFFFFF),
-                                ),
-                                children: [
-                                  TextSpan(
-                                    text: 'This Week’s',
-                                    style: GoogleFonts.getFont(
-                                      'Inter',
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 16,
-                                      height: 1.3,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: ' ',
-                                    style: GoogleFonts.getFont(
-                                      'Inter',
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 24,
-                                      height: 1.3,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: 'EDM BANGERS',
-                                    style: GoogleFonts.getFont(
-                                      'Inter',
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 24,
-                                      height: 1.3,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                      // ======================================================================== cột (ITEM)
                     ],
                   ),
                 ),
+// ======================================================================== Hàng 1
               ],
             ),
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 24),
+            margin: const EdgeInsets.fromLTRB(0, 0, 0, 24),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  margin: EdgeInsets.fromLTRB(24, 0, 25.7, 16),
+                  margin: const EdgeInsets.fromLTRB(24, 0, 25.7, 16),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+// ======================================================================== Hàng 2
                       Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 14, 0),
+                        margin: const EdgeInsets.fromLTRB(0, 0, 14, 0),
                         child: SizedBox(
                           width: 224,
                           child: Text(
@@ -1013,13 +434,13 @@ class Home extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                               fontSize: 24,
                               height: 1.2,
-                              color: Color(0xBFFFFFFF),
+                              color: const Color(0xBFFFFFFF),
                             ),
                           ),
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.fromLTRB(0, 8, 0, 0),
+                        margin: const EdgeInsets.fromLTRB(0, 8, 0, 0),
                         child: Text(
                           'See more',
                           style: GoogleFonts.getFont(
@@ -1027,7 +448,7 @@ class Home extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                             fontSize: 16,
                             height: 1.3,
-                            color: Color(0xFFFFFFFF),
+                            color: const Color(0xFFFFFFFF),
                           ),
                         ),
                       ),
@@ -1035,24 +456,25 @@ class Home extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.fromLTRB(24, 0, 0, 8),
+                  padding: const EdgeInsets.fromLTRB(24, 0, 0, 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      //========================================== Cột (ITEM2)
                       Expanded(
                         child: Container(
-                          margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
+                          margin: const EdgeInsets.fromLTRB(0, 0, 16, 0),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
+                                margin: const EdgeInsets.fromLTRB(0, 0, 0, 8),
                                 child: Container(
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(8),
-                                    image: DecorationImage(
+                                    image: const DecorationImage(
                                       fit: BoxFit.cover,
                                       image: AssetImage(
                                         'assets/images/image_44.png',
@@ -1061,12 +483,13 @@ class Home extends StatelessWidget {
                                   ),
                                   child: Container(
                                     height: 80,
-                                    padding: EdgeInsets.fromLTRB(8, 48, 8, 8),
+                                    padding:
+                                        const EdgeInsets.fromLTRB(8, 48, 8, 8),
                                     child: Container(
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(25),
-                                        color: Color(0xBFFFFFFF),
-                                        boxShadow: [
+                                        color: const Color(0xBFFFFFFF),
+                                        boxShadow: const [
                                           BoxShadow(
                                             color: Color(0x40000000),
                                             offset: Offset(0, 0),
@@ -1074,7 +497,7 @@ class Home extends StatelessWidget {
                                           ),
                                         ],
                                       ),
-                                      child: Container(
+                                      child: SizedBox(
                                         width: 24,
                                         height: 24,
                                         child: Positioned(
@@ -1114,527 +537,11 @@ class Home extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Expanded(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                    image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: AssetImage(
-                                        'assets/images/image_53.png',
-                                      ),
-                                    ),
-                                  ),
-                                  child: Container(
-                                    height: 80,
-                                    padding: EdgeInsets.fromLTRB(8, 48, 8, 8),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(25),
-                                        color: Color(0xBFFFFFFF),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Color(0x40000000),
-                                            offset: Offset(0, 0),
-                                            blurRadius: 2,
-                                          ),
-                                        ],
-                                      ),
-                                      child: Container(
-                                        width: 24,
-                                        height: 24,
-                                        child: Positioned(
-                                          right: 7.5,
-                                          bottom: 7.5,
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(0.4),
-                                            child: SizedBox(
-                                              width: 7,
-                                              height: 9,
-                                              child: SvgPicture.asset(
-                                                'assets/vectors/play_arrow_77_x2.svg',
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment.topLeft,
-                                child: Text(
-                                  'Young',
-                                  style: GoogleFonts.getFont(
-                                    'Inter',
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 12,
-                                    height: 1.2,
-                                    color: Color(0xBFFFFFFF),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                    image: DecorationImage(
-                                      image: AssetImage(
-                                        'assets/images/image_6.png',
-                                      ),
-                                    ),
-                                  ),
-                                  child: Container(
-                                    height: 80,
-                                    padding: EdgeInsets.fromLTRB(8, 48, 8, 8),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(25),
-                                        color: Color(0xBFFFFFFF),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Color(0x40000000),
-                                            offset: Offset(0, 0),
-                                            blurRadius: 2,
-                                          ),
-                                        ],
-                                      ),
-                                      child: Container(
-                                        width: 24,
-                                        height: 24,
-                                        child: Positioned(
-                                          right: 7.5,
-                                          bottom: 7.5,
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(0.4),
-                                            child: SizedBox(
-                                              width: 7,
-                                              height: 9,
-                                              child: SvgPicture.asset(
-                                                'assets/vectors/play_arrow_41_x2.svg',
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 4.3, 0),
-                                child: Text(
-                                  'Beach House',
-                                  style: GoogleFonts.getFont(
-                                    'Inter',
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 12,
-                                    height: 1.2,
-                                    color: Color(0xBFFFFFFF),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                        child: SizedBox(
-                          width: 80,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                    image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: AssetImage(
-                                        'assets/images/image_7.png',
-                                      ),
-                                    ),
-                                  ),
-                                  child: Container(
-                                    height: 80,
-                                    padding: EdgeInsets.fromLTRB(8, 48, 8, 8),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(25),
-                                        color: Color(0xBFFFFFFF),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Color(0x40000000),
-                                            offset: Offset(0, 0),
-                                            blurRadius: 2,
-                                          ),
-                                        ],
-                                      ),
-                                      child: Container(
-                                        width: 24,
-                                        height: 24,
-                                        child: Positioned(
-                                          right: 7.5,
-                                          bottom: 7.5,
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(0.4),
-                                            child: SizedBox(
-                                              width: 7,
-                                              height: 9,
-                                              child: SvgPicture.asset(
-                                                'assets/vectors/play_arrow_79_x2.svg',
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 0.2, 0),
-                                child: Text(
-                                  'Kills You Slo...',
-                                  style: GoogleFonts.getFont(
-                                    'Inter',
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 12,
-                                    height: 1.2,
-                                    color: Color(0xBFFFFFFF),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                        child: SizedBox(
-                          width: 80,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                    image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: AssetImage(
-                                        'assets/images/image_8.png',
-                                      ),
-                                    ),
-                                  ),
-                                  child: Container(
-                                    height: 80,
-                                    padding: EdgeInsets.fromLTRB(8, 48, 8, 8),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(25),
-                                        color: Color(0xBFFFFFFF),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Color(0x40000000),
-                                            offset: Offset(0, 0),
-                                            blurRadius: 2,
-                                          ),
-                                        ],
-                                      ),
-                                      child: Container(
-                                        width: 24,
-                                        height: 24,
-                                        child: Positioned(
-                                          right: 7.5,
-                                          bottom: 7.5,
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(0.4),
-                                            child: SizedBox(
-                                              width: 7,
-                                              height: 9,
-                                              child: SvgPicture.asset(
-                                                'assets/vectors/play_arrow_42_x2.svg',
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 7.7, 0),
-                                child: Text(
-                                  'Setting Fires',
-                                  style: GoogleFonts.getFont(
-                                    'Inter',
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 12,
-                                    height: 1.2,
-                                    color: Color(0xBFFFFFFF),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                        child: SizedBox(
-                          width: 80,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                    image: DecorationImage(
-                                      image: AssetImage(
-                                        'assets/images/image_9.png',
-                                      ),
-                                    ),
-                                  ),
-                                  child: Container(
-                                    height: 80,
-                                    padding: EdgeInsets.fromLTRB(8, 48, 8, 8),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(25),
-                                        color: Color(0xBFFFFFFF),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Color(0x40000000),
-                                            offset: Offset(0, 0),
-                                            blurRadius: 2,
-                                          ),
-                                        ],
-                                      ),
-                                      child: Container(
-                                        width: 24,
-                                        height: 24,
-                                        child: Positioned(
-                                          right: 7.5,
-                                          bottom: 7.5,
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(0.4),
-                                            child: SizedBox(
-                                              width: 7,
-                                              height: 9,
-                                              child: SvgPicture.asset(
-                                                'assets/vectors/play_arrow_21_x2.svg',
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 18.4, 0),
-                                child: Text(
-                                  'Somebody',
-                                  style: GoogleFonts.getFont(
-                                    'Inter',
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 12,
-                                    height: 1.2,
-                                    color: Color(0xBFFFFFFF),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                        child: SizedBox(
-                          width: 80,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                    image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: AssetImage(
-                                        'assets/images/image_24.png',
-                                      ),
-                                    ),
-                                  ),
-                                  child: Container(
-                                    height: 80,
-                                    padding: EdgeInsets.fromLTRB(8, 48, 8, 8),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(25),
-                                        color: Color(0xBFFFFFFF),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Color(0x40000000),
-                                            offset: Offset(0, 0),
-                                            blurRadius: 2,
-                                          ),
-                                        ],
-                                      ),
-                                      child: Container(
-                                        width: 24,
-                                        height: 24,
-                                        child: Positioned(
-                                          right: 7.5,
-                                          bottom: 7.5,
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(0.4),
-                                            child: SizedBox(
-                                              width: 7,
-                                              height: 9,
-                                              child: SvgPicture.asset(
-                                                'assets/vectors/play_arrow_40_x2.svg',
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 2.8, 0),
-                                child: Text(
-                                  'Remind me ...',
-                                  style: GoogleFonts.getFont(
-                                    'Inter',
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 12,
-                                    height: 1.2,
-                                    color: Color(0xBFFFFFFF),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 80,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(
-                                      'assets/images/image_25.png',
-                                    ),
-                                  ),
-                                ),
-                                child: Container(
-                                  height: 80,
-                                  padding: EdgeInsets.fromLTRB(8, 48, 8, 8),
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(25),
-                                      color: Color(0xBFFFFFFF),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Color(0x40000000),
-                                          offset: Offset(0, 0),
-                                          blurRadius: 2,
-                                        ),
-                                      ],
-                                    ),
-                                    child: Container(
-                                      width: 24,
-                                      height: 24,
-                                      child: Positioned(
-                                        right: 7.5,
-                                        bottom: 7.5,
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(0.4),
-                                          child: SizedBox(
-                                            width: 7,
-                                            height: 9,
-                                            child: SvgPicture.asset(
-                                              'assets/vectors/play_arrow_45_x2.svg',
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.fromLTRB(0, 0, 2.7, 0),
-                              child: Text(
-                                'It Won’t Kill ...',
-                                style: GoogleFonts.getFont(
-                                  'Inter',
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 12,
-                                  height: 1.2,
-                                  color: Color(0xBFFFFFFF),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      //========================================== Cột (ITEM2)
                     ],
                   ),
                 ),
+// ======================================================================== Hàng 2
               ],
             ),
           ),
@@ -1646,14 +553,15 @@ class Home extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+// ======================================================================== Hàng 2
                     Container(
-                      margin: EdgeInsets.fromLTRB(0, 0, 0, 24),
+                      margin: const EdgeInsets.fromLTRB(0, 0, 0, 24),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            margin: EdgeInsets.fromLTRB(24, 0, 24, 16),
+                            margin: const EdgeInsets.fromLTRB(24, 0, 24, 16),
                             child: Align(
                               alignment: Alignment.topLeft,
                               child: Text(
@@ -1663,20 +571,21 @@ class Home extends StatelessWidget {
                                   fontWeight: FontWeight.w500,
                                   fontSize: 24,
                                   height: 1.2,
-                                  color: Color(0xBFFFFFFF),
+                                  color: const Color(0xBFFFFFFF),
                                 ),
                               ),
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.fromLTRB(24, 0, 0, 8),
+                            padding: const EdgeInsets.fromLTRB(24, 0, 0, 8),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Expanded(
                                   child: Container(
-                                    margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
+                                    margin:
+                                        const EdgeInsets.fromLTRB(0, 0, 16, 0),
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
@@ -1684,13 +593,13 @@ class Home extends StatelessWidget {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 0, 8),
+                                          margin: const EdgeInsets.fromLTRB(
+                                              0, 0, 0, 8),
                                           child: Container(
                                             decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(8),
-                                              gradient: LinearGradient(
+                                              gradient: const LinearGradient(
                                                 begin: Alignment(0, -1),
                                                 end: Alignment(0, 1),
                                                 colors: <Color>[
@@ -1699,7 +608,7 @@ class Home extends StatelessWidget {
                                                 ],
                                                 stops: <double>[0.75, 0.897],
                                               ),
-                                              image: DecorationImage(
+                                              image: const DecorationImage(
                                                 fit: BoxFit.cover,
                                                 image: AssetImage(
                                                   'assets/images/album_cover_3.png',
@@ -1707,26 +616,25 @@ class Home extends StatelessWidget {
                                               ),
                                             ),
                                             child: Container(
-                                              padding: EdgeInsets.fromLTRB(
-                                                  8.2, 100, 8.2, 4),
-                                              child: Container(
-                                                child: Text(
-                                                  'Mix 1',
-                                                  style: GoogleFonts.getFont(
-                                                    'Inter',
-                                                    fontWeight: FontWeight.w700,
-                                                    fontSize: 12,
-                                                    height: 1.3,
-                                                    color: Color(0xBFFFFFFF),
-                                                  ),
+                                              padding:
+                                                  const EdgeInsets.fromLTRB(
+                                                      8.2, 100, 8.2, 4),
+                                              child: Text(
+                                                'Mix 1',
+                                                style: GoogleFonts.getFont(
+                                                  'Inter',
+                                                  fontWeight: FontWeight.w700,
+                                                  fontSize: 12,
+                                                  height: 1.3,
+                                                  color: Color(0xBFFFFFFF),
                                                 ),
                                               ),
                                             ),
                                           ),
                                         ),
                                         Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 1, 0),
+                                          margin: const EdgeInsets.fromLTRB(
+                                              0, 0, 1, 0),
                                           child: Text(
                                             'Calvin Harris, Martin Garrix, Dewain Whi...',
                                             style: GoogleFonts.getFont(
@@ -1734,7 +642,7 @@ class Home extends StatelessWidget {
                                               fontWeight: FontWeight.w500,
                                               fontSize: 12,
                                               height: 1.2,
-                                              color: Color(0xBFFFFFFF),
+                                              color: const Color(0xBFFFFFFF),
                                             ),
                                           ),
                                         ),
@@ -1744,7 +652,8 @@ class Home extends StatelessWidget {
                                 ),
                                 Expanded(
                                   child: Container(
-                                    margin: EdgeInsets.fromLTRB(0, 0, 16, 36),
+                                    margin:
+                                        const EdgeInsets.fromLTRB(0, 0, 16, 36),
                                     child: Stack(
                                       children: [
                                         Positioned(
@@ -1759,7 +668,7 @@ class Home extends StatelessWidget {
                                                 fontWeight: FontWeight.w500,
                                                 fontSize: 12,
                                                 height: 1.2,
-                                                color: Color(0xBFFFFFFF),
+                                                color: const Color(0xBFFFFFFF),
                                               ),
                                             ),
                                           ),
@@ -1768,7 +677,7 @@ class Home extends StatelessWidget {
                                           decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(8),
-                                            gradient: LinearGradient(
+                                            gradient: const LinearGradient(
                                               begin: Alignment(0, -1),
                                               end: Alignment(0, 1),
                                               colors: <Color>[
@@ -1777,7 +686,7 @@ class Home extends StatelessWidget {
                                               ],
                                               stops: <double>[0.751, 0.875],
                                             ),
-                                            image: DecorationImage(
+                                            image: const DecorationImage(
                                               fit: BoxFit.cover,
                                               image: AssetImage(
                                                 'assets/images/album_cover_2.png',
@@ -1786,18 +695,16 @@ class Home extends StatelessWidget {
                                           ),
                                           child: Container(
                                             width: double.infinity,
-                                            padding: EdgeInsets.fromLTRB(
+                                            padding: const EdgeInsets.fromLTRB(
                                                 8.5, 100, 8.5, 4),
-                                            child: Container(
-                                              child: Text(
-                                                'Mix 2',
-                                                style: GoogleFonts.getFont(
-                                                  'Inter',
-                                                  fontWeight: FontWeight.w700,
-                                                  fontSize: 12,
-                                                  height: 1.3,
-                                                  color: Color(0xBFFFFFFF),
-                                                ),
+                                            child: Text(
+                                              'Mix 2',
+                                              style: GoogleFonts.getFont(
+                                                'Inter',
+                                                fontWeight: FontWeight.w700,
+                                                fontSize: 12,
+                                                height: 1.3,
+                                                color: Color(0xBFFFFFFF),
                                               ),
                                             ),
                                           ),
