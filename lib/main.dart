@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Pages/home.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,6 +43,26 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Home(),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black,
+        unselectedItemColor: Colors.white,
+        items: [
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/vectors/home_19_x2.svg',
+            ),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset('assets/vectors/vector_7_x2.svg'),
+            label: "Search",
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset('assets/vectors/library_music_12_x2.svg'),
+            label: "Your Library",
+          )
+        ],
+      ),
     );
   }
 }

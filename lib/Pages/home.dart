@@ -8,13 +8,10 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xFF0D0D0D),
-        borderRadius: BorderRadius.circular(32),
+      decoration: const BoxDecoration(
+        color: Color(0xFF0D0D0D),
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
         children: [
           Container(
             margin: const EdgeInsets.fromLTRB(0, 0, 0, 24),
@@ -529,7 +526,7 @@ class Home extends StatelessWidget {
                                     fontWeight: FontWeight.w500,
                                     fontSize: 12,
                                     height: 1.2,
-                                    color: Color(0xBFFFFFFF),
+                                    color: const Color(0xBFFFFFFF),
                                   ),
                                 ),
                               ),
@@ -553,7 +550,7 @@ class Home extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-// ======================================================================== Hàng 2
+// ======================================================================== Hàng 3
                     Container(
                       margin: const EdgeInsets.fromLTRB(0, 0, 0, 24),
                       child: Column(
@@ -582,6 +579,7 @@ class Home extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                                //=============================== cột (ITEM 3)
                                 Expanded(
                                   child: Container(
                                     margin:
@@ -626,7 +624,8 @@ class Home extends StatelessWidget {
                                                   fontWeight: FontWeight.w700,
                                                   fontSize: 12,
                                                   height: 1.3,
-                                                  color: Color(0xBFFFFFFF),
+                                                  color:
+                                                      const Color(0xBFFFFFFF),
                                                 ),
                                               ),
                                             ),
@@ -650,340 +649,11 @@ class Home extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                Expanded(
-                                  child: Container(
-                                    margin:
-                                        const EdgeInsets.fromLTRB(0, 0, 16, 36),
-                                    child: Stack(
-                                      children: [
-                                        Positioned(
-                                          left: 0,
-                                          bottom: -50,
-                                          child: SizedBox(
-                                            height: 42,
-                                            child: Text(
-                                              'A R Rahman, Harris Jeyaraj, Yuvan Sha...',
-                                              style: GoogleFonts.getFont(
-                                                'Inter',
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 12,
-                                                height: 1.2,
-                                                color: const Color(0xBFFFFFFF),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                            gradient: const LinearGradient(
-                                              begin: Alignment(0, -1),
-                                              end: Alignment(0, 1),
-                                              colors: <Color>[
-                                                Color(0x00000000),
-                                                Color(0xBF000000)
-                                              ],
-                                              stops: <double>[0.751, 0.875],
-                                            ),
-                                            image: const DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: AssetImage(
-                                                'assets/images/album_cover_2.png',
-                                              ),
-                                            ),
-                                          ),
-                                          child: Container(
-                                            width: double.infinity,
-                                            padding: const EdgeInsets.fromLTRB(
-                                                8.5, 100, 8.5, 4),
-                                            child: Text(
-                                              'Mix 2',
-                                              style: GoogleFonts.getFont(
-                                                'Inter',
-                                                fontWeight: FontWeight.w700,
-                                                fontSize: 12,
-                                                height: 1.3,
-                                                color: Color(0xBFFFFFFF),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                                  child: SizedBox(
-                                    width: 120,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                              gradient: LinearGradient(
-                                                begin: Alignment(0, -1),
-                                                end: Alignment(0, 1),
-                                                colors: <Color>[
-                                                  Color(0x00000000),
-                                                  Color(0xBF000000)
-                                                ],
-                                                stops: <double>[0.735, 0.894],
-                                              ),
-                                              image: DecorationImage(
-                                                fit: BoxFit.cover,
-                                                image: AssetImage(
-                                                  'assets/images/album_cover_12.png',
-                                                ),
-                                              ),
-                                            ),
-                                            child: Container(
-                                              padding: EdgeInsets.fromLTRB(
-                                                  8.2, 100, 8.2, 4),
-                                              child: Container(
-                                                child: Text(
-                                                  'Mix 3',
-                                                  style: GoogleFonts.getFont(
-                                                    'Inter',
-                                                    fontWeight: FontWeight.w700,
-                                                    fontSize: 12,
-                                                    height: 1.3,
-                                                    color: Color(0xBFFFFFFF),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 5.1, 0),
-                                          child: Text(
-                                            'Maroon 5, Imagine Dragons, Coldplay...',
-                                            style: GoogleFonts.getFont(
-                                              'Inter',
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 12,
-                                              height: 1.2,
-                                              color: Color(0xBFFFFFFF),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                                  child: SizedBox(
-                                    width: 120,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                              gradient: LinearGradient(
-                                                begin: Alignment(0, -1),
-                                                end: Alignment(0, 1),
-                                                colors: <Color>[
-                                                  Color(0x00000000),
-                                                  Color(0xBF000000)
-                                                ],
-                                                stops: <double>[0.697, 0.903],
-                                              ),
-                                              image: DecorationImage(
-                                                fit: BoxFit.cover,
-                                                image: AssetImage(
-                                                  'assets/images/album_cover_1.png',
-                                                ),
-                                              ),
-                                            ),
-                                            child: Container(
-                                              padding: EdgeInsets.fromLTRB(
-                                                  8.7, 100, 8.7, 4),
-                                              child: Container(
-                                                child: Text(
-                                                  'High Energy',
-                                                  style: GoogleFonts.getFont(
-                                                    'Inter',
-                                                    fontWeight: FontWeight.w700,
-                                                    fontSize: 12,
-                                                    height: 1.3,
-                                                    color: Color(0xBFFFFFFF),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 1.6, 0),
-                                          child: Text(
-                                            'Mark Ronson, DNCE, Bruno Mars, The C...',
-                                            style: GoogleFonts.getFont(
-                                              'Inter',
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 12,
-                                              height: 1.2,
-                                              color: Color(0xBFFFFFFF),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 16, 36),
-                                  child: SizedBox(
-                                    width: 120,
-                                    child: Stack(
-                                      children: [
-                                        Positioned(
-                                          left: 0,
-                                          bottom: -50,
-                                          child: SizedBox(
-                                            height: 42,
-                                            child: Text(
-                                              'DNCE, Ariana Grande, Justin Bei...',
-                                              style: GoogleFonts.getFont(
-                                                'Inter',
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 12,
-                                                height: 1.2,
-                                                color: Color(0xBFFFFFFF),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                            gradient: LinearGradient(
-                                              begin: Alignment(0, -1),
-                                              end: Alignment(0, 1),
-                                              colors: <Color>[
-                                                Color(0x00000000),
-                                                Color(0xBF000000)
-                                              ],
-                                              stops: <double>[0.779, 0.907],
-                                            ),
-                                            image: DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: AssetImage(
-                                                'assets/images/album_cover_13.png',
-                                              ),
-                                            ),
-                                          ),
-                                          child: Container(
-                                            width: double.infinity,
-                                            padding: EdgeInsets.fromLTRB(
-                                                9.5, 100, 9.5, 4),
-                                            child: Container(
-                                              child: Text(
-                                                'Happy Vibes',
-                                                style: GoogleFonts.getFont(
-                                                  'Inter',
-                                                  fontWeight: FontWeight.w700,
-                                                  fontSize: 12,
-                                                  height: 1.3,
-                                                  color: Color(0xBFFFFFFF),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 0, 36),
-                                  child: SizedBox(
-                                    width: 120,
-                                    child: Stack(
-                                      children: [
-                                        Positioned(
-                                          left: 0,
-                                          bottom: -50,
-                                          child: SizedBox(
-                                            height: 42,
-                                            child: Text(
-                                              'Snow Patrol, The Chainsmokers, Ros...',
-                                              style: GoogleFonts.getFont(
-                                                'Inter',
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 12,
-                                                height: 1.2,
-                                                color: Color(0xBFFFFFFF),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                            gradient: LinearGradient(
-                                              begin: Alignment(0, -1),
-                                              end: Alignment(0, 1),
-                                              colors: <Color>[
-                                                Color(0x00000000),
-                                                Color(0xBF000000)
-                                              ],
-                                              stops: <double>[0.727, 0.899],
-                                            ),
-                                            image: DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: AssetImage(
-                                                'assets/images/album_cover_5.png',
-                                              ),
-                                            ),
-                                          ),
-                                          child: Container(
-                                            width: double.infinity,
-                                            padding: EdgeInsets.fromLTRB(
-                                                10.4, 100, 10.4, 4),
-                                            child: Container(
-                                              child: Text(
-                                                'Chill Hits',
-                                                style: GoogleFonts.getFont(
-                                                  'Inter',
-                                                  fontWeight: FontWeight.w700,
-                                                  fontSize: 12,
-                                                  height: 1.3,
-                                                  color: Color(0xBFFFFFFF),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
+                                //=============================== cột (ITEM 3)
                               ],
                             ),
                           ),
+// ======================================================================== Hàng 3
                         ],
                       ),
                     ),
@@ -993,8 +663,9 @@ class Home extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
+// ======================================================================== Hàng 4
                           Container(
-                            margin: EdgeInsets.fromLTRB(24, 0, 25.7, 16),
+                            margin: const EdgeInsets.fromLTRB(24, 0, 25.7, 16),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -1010,7 +681,8 @@ class Home extends StatelessWidget {
                                   ),
                                 ),
                                 Container(
-                                  margin: EdgeInsets.fromLTRB(0, 8, 0, 28),
+                                  margin:
+                                      const EdgeInsets.fromLTRB(0, 8, 0, 28),
                                   child: Text(
                                     'See more',
                                     style: GoogleFonts.getFont(
@@ -1018,7 +690,7 @@ class Home extends StatelessWidget {
                                       fontWeight: FontWeight.w500,
                                       fontSize: 16,
                                       height: 1.3,
-                                      color: Color(0xFFFFFFFF),
+                                      color: const Color(0xFFFFFFFF),
                                     ),
                                   ),
                                 ),
@@ -1031,6 +703,7 @@ class Home extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                                //=============================== cột (ITEM 4)
                                 Expanded(
                                   child: Container(
                                     margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
@@ -1047,7 +720,7 @@ class Home extends StatelessWidget {
                                             decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(8),
-                                              image: DecorationImage(
+                                              image: const DecorationImage(
                                                 fit: BoxFit.cover,
                                                 image: AssetImage(
                                                   'assets/images/album_cover_10.png',
@@ -1061,7 +734,7 @@ class Home extends StatelessWidget {
                                           ),
                                         ),
                                         Container(
-                                          margin: EdgeInsets.fromLTRB(
+                                          margin: const EdgeInsets.fromLTRB(
                                               9.3, 0, 9.3, 0),
                                           child: Text(
                                             'Maroon 5: Best of the best',
@@ -1079,262 +752,30 @@ class Home extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                Expanded(
-                                  child: Container(
-                                    margin: EdgeInsets.fromLTRB(0, 0, 16, 14),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                              image: DecorationImage(
-                                                fit: BoxFit.cover,
-                                                image: AssetImage(
-                                                  'assets/images/album_cover_11.png',
-                                                ),
-                                              ),
-                                            ),
-                                            child: Container(
-                                              width: 120,
-                                              height: 120,
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          margin: EdgeInsets.fromLTRB(
-                                              12.8, 0, 12.8, 0),
-                                          child: Text(
-                                            'This is Maroon 5',
-                                            style: GoogleFonts.getFont(
-                                              'Inter',
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 12,
-                                              height: 1.2,
-                                              color: Color(0xBFFFFFFF),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 16, 14),
-                                  child: SizedBox(
-                                    width: 120,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                              image: DecorationImage(
-                                                fit: BoxFit.cover,
-                                                image: AssetImage(
-                                                  'assets/images/album_cover_8.png',
-                                                ),
-                                              ),
-                                            ),
-                                            child: Container(
-                                              width: 120,
-                                              height: 120,
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          margin: EdgeInsets.fromLTRB(
-                                              3.3, 0, 3.3, 0),
-                                          child: Text(
-                                            'Maroon 5 - Top Hits',
-                                            style: GoogleFonts.getFont(
-                                              'Inter',
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 12,
-                                              height: 1.2,
-                                              color: Color(0xBFFFFFFF),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                                  child: SizedBox(
-                                    width: 120,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                              image: DecorationImage(
-                                                fit: BoxFit.cover,
-                                                image: AssetImage(
-                                                  'assets/images/album_cover_9.png',
-                                                ),
-                                              ),
-                                            ),
-                                            child: Container(
-                                              width: 120,
-                                              height: 120,
-                                            ),
-                                          ),
-                                        ),
-                                        Text(
-                                          'Maroon5 live unplugged',
-                                          textAlign: TextAlign.center,
-                                          style: GoogleFonts.getFont(
-                                            'Inter',
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 12,
-                                            height: 1.2,
-                                            color: Color(0xBFFFFFFF),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                                  child: SizedBox(
-                                    width: 120,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                              image: DecorationImage(
-                                                fit: BoxFit.cover,
-                                                image: AssetImage(
-                                                  'assets/images/album_cover_6.png',
-                                                ),
-                                              ),
-                                            ),
-                                            child: Container(
-                                              width: 120,
-                                              height: 120,
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          margin: EdgeInsets.fromLTRB(
-                                              0.6, 0, 0.6, 0),
-                                          child: Text(
-                                            'Coldplay & Maroon 5 hits',
-                                            textAlign: TextAlign.center,
-                                            style: GoogleFonts.getFont(
-                                              'Inter',
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 12,
-                                              height: 1.2,
-                                              color: Color(0xBFFFFFFF),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 0, 14),
-                                  child: SizedBox(
-                                    width: 120,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                              image: DecorationImage(
-                                                image: AssetImage(
-                                                  'assets/images/image_55.png',
-                                                ),
-                                              ),
-                                            ),
-                                            child: Container(
-                                              width: 120,
-                                              height: 120,
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          margin: EdgeInsets.fromLTRB(
-                                              8.5, 0, 8.5, 0),
-                                          child: Text(
-                                            'Top 10 Soft Rocks',
-                                            style: GoogleFonts.getFont(
-                                              'Inter',
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 12,
-                                              height: 1.2,
-                                              color: Color(0xBFFFFFFF),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
+                                //=============================== cột (ITEM 4)
                               ],
                             ),
                           ),
+// ======================================================================== Hàng 4
                         ],
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(0, 0, 0, 24),
+                      margin: const EdgeInsets.fromLTRB(0, 0, 0, 24),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+// ======================================================================== Hàng 5
                           Container(
-                            margin: EdgeInsets.fromLTRB(24, 0, 25.7, 16),
+                            margin: const EdgeInsets.fromLTRB(24, 0, 25.7, 16),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 14, 0),
+                                  margin:
+                                      const EdgeInsets.fromLTRB(0, 0, 14, 0),
                                   child: SizedBox(
                                     width: 224,
                                     child: Text(
@@ -1344,13 +785,13 @@ class Home extends StatelessWidget {
                                         fontWeight: FontWeight.w500,
                                         fontSize: 24,
                                         height: 1.2,
-                                        color: Color(0xBFFFFFFF),
+                                        color: const Color(0xBFFFFFFF),
                                       ),
                                     ),
                                   ),
                                 ),
                                 Container(
-                                  margin: EdgeInsets.fromLTRB(0, 8, 0, 0),
+                                  margin: const EdgeInsets.fromLTRB(0, 8, 0, 0),
                                   child: Text(
                                     'See more',
                                     style: GoogleFonts.getFont(
@@ -1358,7 +799,7 @@ class Home extends StatelessWidget {
                                       fontWeight: FontWeight.w500,
                                       fontSize: 16,
                                       height: 1.3,
-                                      color: Color(0xFFFFFFFF),
+                                      color: const Color(0xFFFFFFFF),
                                     ),
                                   ),
                                 ),
@@ -1366,14 +807,16 @@ class Home extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.fromLTRB(24, 0, 0, 8),
+                            padding: const EdgeInsets.fromLTRB(24, 0, 0, 8),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                                //=============================== cột (ITEM 5)
                                 Expanded(
                                   child: Container(
-                                    margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
+                                    margin:
+                                        const EdgeInsets.fromLTRB(0, 0, 16, 0),
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
@@ -1381,13 +824,13 @@ class Home extends StatelessWidget {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 0, 8),
+                                          margin: const EdgeInsets.fromLTRB(
+                                              0, 0, 0, 8),
                                           child: Container(
                                             decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(8),
-                                              image: DecorationImage(
+                                              image: const DecorationImage(
                                                 fit: BoxFit.cover,
                                                 image: AssetImage(
                                                   'assets/images/image_16.png',
@@ -1396,14 +839,16 @@ class Home extends StatelessWidget {
                                             ),
                                             child: Container(
                                               height: 80,
-                                              padding: EdgeInsets.fromLTRB(
-                                                  8, 48, 8, 8),
+                                              padding:
+                                                  const EdgeInsets.fromLTRB(
+                                                      8, 48, 8, 8),
                                               child: Container(
                                                 decoration: BoxDecoration(
                                                   borderRadius:
                                                       BorderRadius.circular(25),
-                                                  color: Color(0xBFFFFFFF),
-                                                  boxShadow: [
+                                                  color:
+                                                      const Color(0xBFFFFFFF),
+                                                  boxShadow: const [
                                                     BoxShadow(
                                                       color: Color(0x40000000),
                                                       offset: Offset(0, 0),
@@ -1411,7 +856,7 @@ class Home extends StatelessWidget {
                                                     ),
                                                   ],
                                                 ),
-                                                child: Container(
+                                                child: SizedBox(
                                                   width: 24,
                                                   height: 24,
                                                   child: Positioned(
@@ -1452,582 +897,11 @@ class Home extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                Expanded(
-                                  child: Container(
-                                    margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                              image: DecorationImage(
-                                                fit: BoxFit.cover,
-                                                image: AssetImage(
-                                                  'assets/images/image_17.png',
-                                                ),
-                                              ),
-                                            ),
-                                            child: Container(
-                                              height: 80,
-                                              padding: EdgeInsets.fromLTRB(
-                                                  8, 48, 8, 8),
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(25),
-                                                  color: Color(0xBFFFFFFF),
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                      color: Color(0x40000000),
-                                                      offset: Offset(0, 0),
-                                                      blurRadius: 2,
-                                                    ),
-                                                  ],
-                                                ),
-                                                child: Container(
-                                                  width: 24,
-                                                  height: 24,
-                                                  child: Positioned(
-                                                    right: 7.5,
-                                                    bottom: 7.5,
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              0.4),
-                                                      child: SizedBox(
-                                                        width: 7,
-                                                        height: 9,
-                                                        child: SvgPicture.asset(
-                                                          'assets/vectors/play_arrow_44_x2.svg',
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 0.1, 0),
-                                          child: Text(
-                                            'Lonely Toge...',
-                                            style: GoogleFonts.getFont(
-                                              'Inter',
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 12,
-                                              height: 1.2,
-                                              color: Color(0xBFFFFFFF),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Container(
-                                    margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                              image: DecorationImage(
-                                                fit: BoxFit.cover,
-                                                image: AssetImage(
-                                                  'assets/images/image_19.png',
-                                                ),
-                                              ),
-                                            ),
-                                            child: Container(
-                                              height: 80,
-                                              padding: EdgeInsets.fromLTRB(
-                                                  8, 48, 8, 8),
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(25),
-                                                  color: Color(0xBFFFFFFF),
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                      color: Color(0x40000000),
-                                                      offset: Offset(0, 0),
-                                                      blurRadius: 2,
-                                                    ),
-                                                  ],
-                                                ),
-                                                child: Container(
-                                                  width: 24,
-                                                  height: 24,
-                                                  child: Positioned(
-                                                    right: 7.5,
-                                                    bottom: 7.5,
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              0.4),
-                                                      child: SizedBox(
-                                                        width: 7,
-                                                        height: 9,
-                                                        child: SvgPicture.asset(
-                                                          'assets/vectors/play_arrow_54_x2.svg',
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 8, 0),
-                                          child: Text(
-                                            'Pay No Mind',
-                                            style: GoogleFonts.getFont(
-                                              'Inter',
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 12,
-                                              height: 1.2,
-                                              color: Color(0xBFFFFFFF),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                                  child: SizedBox(
-                                    width: 80,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                              image: DecorationImage(
-                                                fit: BoxFit.cover,
-                                                image: AssetImage(
-                                                  'assets/images/image_22.png',
-                                                ),
-                                              ),
-                                            ),
-                                            child: Container(
-                                              height: 80,
-                                              padding: EdgeInsets.fromLTRB(
-                                                  8, 48, 8, 8),
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(25),
-                                                  color: Color(0xBFFFFFFF),
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                      color: Color(0x40000000),
-                                                      offset: Offset(0, 0),
-                                                      blurRadius: 2,
-                                                    ),
-                                                  ],
-                                                ),
-                                                child: Container(
-                                                  width: 24,
-                                                  height: 24,
-                                                  child: Positioned(
-                                                    right: 7.5,
-                                                    bottom: 7.5,
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              0.4),
-                                                      child: SizedBox(
-                                                        width: 7,
-                                                        height: 9,
-                                                        child: SvgPicture.asset(
-                                                          'assets/vectors/play_arrow_35_x2.svg',
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Align(
-                                          alignment: Alignment.topLeft,
-                                          child: Text(
-                                            '#SELFIE',
-                                            style: GoogleFonts.getFont(
-                                              'Inter',
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 12,
-                                              height: 1.2,
-                                              color: Color(0xBFFFFFFF),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                                  child: SizedBox(
-                                    width: 80,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                              image: DecorationImage(
-                                                fit: BoxFit.cover,
-                                                image: AssetImage(
-                                                  'assets/images/image_21.png',
-                                                ),
-                                              ),
-                                            ),
-                                            child: Container(
-                                              height: 80,
-                                              padding: EdgeInsets.fromLTRB(
-                                                  8, 48, 8, 8),
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(25),
-                                                  color: Color(0xBFFFFFFF),
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                      color: Color(0x40000000),
-                                                      offset: Offset(0, 0),
-                                                      blurRadius: 2,
-                                                    ),
-                                                  ],
-                                                ),
-                                                child: Container(
-                                                  width: 24,
-                                                  height: 24,
-                                                  child: Positioned(
-                                                    right: 7.5,
-                                                    bottom: 7.5,
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              0.4),
-                                                      child: SizedBox(
-                                                        width: 7,
-                                                        height: 9,
-                                                        child: SvgPicture.asset(
-                                                          'assets/vectors/play_arrow_48_x2.svg',
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 4.9, 0),
-                                          child: Text(
-                                            'Until You W...',
-                                            style: GoogleFonts.getFont(
-                                              'Inter',
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 12,
-                                              height: 1.2,
-                                              color: Color(0xBFFFFFFF),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                                  child: SizedBox(
-                                    width: 80,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                              image: DecorationImage(
-                                                fit: BoxFit.cover,
-                                                image: AssetImage(
-                                                  'assets/images/image_23.png',
-                                                ),
-                                              ),
-                                            ),
-                                            child: Container(
-                                              height: 80,
-                                              padding: EdgeInsets.fromLTRB(
-                                                  8, 48, 8, 8),
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(25),
-                                                  color: Color(0xBFFFFFFF),
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                      color: Color(0x40000000),
-                                                      offset: Offset(0, 0),
-                                                      blurRadius: 2,
-                                                    ),
-                                                  ],
-                                                ),
-                                                child: Container(
-                                                  width: 24,
-                                                  height: 24,
-                                                  child: Positioned(
-                                                    right: 7.5,
-                                                    bottom: 7.5,
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              0.4),
-                                                      child: SizedBox(
-                                                        width: 7,
-                                                        height: 9,
-                                                        child: SvgPicture.asset(
-                                                          'assets/vectors/play_arrow_23_x2.svg',
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 0.2, 0),
-                                          child: Text(
-                                            'Good Intens...',
-                                            style: GoogleFonts.getFont(
-                                              'Inter',
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 12,
-                                              height: 1.2,
-                                              color: Color(0xBFFFFFFF),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                                  child: SizedBox(
-                                    width: 80,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                              image: DecorationImage(
-                                                fit: BoxFit.cover,
-                                                image: AssetImage(
-                                                  'assets/images/image_24.png',
-                                                ),
-                                              ),
-                                            ),
-                                            child: Container(
-                                              height: 80,
-                                              padding: EdgeInsets.fromLTRB(
-                                                  8, 48, 8, 8),
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(25),
-                                                  color: Color(0xBFFFFFFF),
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                      color: Color(0x40000000),
-                                                      offset: Offset(0, 0),
-                                                      blurRadius: 2,
-                                                    ),
-                                                  ],
-                                                ),
-                                                child: Container(
-                                                  width: 24,
-                                                  height: 24,
-                                                  child: Positioned(
-                                                    right: 7.5,
-                                                    bottom: 7.5,
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              0.4),
-                                                      child: SizedBox(
-                                                        width: 7,
-                                                        height: 9,
-                                                        child: SvgPicture.asset(
-                                                          'assets/vectors/play_arrow_27_x2.svg',
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 2.8, 0),
-                                          child: Text(
-                                            'Remind me ...',
-                                            style: GoogleFonts.getFont(
-                                              'Inter',
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 12,
-                                              height: 1.2,
-                                              color: Color(0xBFFFFFFF),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 80,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                            image: DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: AssetImage(
-                                                'assets/images/image_25.png',
-                                              ),
-                                            ),
-                                          ),
-                                          child: Container(
-                                            height: 80,
-                                            padding: EdgeInsets.fromLTRB(
-                                                8, 48, 8, 8),
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(25),
-                                                color: Color(0xBFFFFFFF),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color: Color(0x40000000),
-                                                    offset: Offset(0, 0),
-                                                    blurRadius: 2,
-                                                  ),
-                                                ],
-                                              ),
-                                              child: Container(
-                                                width: 24,
-                                                height: 24,
-                                                child: Positioned(
-                                                  right: 7.5,
-                                                  bottom: 7.5,
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.4),
-                                                    child: SizedBox(
-                                                      width: 7,
-                                                      height: 9,
-                                                      child: SvgPicture.asset(
-                                                        'assets/vectors/play_arrow_49_x2.svg',
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Container(
-                                        margin:
-                                            EdgeInsets.fromLTRB(0, 0, 2.7, 0),
-                                        child: Text(
-                                          'It Won’t Kill ...',
-                                          style: GoogleFonts.getFont(
-                                            'Inter',
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 12,
-                                            height: 1.2,
-                                            color: Color(0xBFFFFFFF),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                                //=============================== cột (ITEM 5)
                               ],
                             ),
                           ),
+// ======================================================================== Hàng 5
                         ],
                       ),
                     ),
@@ -2035,14 +909,15 @@ class Home extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+// ======================================================================== Hàng 6
                         Container(
-                          margin: EdgeInsets.fromLTRB(24, 0, 25.7, 16),
+                          margin: const EdgeInsets.fromLTRB(24, 0, 25.7, 16),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 14, 0),
+                                margin: const EdgeInsets.fromLTRB(0, 0, 14, 0),
                                 child: SizedBox(
                                   width: 224,
                                   child: Text(
@@ -2079,6 +954,7 @@ class Home extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              //=============================== cột (ITEM 6)
                               Expanded(
                                 child: Container(
                                   margin: EdgeInsets.fromLTRB(0, 0, 16, 36),
@@ -2107,7 +983,7 @@ class Home extends StatelessWidget {
                                           decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(8),
-                                            image: DecorationImage(
+                                            image: const DecorationImage(
                                               fit: BoxFit.cover,
                                               image: AssetImage(
                                                 'assets/images/album_cover_14.png',
@@ -2124,354 +1000,14 @@ class Home extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              Expanded(
-                                child: Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                            image: DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: AssetImage(
-                                                'assets/images/album_cover_15.png',
-                                              ),
-                                            ),
-                                          ),
-                                          child: Container(
-                                            width: 120,
-                                            height: 120,
-                                          ),
-                                        ),
-                                      ),
-                                      Container(
-                                        margin: EdgeInsets.fromLTRB(
-                                            16.9, 0, 16.9, 0),
-                                        child: Text(
-                                          'SIGMA MALE TIKTOK MUSIC',
-                                          textAlign: TextAlign.center,
-                                          style: GoogleFonts.getFont(
-                                            'Inter',
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 12,
-                                            height: 1.2,
-                                            color: Color(0xBFFFFFFF),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 16, 14),
-                                child: SizedBox(
-                                  width: 120,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                            image: DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: AssetImage(
-                                                'assets/images/album_cover_4.png',
-                                              ),
-                                            ),
-                                          ),
-                                          child: Container(
-                                            width: 120,
-                                            height: 120,
-                                          ),
-                                        ),
-                                      ),
-                                      Text(
-                                        'Phonk Villain',
-                                        style: GoogleFonts.getFont(
-                                          'Inter',
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 12,
-                                          height: 1.2,
-                                          color: Color(0xBFFFFFFF),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 16, 14),
-                                child: SizedBox(
-                                  width: 120,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                            image: DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: AssetImage(
-                                                'assets/images/album_cover.png',
-                                              ),
-                                            ),
-                                          ),
-                                          child: Container(
-                                            width: 120,
-                                            height: 120,
-                                          ),
-                                        ),
-                                      ),
-                                      Container(
-                                        margin: EdgeInsets.fromLTRB(
-                                            18.2, 0, 18.2, 0),
-                                        child: Text(
-                                          'Name is Ghost',
-                                          style: GoogleFonts.getFont(
-                                            'Inter',
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 12,
-                                            height: 1.2,
-                                            color: Color(0xBFFFFFFF),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 16, 14),
-                                child: SizedBox(
-                                  width: 120,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                            image: DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: AssetImage(
-                                                'assets/images/album_cover_7.png',
-                                              ),
-                                            ),
-                                          ),
-                                          child: Container(
-                                            width: 120,
-                                            height: 120,
-                                          ),
-                                        ),
-                                      ),
-                                      Text(
-                                        'Drift Phonk',
-                                        style: GoogleFonts.getFont(
-                                          'Inter',
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 12,
-                                          height: 1.2,
-                                          color: Color(0xBFFFFFFF),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 0, 36),
-                                child: SizedBox(
-                                  width: 120,
-                                  height: 120,
-                                  child: Stack(
-                                    children: [
-                                      Positioned(
-                                        right: 9.4,
-                                        bottom: -50,
-                                        child: SizedBox(
-                                          height: 42,
-                                          child: Text(
-                                            'Phonklicious: The Most Delicious Pho...',
-                                            textAlign: TextAlign.center,
-                                            style: GoogleFonts.getFont(
-                                              'Inter',
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 12,
-                                              height: 1.2,
-                                              color: Color(0xBFFFFFFF),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          image: DecorationImage(
-                                            fit: BoxFit.cover,
-                                            image: AssetImage(
-                                              'assets/images/image_551.png',
-                                            ),
-                                          ),
-                                        ),
-                                        child: Container(
-                                          width: 120,
-                                          height: 120,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
+                              //=============================== cột (ITEM 6)
                             ],
                           ),
                         ),
+// ======================================================================== Hàng 6
                       ],
                     ),
                   ],
-                ),
-              ),
-              Positioned(
-                left: 0,
-                right: 0,
-                top: 154,
-                child: ClipRect(
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(
-                      sigmaX: 0.5,
-                      sigmaY: 0.5,
-                    ),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment(0, -1),
-                          end: Alignment(0, 1),
-                          colors: <Color>[Color(0x80000000), Color(0xFF000000)],
-                          stops: <double>[0, 0.758],
-                        ),
-                      ),
-                      child: SizedBox(
-                        width: 360,
-                        height: 72,
-                        child: Container(
-                          padding: EdgeInsets.fromLTRB(0, 12, 0, 20),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.fromLTRB(2.3, 0, 2.3, 4),
-                                    child: SizedBox(
-                                      width: 24,
-                                      height: 24,
-                                      child: SvgPicture.asset(
-                                        'assets/vectors/home_19_x2.svg',
-                                      ),
-                                    ),
-                                  ),
-                                  Text(
-                                    'Home',
-                                    style: GoogleFonts.getFont(
-                                      'Inter',
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 10,
-                                      height: 1.2,
-                                      color: Color(0xBFFFFFFF),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 2, 0, 0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      margin:
-                                          EdgeInsets.fromLTRB(7.1, 0, 7.1, 6),
-                                      width: 20,
-                                      height: 20,
-                                      child: SizedBox(
-                                        width: 20,
-                                        height: 20,
-                                        child: SvgPicture.asset(
-                                          'assets/vectors/vector_7_x2.svg',
-                                        ),
-                                      ),
-                                    ),
-                                    Text(
-                                      'Search',
-                                      style: GoogleFonts.getFont(
-                                        'Inter',
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 10,
-                                        height: 1.2,
-                                        color: Color(0x80FFFFFF),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    margin:
-                                        EdgeInsets.fromLTRB(17.7, 0, 17.7, 4),
-                                    child: SizedBox(
-                                      width: 24,
-                                      height: 24,
-                                      child: SvgPicture.asset(
-                                        'assets/vectors/library_music_12_x2.svg',
-                                      ),
-                                    ),
-                                  ),
-                                  Text(
-                                    'Your Library',
-                                    style: GoogleFonts.getFont(
-                                      'Inter',
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 10,
-                                      height: 1.2,
-                                      color: Color(0x80FFFFFF),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
                 ),
               ),
             ],
