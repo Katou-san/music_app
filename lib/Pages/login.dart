@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:music_app/Api/fetch.dart';
 import 'package:music_app/Components/Form_data/button_Form.dart';
 import 'package:music_app/Components/Form_data/button_fill_Form.dart';
 import 'package:music_app/Components/Form_data/input_Form.dart';
+import 'package:music_app/Model/User.dart';
 
 class login extends StatelessWidget {
   login({super.key});
 
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
-
+  final LoginModel _loginM = LoginModel(User_Email: "", User_Password: "");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,9 +53,11 @@ class login extends StatelessWidget {
               inputCTL: _password,
             ),
             buttonForm(
-                title: "Login",
-                titleColor: const Color(0xFF000000),
-                bgColor: const Color(0xFFD9D9D9)),
+              title: "Login",
+              titleColor: const Color(0xFF000000),
+              bgColor: const Color(0xFFD9D9D9),
+              onClick: () => {},
+            ),
             Container(
               margin: const EdgeInsets.fromLTRB(0, 30, 0, 30),
               child: SizedBox(
@@ -68,7 +72,7 @@ class login extends StatelessWidget {
                         decoration: const BoxDecoration(
                           color: Color(0xFFFFFFFF),
                         ),
-                        child: Container(
+                        child: const SizedBox(
                           width: 98,
                           height: 1,
                         ),
@@ -102,12 +106,20 @@ class login extends StatelessWidget {
             ),
             const ButtonFillForm(title: "Continue with Google", icon: "icon"),
             buttonForm(
-                title: "Create account",
-                titleColor: const Color(0xFF000000),
-                bgColor: const Color(0xFFD9D9D9)),
+              title: "Create account",
+              titleColor: const Color(0xFF000000),
+              bgColor: const Color(0xFFD9D9D9),
+              onClick: submitForm(_loginM),
+            ),
           ],
         ),
       ),
     ));
   }
+}
+
+dynamic submitForm(LoginModel value) {
+  final fecth = Fetch();
+  Map<String, String> options = {"name": "F"};
+  fecth.get("", options);
 }

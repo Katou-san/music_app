@@ -15,11 +15,11 @@ class _SignupState extends State<Signup> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Color(0xFF0D0D0D),
+        color: const Color(0xFF0D0D0D),
         borderRadius: BorderRadius.circular(32),
       ),
       child: Container(
-        padding: EdgeInsets.fromLTRB(24, 98, 24, 57),
+        padding: const EdgeInsets.fromLTRB(24, 98, 24, 57),
         child: Stack(
           clipBehavior: Clip.none,
           children: [

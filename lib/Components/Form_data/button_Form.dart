@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class buttonForm extends StatelessWidget {
-  buttonForm(
-      {super.key,
-      required this.title,
-      required this.titleColor,
-      required this.bgColor});
+  buttonForm({
+    super.key,
+    required this.title,
+    required this.titleColor,
+    required this.bgColor,
+    required this.onClick,
+  });
   final String title;
-  Color bgColor = const Color(0xFFD9D9D9);
-  Color titleColor = const Color(0xFF000000);
+  Color bgColor;
+  Color titleColor;
+  Function onClick;
 
   @override
   Widget build(BuildContext context) {
