@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_app/Pages/Signup.dart';
-import 'package:music_app/Pages/Login.dart';
+import 'package:music_app/Pages/login.dart';
 import 'Pages/home.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -20,55 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {});
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      // body: Container(
-      //   child: Text("hello"),
-      // ),
-
-      body: Login(),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   backgroundColor: Colors.black,
-      //   unselectedItemColor: Colors.white,
-      //   items: [
-      //     BottomNavigationBarItem(
-      //       icon: SvgPicture.asset(
-      //         'assets/vectors/home_19_x2.svg',
-      //       ),
-      //       label: "Home",
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: SvgPicture.asset('assets/vectors/vector_7_x2.svg'),
-      //       label: "Search",
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: SvgPicture.asset('assets/vectors/library_music_12_x2.svg'),
-      //       label: "Your Library",
-      //     )
-      //   ],
-      // ),
+      routes: {'/': (context) => login()},
     );
   }
 }

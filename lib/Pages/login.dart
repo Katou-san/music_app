@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
-// import 'dart:ui';
-import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:music_app/Utils/utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_app/Components/Form_data/button_Form.dart';
 import 'package:music_app/Components/Form_data/button_fill_Form.dart';
 import 'package:music_app/Components/Form_data/input_Form.dart';
 
-void HandleLogin() {}
-
-class Login extends StatelessWidget {
-  Login({super.key});
+class login extends StatelessWidget {
+  login({super.key});
 
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
+        body: Container(
       width: double.infinity,
       height: double.infinity,
+      padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
       decoration: const BoxDecoration(
         color: Color(0xFF0D0D0D),
         // borderRadius: BorderRadius.circular(32),
@@ -53,12 +50,12 @@ class Login extends StatelessWidget {
               textinput: 'this is the password',
               inputCTL: _password,
             ),
-            ButtonForm(
+            buttonForm(
                 title: "Login",
                 titleColor: const Color(0xFF000000),
                 bgColor: const Color(0xFFD9D9D9)),
             Container(
-              margin: const EdgeInsets.fromLTRB(2.8, 0, 0, 0),
+              margin: const EdgeInsets.fromLTRB(0, 30, 0, 30),
               child: SizedBox(
                 width: 269,
                 child: Row(
@@ -84,7 +81,7 @@ class Login extends StatelessWidget {
                         fontWeight: FontWeight.w700,
                         fontSize: 16,
                         height: 1.3,
-                        color: Color(0xFFFFFFFF),
+                        color: const Color(0xFFFFFFFF),
                       ),
                     ),
                     Container(
@@ -104,13 +101,13 @@ class Login extends StatelessWidget {
               ),
             ),
             const ButtonFillForm(title: "Continue with Google", icon: "icon"),
-            ButtonForm(
+            buttonForm(
                 title: "Create account",
                 titleColor: const Color(0xFF000000),
                 bgColor: const Color(0xFFD9D9D9)),
           ],
         ),
       ),
-    );
+    ));
   }
 }

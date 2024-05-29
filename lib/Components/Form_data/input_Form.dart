@@ -15,7 +15,7 @@ class InputForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+        margin: const EdgeInsets.fromLTRB(0, 30, 0, 10),
         width: 312,
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -52,13 +52,13 @@ class InputForm extends StatelessWidget {
                         border: InputBorder.none,
                         hintText: textinput.toString(),
                         hintStyle: const TextStyle(color: Color(0xFF9B9B9B))),
-                    style: GoogleFonts.getFont(
-                      'Inter',
-                      fontWeight: FontWeight.w700,
-                      fontSize: 16,
-                      height: 1.3,
-                      color: const Color.fromARGB(255, 80, 79, 79),
-                    ),
+                    // style: GoogleFonts.getFont(
+                    //   'Inter',
+                    //   fontWeight: FontWeight.w700,
+                    //   fontSize: 16,
+                    //   height: 1.3,
+                    //   color: const Color.fromARGB(255, 80, 79, 79),
+                    // ),
                   ),
                 ),
               )

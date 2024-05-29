@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -36,9 +35,7 @@ class ButtonFillForm extends StatelessWidget {
                     child: SizedBox(
                       width: 24,
                       height: 24,
-                      child: SvgPicture.network(
-                        'assets/vectors/vector_39_x2.svg',
-                      ),
+                      child: Text("dsd"),
                     ),
                   ),
                   Positioned(
