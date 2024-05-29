@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:music_app/Pages/Signup.dart';
+import 'package:music_app/Pages/Login.dart';
 import 'Pages/home.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -42,27 +44,31 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Home(),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
-        unselectedItemColor: Colors.white,
-        items: [
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/vectors/home_19_x2.svg',
-            ),
-            label: "Home",
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/vectors/vector_7_x2.svg'),
-            label: "Search",
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset('assets/vectors/library_music_12_x2.svg'),
-            label: "Your Library",
-          )
-        ],
-      ),
+      // body: Container(
+      //   child: Text("hello"),
+      // ),
+
+      body: Login(),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   backgroundColor: Colors.black,
+      //   unselectedItemColor: Colors.white,
+      //   items: [
+      //     BottomNavigationBarItem(
+      //       icon: SvgPicture.asset(
+      //         'assets/vectors/home_19_x2.svg',
+      //       ),
+      //       label: "Home",
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: SvgPicture.asset('assets/vectors/vector_7_x2.svg'),
+      //       label: "Search",
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: SvgPicture.asset('assets/vectors/library_music_12_x2.svg'),
+      //       label: "Your Library",
+      //     )
+      //   ],
+      // ),
     );
   }
 }

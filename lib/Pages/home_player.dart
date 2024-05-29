@@ -9,7 +9,7 @@ class HomePlayer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Color(0xFF0D0D0D),
+        color: const Color(0xFF0D0D0D),
         borderRadius: BorderRadius.circular(32),
       ),
       child: Column(
