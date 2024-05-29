@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:music_app/Utils/utils.dart';
+// import 'package:music_app/Utils/utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatelessWidget {
+  const Home({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -658,7 +658,7 @@ class Home extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(0, 0, 0, 24),
+                      margin: const EdgeInsets.fromLTRB(0, 0, 0, 24),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -677,7 +677,7 @@ class Home extends StatelessWidget {
                                     fontWeight: FontWeight.w500,
                                     fontSize: 24,
                                     height: 1.2,
-                                    color: Color(0xBFFFFFFF),
+                                    color: const Color(0xBFFFFFFF),
                                   ),
                                 ),
                                 Container(
@@ -698,7 +698,7 @@ class Home extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.fromLTRB(24, 0, 0, 8),
+                            padding: const EdgeInsets.fromLTRB(24, 0, 0, 8),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -706,7 +706,8 @@ class Home extends StatelessWidget {
                                 //=============================== cột (ITEM 4)
                                 Expanded(
                                   child: Container(
-                                    margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
+                                    margin:
+                                        const EdgeInsets.fromLTRB(0, 0, 16, 0),
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
@@ -714,8 +715,8 @@ class Home extends StatelessWidget {
                                           CrossAxisAlignment.center,
                                       children: [
                                         Container(
-                                          margin:
-                                              EdgeInsets.fromLTRB(0, 0, 0, 8),
+                                          margin: const EdgeInsets.fromLTRB(
+                                              0, 0, 0, 8),
                                           child: Container(
                                             decoration: BoxDecoration(
                                               borderRadius:
@@ -727,7 +728,7 @@ class Home extends StatelessWidget {
                                                 ),
                                               ),
                                             ),
-                                            child: Container(
+                                            child: const SizedBox(
                                               width: 120,
                                               height: 120,
                                             ),
@@ -744,7 +745,7 @@ class Home extends StatelessWidget {
                                               fontWeight: FontWeight.w500,
                                               fontSize: 12,
                                               height: 1.2,
-                                              color: Color(0xBFFFFFFF),
+                                              color: const Color(0xBFFFFFFF),
                                             ),
                                           ),
                                         ),
@@ -889,7 +890,7 @@ class Home extends StatelessWidget {
                                               fontWeight: FontWeight.w500,
                                               fontSize: 12,
                                               height: 1.2,
-                                              color: Color(0xBFFFFFFF),
+                                              color: const Color(0xBFFFFFFF),
                                             ),
                                           ),
                                         ),
@@ -927,13 +928,13 @@ class Home extends StatelessWidget {
                                       fontWeight: FontWeight.w500,
                                       fontSize: 24,
                                       height: 1.2,
-                                      color: Color(0xBFFFFFFF),
+                                      color: const Color(0xBFFFFFFF),
                                     ),
                                   ),
                                 ),
                               ),
                               Container(
-                                margin: EdgeInsets.fromLTRB(0, 8, 0, 0),
+                                margin: const EdgeInsets.fromLTRB(0, 8, 0, 0),
                                 child: Text(
                                   'See more',
                                   style: GoogleFonts.getFont(
@@ -941,7 +942,7 @@ class Home extends StatelessWidget {
                                     fontWeight: FontWeight.w500,
                                     fontSize: 16,
                                     height: 1.3,
-                                    color: Color(0xFFFFFFFF),
+                                    color: const Color(0xFFFFFFFF),
                                   ),
                                 ),
                               ),
@@ -949,7 +950,7 @@ class Home extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          padding: EdgeInsets.fromLTRB(24, 0, 0, 8),
+                          padding: const EdgeInsets.fromLTRB(24, 0, 0, 8),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -957,7 +958,8 @@ class Home extends StatelessWidget {
                               //=============================== cột (ITEM 6)
                               Expanded(
                                 child: Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 16, 36),
+                                  margin:
+                                      const EdgeInsets.fromLTRB(0, 0, 16, 36),
                                   child: SizedBox(
                                     height: 120,
                                     child: Stack(
@@ -974,7 +976,7 @@ class Home extends StatelessWidget {
                                                 fontWeight: FontWeight.w500,
                                                 fontSize: 12,
                                                 height: 1.2,
-                                                color: Color(0xBFFFFFFF),
+                                                color: const Color(0xBFFFFFFF),
                                               ),
                                             ),
                                           ),
@@ -990,7 +992,7 @@ class Home extends StatelessWidget {
                                               ),
                                             ),
                                           ),
-                                          child: Container(
+                                          child: const SizedBox(
                                             width: 120,
                                             height: 120,
                                           ),
