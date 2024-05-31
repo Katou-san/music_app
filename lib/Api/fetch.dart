@@ -8,8 +8,9 @@ class Fetch {
     return res;
   }
 
-  dynamic post(String url, dynamic body, String options) async {
+  dynamic post(String url, Map<String, dynamic> body, String options) async {
     dynamic res = await http.post(Uri.parse(url));
+    print(res.toString());
     return res;
   }
 
