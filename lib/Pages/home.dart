@@ -3,8 +3,22 @@ import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:music_app/Utils/utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => loadInformation());
+  }
+
+  void loadInformation() {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,85 +35,6 @@ class Home extends StatelessWidget {
                 child: Container(
                   decoration: const BoxDecoration(
                     color: Color(0x1F000000),
-                  ),
-                  child: Container(
-                    padding: const EdgeInsets.fromLTRB(16, 14, 16, 2),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              margin: const EdgeInsets.fromLTRB(0, 6, 8, 6),
-                              child: Opacity(
-                                opacity: 0.5,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFFFFFFFF),
-                                    borderRadius: BorderRadius.circular(2),
-                                  ),
-                                  child: const SizedBox(
-                                    width: 4,
-                                    height: 4,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Opacity(
-                              opacity: 0.6,
-                              child: Text(
-                                '12:00',
-                                style: GoogleFonts.getFont(
-                                  'Roboto',
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 14,
-                                  color: const Color(0xFFFFFFFF),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Container(
-                          margin: const EdgeInsets.fromLTRB(0, 2, 0, 2),
-                          child: SizedBox(
-                            width: 52,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(1),
-                                  child: SizedBox(
-                                    width: 12,
-                                    height: 12,
-                                    child: SvgPicture.asset(
-                                      'assets/vectors/vector_1_x2.svg',
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 16,
-                                  height: 12,
-                                  child: SvgPicture.asset(
-                                    'assets/vectors/ellipse_27_x2.svg',
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 8,
-                                  height: 12,
-                                  child: SvgPicture.asset(
-                                    'assets/vectors/union_10_x2.svg',
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
                   ),
                 ),
               ),
