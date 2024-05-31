@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 
 class ButtonFillForm extends StatelessWidget {
   const ButtonFillForm({super.key, required this.title, required this.icon});
@@ -17,7 +17,7 @@ class ButtonFillForm extends StatelessWidget {
         children: [
           Container(
             width: double.maxFinite,
-            margin: const EdgeInsets.fromLTRB(0, 0, 1, 85),
+            margin: const EdgeInsets.fromLTRB(0, 0, 1, 0),
             height: 56,
             decoration: BoxDecoration(
               border: Border.all(color: const Color(0xBFFFFFFF)),
@@ -32,7 +32,7 @@ class ButtonFillForm extends StatelessWidget {
                     margin: const EdgeInsets.fromLTRB(0, 0, 30, 0),
                     width: 24,
                     height: 24,
-                    child: SizedBox(
+                    child: const SizedBox(
                       width: 24,
                       height: 24,
                       child: Text("dsd"),
