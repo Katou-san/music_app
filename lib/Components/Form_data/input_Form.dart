@@ -46,7 +46,7 @@ class InputForm extends StatelessWidget {
                 ),
                 child: Container(
                   padding: const EdgeInsets.fromLTRB(23.5, 8, 23.5, 8),
-                  child: TextField(
+                  child: TextFormField(
                     controller: inputCTL,
                     decoration: InputDecoration(
                         border: InputBorder.none,
@@ -59,6 +59,12 @@ class InputForm extends StatelessWidget {
                     //   height: 1.3,
                     //   color: const Color.fromARGB(255, 80, 79, 79),
                     // ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter some text';
+                      }
+                      return null;
+                    },
                   ),
                 ),
               )

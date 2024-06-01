@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/Pages/login.dart';
+import 'package:music_app/Pages/signup.dart';
 import 'Pages/home.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      routes: {'/': (context) => login()},
+      routes: {'/': (context) => Login()},
     );
   }
 }
