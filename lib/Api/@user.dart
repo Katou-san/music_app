@@ -19,7 +19,7 @@ class ApiUser {
         headers: headers);
 
     if (res.statusCode == 200) {
-      dynamic result = jsonDecode(res.body);
+      dynamic result = await jsonDecode(res.body);
       if (result['status'] != 404) {
         return LoginRespone.fromJson(result['data']);
       } else {

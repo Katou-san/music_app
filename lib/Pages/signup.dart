@@ -5,8 +5,8 @@ import 'package:music_app/Components/Form_data/button_Form.dart';
 import 'package:music_app/Components/Form_data/input_Form.dart';
 // import 'package:music_app/Model/User.dart';
 
-class Sigup extends StatelessWidget {
-  Sigup({super.key});
+class Signup extends StatelessWidget {
+  Signup({super.key});
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
   final TextEditingController _name = TextEditingController();

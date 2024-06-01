@@ -5,10 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_app/Api/@user.dart';
 import 'package:music_app/Api/fetch.dart';
+import 'package:music_app/Components/Button/Button_Navigation.dart';
 import 'package:music_app/Components/Form_data/button_Form.dart';
 import 'package:music_app/Components/Form_data/button_fill_Form.dart';
 import 'package:music_app/Components/Form_data/input_Form.dart';
 import 'package:music_app/Model/LoginM.dart';
+import 'package:music_app/Routes/index.dart';
 // import 'package:music_app/Model/User.dart';
 
 class Login extends StatelessWidget {
@@ -122,22 +124,19 @@ class Login extends StatelessWidget {
                     const ButtonFillForm(
                         title: "Continue with Google", icon: "icon"),
                     ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.all(0)),
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Processing Data')),
-                          );
-                        }
-                      },
-                      child: buttonForm(
-                        title: "Create account",
-                        titleColor: const Color(0xFF000000),
-                        bgColor: const Color(0xFFD9D9D9),
-                        function: () => {},
-                      ),
-                    ),
+                        style: ElevatedButton.styleFrom(
+                            padding: const EdgeInsets.all(0)),
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(content: Text('Processing Data')),
+                            );
+                          }
+                        },
+                        child: const ButtonNavigation(
+                          title: "Signup",
+                          url: AppRoutes.sigupPage,
+                        )),
                   ],
                 ),
               ),
@@ -147,8 +146,6 @@ class Login extends StatelessWidget {
 
 dynamic submitForm(dynamic email, dynamic password) async {
   final userAPI = ApiUser();
-
-  var body = json.encode({"User_Email": email, "User_Pass": password});
   dynamic response =
       await userAPI.login(LoginRequest(email: email, password: password));
   print(response);

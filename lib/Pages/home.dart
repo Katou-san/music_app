@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:music_app/Utils/utils.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:music_app/Components/Button/Button_Navigation.dart';
+import 'package:music_app/Routes/index.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -77,11 +80,17 @@ class _HomeState extends State<Home> {
                       ],
                     ),
                     SizedBox(
-                      width: 96,
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
+                          const ButtonNavigation(
+                            title: "test",
+                            titleColor: Color.fromARGB(255, 225, 222, 222),
+                            url: AppRoutes.loginPage,
+                            height: 23,
+                            width: 30,
+                          ),
                           Container(
                             margin: const EdgeInsets.fromLTRB(0, 8, 16, 8),
                             child: SizedBox(
