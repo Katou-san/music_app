@@ -1,11 +1,11 @@
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_app/Api/@user.dart';
 import 'package:music_app/Api/fetch.dart';
 import 'package:music_app/Components/Button/Button_Navigation.dart';
+import 'package:music_app/Components/Form_data/Or_line.dart';
 import 'package:music_app/Components/Form_data/button_Form.dart';
 import 'package:music_app/Components/Form_data/button_fill_Form.dart';
 import 'package:music_app/Components/Form_data/input_Form.dart';
@@ -27,20 +27,17 @@ class Login extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
             decoration: const BoxDecoration(
               color: Color(0xFF0D0D0D),
-              // borderRadius: BorderRadius.circular(32),
             ),
-            child: Container(
+            child: SizedBox(
               width: 312,
-              padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
               height: double.infinity,
               child: Form(
                 key: _formKey,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      margin: const EdgeInsets.fromLTRB(2.8, 0, 0, 0),
+                    SizedBox(
                       child: Text(
                         'Login',
                         style: GoogleFonts.getFont(
@@ -62,65 +59,18 @@ class Login extends StatelessWidget {
                       inputCTL: _password,
                     ),
                     ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.all(0)),
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          submitForm(_email.text, _password.text);
-                        }
-                      },
-                      child: buttonForm(
-                          title: "Login",
-                          titleColor: const Color(0xFF000000),
-                          bgColor: const Color(0xFFD9D9D9),
-                          function: () => {}),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.fromLTRB(0, 30, 0, 30),
-                      child: SizedBox(
-                        width: 269,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              margin: const EdgeInsets.fromLTRB(0, 13, 0, 6),
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  color: Color.fromARGB(255, 159, 147, 147),
-                                ),
-                                child: const SizedBox(
-                                  width: 98,
-                                  height: 1,
-                                ),
-                              ),
-                            ),
-                            Text(
-                              'or',
-                              style: GoogleFonts.getFont(
-                                'Inter',
-                                fontWeight: FontWeight.w700,
-                                fontSize: 16,
-                                height: 1.3,
-                                color: const Color(0xFFFFFFFF),
-                              ),
-                            ),
-                            Container(
-                              margin: const EdgeInsets.fromLTRB(0, 13, 0, 6),
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  color: Color(0xFFFFFFFF),
-                                ),
-                                child: const SizedBox(
-                                  width: 98,
-                                  height: 1,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                        style: ElevatedButton.styleFrom(
+                            padding: const EdgeInsets.all(0)),
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            submitForm(_email.text, _password.text);
+                          }
+                        },
+                        child: ButtonForm(
+                            title: "Login",
+                            titleColor: const Color(0xFF000000),
+                            bgColor: const Color(0xFFD9D9D9))),
+                    const OrLine(),
                     const ButtonFillForm(
                         title: "Continue with Google", icon: "icon"),
                     ElevatedButton(
@@ -134,8 +84,9 @@ class Login extends StatelessWidget {
                           }
                         },
                         child: const ButtonNavigation(
-                          title: "Signup",
+                          title: "Create account",
                           url: AppRoutes.sigupPage,
+                          width: 312,
                         )),
                   ],
                 ),

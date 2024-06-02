@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class buttonForm extends StatelessWidget {
-  buttonForm({
+class ButtonForm extends StatelessWidget {
+  ButtonForm({
     super.key,
     required this.title,
     required this.titleColor,
     required this.bgColor,
-    required this.function,
+    this.function,
   });
   final String title;
-  Color bgColor;
-  Color titleColor;
-  final dynamic function;
+  final Color bgColor;
+  final Color titleColor;
+  final Function? function;
 
   @override
   Widget build(BuildContext context) {

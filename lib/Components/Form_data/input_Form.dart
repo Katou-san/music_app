@@ -8,14 +8,16 @@ class InputForm extends StatelessWidget {
       {super.key,
       required this.lables,
       required this.textinput,
-      required this.inputCTL});
+      required this.inputCTL,
+      this.margin});
   final String lables;
   final String textinput;
+  final EdgeInsetsGeometry? margin;
   final TextEditingController inputCTL;
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: const EdgeInsets.fromLTRB(0, 30, 0, 10),
+        margin: margin ?? const EdgeInsets.fromLTRB(0, 10, 0, 10),
         width: 312,
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -26,7 +28,7 @@ class InputForm extends StatelessWidget {
                 child: Align(
                     alignment: Alignment.topLeft,
                     child: Container(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
+                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 2),
                         child: Text(
                           lables.toString(),
                           style: GoogleFonts.getFont(
@@ -45,20 +47,13 @@ class InputForm extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Container(
-                  padding: const EdgeInsets.fromLTRB(23.5, 8, 23.5, 8),
+                  padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
                   child: TextFormField(
                     controller: inputCTL,
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: textinput.toString(),
                         hintStyle: const TextStyle(color: Color(0xFF9B9B9B))),
-                    // style: GoogleFonts.getFont(
-                    //   'Inter',
-                    //   fontWeight: FontWeight.w700,
-                    //   fontSize: 16,
-                    //   height: 1.3,
-                    //   color: const Color.fromARGB(255, 80, 79, 79),
-                    // ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Please enter some text';

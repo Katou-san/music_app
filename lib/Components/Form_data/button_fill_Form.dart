@@ -10,14 +10,14 @@ class ButtonFillForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 312,
-      margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+      margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             width: double.maxFinite,
-            margin: const EdgeInsets.fromLTRB(0, 0, 1, 0),
+            margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
             height: 56,
             decoration: BoxDecoration(
               border: Border.all(color: const Color(0xBFFFFFFF)),
