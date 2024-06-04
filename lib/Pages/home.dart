@@ -1,14 +1,9 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:music_app/Utils/utils.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:music_app/Components/Button/Button_Navigation.dart';
 import 'package:music_app/Layout/Home/category.dart';
 import 'package:music_app/Layout/Home/slider.dart';
-import 'package:music_app/Routes/index.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -18,6 +13,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int _selectedIndex = 0;
   List<int> listdata = [];
 
   void loadInformation() {
@@ -747,38 +743,40 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
-      bottomNavigationBar: SizedBox(
-        height: 40,
-        child: BottomNavigationBar(
-          backgroundColor: Colors.black,
-          unselectedItemColor: Colors.white,
-          selectedFontSize: 0.0,
-          unselectedFontSize: 0.0,
-          items: [
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/vectors/home_19_x2.svg',
-                height: 30,
-              ),
-              label: "Home",
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/vectors/vector_7_x2.svg',
-                height: 30,
-              ),
-              label: "Search",
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/vectors/library_music_12_x2.svg',
-                height: 30,
-              ),
-              label: "Your Library",
-            )
-          ],
-        ),
-      ),
+      bottomNavigationBar: SalomonBottomBar(
+          currentIndex: _selectedIndex,
+          selectedItemColor: const Color(0xff6200ee),
+          unselectedItemColor: const Color(0xff757575),
+          backgroundColor: Color.fromARGB(255, 0, 0, 0),
+          onTap: (index) {
+            setState(() {
+              _selectedIndex = index;
+            });
+          },
+          items: _navBarItems),
     );
   }
 }
+
+final _navBarItems = [
+  SalomonBottomBarItem(
+    icon: const Icon(Icons.home),
+    title: const Text("Home"),
+    selectedColor: Colors.purple,
+  ),
+  SalomonBottomBarItem(
+    icon: const Icon(Icons.favorite_border),
+    title: const Text("Likes"),
+    selectedColor: Colors.pink,
+  ),
+  SalomonBottomBarItem(
+    icon: const Icon(Icons.search),
+    title: const Text("Search"),
+    selectedColor: Colors.orange,
+  ),
+  SalomonBottomBarItem(
+    icon: const Icon(Icons.person),
+    title: const Text("Profile"),
+    selectedColor: Colors.teal,
+  ),
+];

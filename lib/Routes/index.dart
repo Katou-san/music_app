@@ -23,7 +23,7 @@ Route _createRouteAnimation(Widget page) {
 
 class AppRoutes {
   static const String loginPage = "/login";
-  static const String sigupPage = "/sigup";
+  static const String sigupPage = "/signup";
   static const String initPage = "/";
 
   Map<String, WidgetBuilder> routes() => {

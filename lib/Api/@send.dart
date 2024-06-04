@@ -7,13 +7,12 @@ import 'package:music_app/Model/LoginM.dart';
 
 Map<String, String> headers = {"Content-Type": "application/json"};
 
-class ApiUser {
-  ApiUser();
+class ApiSend {
+  ApiSend();
 
-  Future<dynamic> login(LoginRequest loginRequest) async {
-    http.Response res = await http.post(
+  Future<dynamic> audio(String id) async {
+    http.Response res = await http.get(
         Uri.parse('http://localhost:8080/api/admin/v1/user/login'),
-        body: loginRequest.toJson(),
         headers: headers);
 
     if (res.statusCode == 200) {
