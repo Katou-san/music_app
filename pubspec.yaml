@@ -37,7 +37,12 @@ dependencies:
   flutter_dotenv: ^5.1.0
   provider: ^6.1.2
   just_audio: ^0.9.38
+  just_audio_background: ^0.0.1-beta.12
+  audio_video_progress_bar: ^2.0.3
+  cached_network_image: ^3.3.1
+  rxdart: ^0.27.7
   salomon_bottom_bar: ^3.3.2
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
 
