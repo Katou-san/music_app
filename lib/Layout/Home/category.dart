@@ -22,7 +22,7 @@ class CateFrame extends StatelessWidget {
               children: [
                 Container(
                     height: 60,
-                    margin: EdgeInsets.only(right: 10),
+                    margin: const EdgeInsets.only(right: 10),
                     child: const ButtonNavigation(
                       title: 'for you',
                       url: 'test',

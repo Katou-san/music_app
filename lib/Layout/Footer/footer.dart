@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class Footer extends StatefulWidget {
-  const Footer({Key? key}) : super(key: key);
-
+  const Footer({super.key, required this.initIndex});
+  final int initIndex;
   @override
   State<Footer> createState() => _FooterState();
 }
@@ -14,21 +14,29 @@ class _FooterState extends State<Footer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Google Bottom Bar')),
-      body: Center(
-        child: _navBarItems[_selectedIndex].title,
-      ),
-      bottomNavigationBar: SalomonBottomBar(
-          currentIndex: _selectedIndex,
-          selectedItemColor: const Color(0xff6200ee),
-          unselectedItemColor: const Color(0xff757575),
-          onTap: (index) {
-            setState(() {
-              _selectedIndex = index;
-            });
-          },
-          items: _navBarItems),
-    );
+        appBar: AppBar(title: const Text('Google Bottom Bar')),
+        body: Center(
+          child: _navBarItems[_selectedIndex].title,
+        ),
+        bottomNavigationBar: Container(
+            height: 60,
+            width: double.infinity,
+            decoration: BoxDecoration(color: Colors.white),
+            child: Column(
+              children: [
+                Text("hello"),
+                SalomonBottomBar(
+                    currentIndex: _selectedIndex,
+                    selectedItemColor: const Color(0xff6200ee),
+                    unselectedItemColor: const Color(0xff757575),
+                    onTap: (index) {
+                      setState(() {
+                        _selectedIndex = index;
+                      });
+                    },
+                    items: _navBarItems),
+              ],
+            )));
   }
 }
 

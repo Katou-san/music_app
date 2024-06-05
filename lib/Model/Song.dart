@@ -1,4 +1,4 @@
-class Song {
+class SongRespone {
   final String songId;
   final String songName;
   final String songImage;
@@ -10,7 +10,7 @@ class Song {
   final String tag;
   final String color;
   final String isPublish;
-  Song(
+  SongRespone(
       {required this.songId,
       required this.songName,
       required this.songImage,

@@ -99,5 +99,4 @@ dynamic submitForm(dynamic email, dynamic password) async {
   final userAPI = ApiUser();
   dynamic response =
       await userAPI.login(LoginRequest(email: email, password: password));
-  print(response);
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/Pages/home.dart';
+import 'package:music_app/Pages/index.dart';
 import 'package:music_app/Pages/login.dart';
 import 'package:music_app/Pages/signup.dart';
 
@@ -29,6 +30,8 @@ class AppRoutes {
   Map<String, WidgetBuilder> routes() => {
         loginPage: (context) => Login(),
         sigupPage: (context) => Signup(),
-        initPage: (context) => Home()
+        initPage: (context) => IndexPage()
       };
+
+  List<Widget> listPage = [Home(), Signup(), Login()];
 }
