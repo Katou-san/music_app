@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:music_app/Components/Button/Button_Navigation.dart';
 
 class CateFrame extends StatelessWidget {
   const CateFrame({super.key});
@@ -7,46 +9,30 @@ class CateFrame extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.fromLTRB(0, 0, 0, 24),
-      child: Container(
-        padding: const EdgeInsets.fromLTRB(24, 0, 0, 0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
+      margin: const EdgeInsets.all(24),
+      height: 40,
+      width: double.infinity,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: 3,
+          itemBuilder: (content, index) {
+            return Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                //==============================(Category)
                 Container(
-                  margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: const Color(0x1FFFFFFF),
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                    child: Container(
-                      padding: const EdgeInsets.fromLTRB(16, 8, 17.3, 8),
-                      child: Text(
-                        'For you',
-                        style: GoogleFonts.getFont(
-                          'Inter',
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16,
-                          height: 1.3,
-                          color: const Color(0x80FFFFFF),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                //==============================(Category)
+                    height: 60,
+                    margin: EdgeInsets.only(right: 10),
+                    child: const ButtonNavigation(
+                      title: 'for you',
+                      url: 'test',
+                      padding: EdgeInsets.all(0),
+                      bgColor: Color(0x1FFFFFFF),
+                      titleColor: Color.fromARGB(255, 139, 139, 139),
+                    ))
               ],
-            ),
-          ],
-        ),
-      ),
+            );
+          }),
     );
   }
 }
