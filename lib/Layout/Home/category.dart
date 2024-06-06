@@ -3,8 +3,25 @@ import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_app/Components/Button/Button_Navigation.dart';
 
-class CateFrame extends StatelessWidget {
+class CateFrame extends StatefulWidget {
   const CateFrame({super.key});
+
+  @override
+  State<CateFrame> createState() => _CateFrameState();
+}
+
+class _CateFrameState extends State<CateFrame> {
+  int _indexSeletct = 0;
+  final List<Map<String, String>> _list = [
+    {'title': 'For you', 'url': '/'},
+    {'title': 'Relax', 'url': '/login'}
+  ];
+
+  void setIndex(int index) {
+    setState(() {
+      _indexSeletct = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +31,7 @@ class CateFrame extends StatelessWidget {
       width: double.infinity,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: 3,
+          itemCount: _list.length,
           itemBuilder: (content, index) {
             return Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -23,9 +40,9 @@ class CateFrame extends StatelessWidget {
                 Container(
                     height: 60,
                     margin: const EdgeInsets.only(right: 10),
-                    child: const ButtonNavigation(
-                      title: 'for you',
-                      url: 'test',
+                    child: ButtonNavigation(
+                      title: _list[index]['title'].toString(),
+                      url: _list[index]['url'].toString(),
                       padding: EdgeInsets.all(0),
                       bgColor: Color(0x1FFFFFFF),
                       titleColor: Color.fromARGB(255, 139, 139, 139),

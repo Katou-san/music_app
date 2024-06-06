@@ -1,12 +1,13 @@
-import 'dart:html';
-
 class Convert {
-  FormData formData(Map data, List<String> deny) {
-    FormData result = FormData();
-    List<String> arraykey = data.keys.first;
-    arraykey.map((item) => {
-          if (deny.indexOf(item) != -1) {result.append(item, data[item])}
-        });
+  Map<String, String> formData(Map data, List<String> deny) {
+    Map<String, String> result = {};
+    List<String> arraykey = [];
+    data.keys.forEach((element) => arraykey.add(element));
+    arraykey.forEach((item) {
+      if (!deny.contains(item)) {
+        result[item] = data[item];
+      }
+    });
     return result;
   }
 }

@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:music_app/Model/Playlist.dart';
 
 class ListPlaylist extends StatelessWidget {
-  const ListPlaylist({super.key});
-
+  const ListPlaylist({super.key, required this.listdata});
+  final List<PlaylistRespone> listdata;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -57,7 +58,7 @@ class ListPlaylist extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(0, 0, 0, 8),
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 3,
+                  itemCount: listdata.length,
                   itemBuilder: (context, index) {
                     return Expanded(
                       child: Container(
@@ -108,7 +109,7 @@ class ListPlaylist extends StatelessWidget {
                             Align(
                               alignment: Alignment.topLeft,
                               child: Text(
-                                'Inside Out',
+                                listdata[index].Playlist_Name.toString(),
                                 style: GoogleFonts.getFont(
                                   'Inter',
                                   fontWeight: FontWeight.w500,

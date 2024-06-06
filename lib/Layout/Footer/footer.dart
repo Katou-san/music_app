@@ -19,7 +19,7 @@ class _FooterState extends State<Footer> {
           child: _navBarItems[_selectedIndex].title,
         ),
         bottomNavigationBar: Container(
-            height: 60,
+            height: 80,
             width: double.infinity,
             decoration: BoxDecoration(color: Colors.white),
             child: Column(
