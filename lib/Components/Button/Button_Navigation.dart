@@ -14,7 +14,8 @@ class ButtonNavigation extends StatelessWidget {
       this.width,
       this.icon,
       this.radius,
-      this.padding});
+      this.padding,
+      this.function});
   final String title;
   final Color? bgColor;
   final Color? titleColor;
@@ -25,6 +26,7 @@ class ButtonNavigation extends StatelessWidget {
   final IconData? icon;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
+  final Function? function;
   @override
   Widget build(BuildContext context) {
     bool checkIcon = icon == null ? false : true;

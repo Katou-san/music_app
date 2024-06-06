@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_app/Pages/audio_detail.dart';
+import 'package:flutter/widgets.dart';
 import 'package:music_app/Pages/home.dart';
 import 'package:music_app/Pages/index.dart';
 import 'package:music_app/Pages/login.dart';
@@ -27,13 +27,11 @@ class AppRoutes {
   static const String loginPage = "/login";
   static const String sigupPage = "/signup";
   static const String initPage = "/";
-  static const String audioPage = "/audio";
 
   Map<String, WidgetBuilder> routes() => {
         loginPage: (context) => Login(),
         sigupPage: (context) => Signup(),
-        initPage: (context) => IndexPage(),
-        audioPage: (context) => AudioDetail(),
+        initPage: (context) => IndexPage()
       };
 
   List<Widget> listPage = [Home(), Signup(), Login()];
