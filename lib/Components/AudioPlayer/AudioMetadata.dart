@@ -60,7 +60,7 @@ class AudioMetaData extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             Text(
-              "Artist: $uploadBy",
+              "Upload By: $uploadBy",
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
