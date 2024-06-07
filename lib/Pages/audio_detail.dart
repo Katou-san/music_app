@@ -14,40 +14,61 @@ class AudioDetail extends StatefulWidget {
 
 class _AudioDetailState extends State<AudioDetail> {
   late AudioPlayer _audioPlayer;
-  final _playlist = ConcatenatingAudioSource(children: [
-    AudioSource.uri(
-      Uri.parse("http://localhost:8080/api/v1/send/audio/2024411502744697.mp3"),
-      tag: SongRespone(
-          songId: "songId",
-          songName: "Coconut",
-          songImage:
-              "http://localhost:8080/api/v1/send/image/@Hung_babyの20のdoor_20241513344299830.png",
-          songSrc: "songSrc",
-          like: "like",
-          userId: "userId",
-          categoryId: "categoryId",
-          lyrics: "lyrics",
-          tag: "tag",
-          color: "color",
-          isPublish: "isPublish"),
-    ),
-    AudioSource.uri(
-      Uri.parse("http://localhost:8080/api/v1/send/audio/2024411502744697.mp3"),
-      tag: SongRespone(
-          songId: "songId",
-          songName: "Out light",
-          songImage:
-              "http://localhost:8080/api/v1/send/image/2024462231595185.jpeg",
-          songSrc: "songSrc",
-          like: "like",
-          userId: "userId",
-          categoryId: "categoryId",
-          lyrics: "lyrics",
-          tag: "tag",
-          color: "color",
-          isPublish: "isPublish"),
-    ),
-  ]);
+  final _playlist = ConcatenatingAudioSource(
+      useLazyPreparation: true,
+      shuffleOrder: DefaultShuffleOrder(),
+      children: [
+        AudioSource.uri(
+          Uri.parse("http://localhost:8080/api/v1/send/audio/panko.mp3"),
+          tag: SongRespone(
+              songId: "songId",
+              songName: "Coconut",
+              songImage:
+                  "http://localhost:8080/api/v1/send/image/@Hung_babyの20のdoor_20241513344299830.png",
+              songSrc: "songSrc",
+              like: "like",
+              userId: "userId",
+              categoryId: "categoryId",
+              lyrics: "lyrics",
+              tag: "tag",
+              color: "color",
+              isPublish: "isPublish"),
+        ),
+        AudioSource.uri(
+          Uri.parse(
+              "http://localhost:8080/api/v1/send/audio/2024411502744697.mp3"),
+          tag: SongRespone(
+              songId: "songId",
+              songName: "Out light",
+              songImage:
+                  "http://localhost:8080/api/v1/send/image/2024462231595185.jpeg",
+              songSrc: "songSrc",
+              like: "like",
+              userId: "userId",
+              categoryId: "categoryId",
+              lyrics: "lyrics",
+              tag: "tag",
+              color: "color",
+              isPublish: "isPublish"),
+        ),
+        AudioSource.uri(
+          Uri.parse(
+              "http://localhost:8080/api/v1/send/audio/2024411502744697.mp3"),
+          tag: SongRespone(
+              songId: "songId",
+              songName: "Test",
+              songImage:
+                  "http://localhost:8080/api/v1/send/image/@Yuta_fs_20240212555235218.jpg",
+              songSrc: "songSrc",
+              like: "like",
+              userId: "userId",
+              categoryId: "categoryId",
+              lyrics: "lyrics",
+              tag: "tag",
+              color: "color",
+              isPublish: "isPublish"),
+        ),
+      ]);
 
   Stream<PositionData> get _positionDataStream =>
       Rx.combineLatest3<Duration, Duration, Duration?, PositionData>(
@@ -66,7 +87,7 @@ class _AudioDetailState extends State<AudioDetail> {
   }
 
   Future<void> _init() async {
-    await _audioPlayer.setLoopMode(LoopMode.all);
+    await _audioPlayer.setLoopMode(LoopMode.off);
     await _audioPlayer.setAudioSource(_playlist);
   }
 
@@ -98,7 +119,7 @@ class _AudioDetailState extends State<AudioDetail> {
           gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [Colors.black, Colors.black26]),
+              colors: [Colors.black, Color.fromARGB(255, 5, 71, 117)]),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -132,9 +153,9 @@ class _AudioDetailState extends State<AudioDetail> {
                 return ProgressBar(
                   barHeight: 10,
                   baseBarColor: Colors.white,
-                  bufferedBarColor: const Color.fromARGB(255, 151, 194, 255),
-                  progressBarColor: const Color.fromARGB(255, 12, 92, 231),
-                  thumbColor: const Color.fromARGB(255, 12, 92, 231),
+                  bufferedBarColor: const Color.fromARGB(195, 151, 194, 255),
+                  progressBarColor: Colors.lightBlue,
+                  thumbColor: Colors.lightBlue,
                   timeLabelTextStyle: const TextStyle(
                       color: Colors.white, fontWeight: FontWeight.bold),
                   progress: positionData?.position ?? Duration.zero,
