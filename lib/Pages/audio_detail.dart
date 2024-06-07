@@ -88,7 +88,9 @@ class _AudioDetailState extends State<AudioDetail> {
 
   Future<void> _init() async {
     await _audioPlayer.setLoopMode(LoopMode.off);
-    await _audioPlayer.setAudioSource(_playlist);
+    try {
+      await _audioPlayer.setAudioSource(_playlist);
+    } catch (e) {}
   }
 
   @override

@@ -5,15 +5,15 @@ class AudioButtons extends StatelessWidget {
   AudioButtons({super.key, required this.player});
   final AudioPlayer player;
   final List<double> speedValue = [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2];
-  int selectedSpeed = 0;
+  int selectedSpeed = 3;
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             StreamBuilder(
               stream: player.speedStream,
@@ -37,6 +37,29 @@ class AudioButtons extends StatelessWidget {
                         await player.setSpeed(speedValue[selectedSpeed]);
                       },
                     ),
+                  ],
+                );
+              },
+            ),
+            StreamBuilder(
+              stream: player.volumeStream,
+              builder: (context, snapshot) {
+                return Row(
+                  children: [
+                    const Icon(
+                      Icons.volume_up,
+                      color: Colors.white,
+                    ),
+                    Slider(
+                      thumbColor: Colors.lightBlue,
+                      activeColor: Colors.lightBlue,
+                      min: 0,
+                      max: 1,
+                      value: snapshot.data ?? 1,
+                      onChanged: (value) async {
+                        await player.setVolume(value);
+                      },
+                    )
                   ],
                 );
               },
@@ -134,34 +157,6 @@ class AudioButtons extends StatelessWidget {
                       color: Colors.white,
                       icon: const Icon(Icons.loop));
                 }
-              },
-            ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            StreamBuilder(
-              stream: player.volumeStream,
-              builder: (context, snapshot) {
-                return Row(
-                  children: [
-                    const Icon(
-                      Icons.volume_up,
-                      color: Colors.white,
-                    ),
-                    Slider(
-                      thumbColor: Colors.lightBlue,
-                      activeColor: Colors.lightBlue,
-                      min: 0,
-                      max: 1,
-                      value: snapshot.data ?? 1,
-                      onChanged: (value) async {
-                        await player.setVolume(value);
-                      },
-                    )
-                  ],
-                );
               },
             ),
           ],
