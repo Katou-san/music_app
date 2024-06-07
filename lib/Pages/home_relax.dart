@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:music_app/Components/Style/text_style.dart';
 import 'package:music_app/Layout/Home/list.dart';
 import 'package:music_app/Layout/Home/slider.dart';
 import 'package:music_app/Utils/utils.dart';
@@ -25,10 +26,15 @@ class _HomeRelaxState extends State<HomeRelax> {
             padding: const EdgeInsets.only(bottom: 70),
             children: [
               Container(
-                margin: const EdgeInsets.fromLTRB(0, 0, 0, 24),
+                padding: EdgeInsets.fromLTRB(24, 24, 0, 0),
+                margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                 child: Container(
                   decoration: const BoxDecoration(
                     color: Color(0x1F000000),
+                  ),
+                  child: Text(
+                    "hello",
+                    style: cusTextStyle(color: Colors.white),
                   ),
                 ),
               ),
@@ -41,7 +47,8 @@ class _HomeRelaxState extends State<HomeRelax> {
                       itemCount: 3,
                       itemBuilder: (context, index) {
                         return Container(
-                          width: 300,
+                          width: 350,
+                          padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(8)),
@@ -49,10 +56,35 @@ class _HomeRelaxState extends State<HomeRelax> {
                           child: Column(
                             children: [
                               Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Container(child: Text("hello")),
                                   Container(
-                                    child: Text("hello"),
+                                    width: 80,
+                                    height: 80,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8),
+                                      image: const DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image: AssetImage(
+                                          'assets/images/image_44.png',
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.only(left: 10),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          child: Text(
+                                            "Hello",
+                                            style: cusTextStyle(
+                                                size: 30, color: Colors.black),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   )
                                 ],
                               ),
@@ -60,9 +92,6 @@ class _HomeRelaxState extends State<HomeRelax> {
                           ),
                         );
                       }))
-              // const ListPlaylist(),
-              // const ListPlaylist(),
-              // const ListPlaylist(),
             ],
           ),
         ),

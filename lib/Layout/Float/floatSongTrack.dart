@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:music_app/Components/Button/Button_Navigation.dart';
 import 'package:music_app/Components/Style/text_style.dart';
 import 'package:music_app/Utils/convert.dart';
 
@@ -44,13 +45,18 @@ class FloatSongTrack extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            "Name",
-                            overflow: TextOverflow.ellipsis,
-                            style: cusTextStyle(
-                                size: 18,
-                                color: Colors.black,
-                                weight: FontWeight.bold),
+                          InkWell(
+                            onTap: () {
+                              Navigator.of(context).pushNamed("/audio");
+                            },
+                            child: Text(
+                              "Name",
+                              overflow: TextOverflow.ellipsis,
+                              style: cusTextStyle(
+                                  size: 18,
+                                  color: Colors.black,
+                                  weight: FontWeight.bold),
+                            ),
                           ),
                           const Text(
                             "Singer",

@@ -38,6 +38,6 @@ class ScreenConfig {
   List<Map<String, dynamic>> tabsHomeScreen = [
     {"title": "For you", "Widget": Home()},
     {"title": "Relax", "Widget": HomeRelax()},
-    {"title": "Test", "Widget": AudioDetail()},
+    // {"title": "Test", "Widget": AudioDetail()},
   ];
 }

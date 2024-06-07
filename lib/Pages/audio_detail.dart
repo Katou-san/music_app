@@ -16,7 +16,7 @@ class _AudioDetailState extends State<AudioDetail> {
   late AudioPlayer _audioPlayer;
   final _playlist = ConcatenatingAudioSource(children: [
     AudioSource.uri(
-      Uri.parse("http://localhost:8080/api/v1/send/audio/Panko.mp3"),
+      Uri.parse("http://localhost:8080/api/v1/send/audio/2024411502744697.mp3"),
       tag: SongRespone(
           songId: "songId",
           songName: "Coconut",
