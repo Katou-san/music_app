@@ -99,6 +99,8 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
     - .env
+    - assets/svg/Play_fill.svg
+    - assets/svg/More.svg
     - assets/svg/Search.svg
     - assets/svg/Message_fill.svg
     - assets/svg/home_light.svg

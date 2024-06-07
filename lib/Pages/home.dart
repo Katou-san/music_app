@@ -56,9 +56,6 @@ class _HomeState extends State<Home> {
               ListPlaylist(
                 listdata: listPlaylist,
               ),
-              // const ListPlaylist(),
-              // const ListPlaylist(),
-              // const ListPlaylist(),
             ],
           ),
         ),
