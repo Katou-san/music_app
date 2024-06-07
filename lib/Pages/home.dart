@@ -17,7 +17,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
-  late List<PlaylistRespone> listPlaylist;
+  List<PlaylistRespone> listPlaylist = [];
 
   @override
   void initState() {
@@ -42,7 +42,7 @@ class _HomeState extends State<Home> {
         child: ScrollConfiguration(
           behavior: const ScrollBehavior(),
           child: ListView(
-            padding: EdgeInsets.only(bottom: 70),
+            padding: const EdgeInsets.only(bottom: 70),
             children: [
               Container(
                 margin: const EdgeInsets.fromLTRB(0, 0, 0, 24),
@@ -52,11 +52,9 @@ class _HomeState extends State<Home> {
                   ),
                 ),
               ),
-
-              const CateFrame(),
               SliderFrame(),
               ListPlaylist(
-                listdata: listPlaylist ?? [],
+                listdata: listPlaylist,
               ),
               // const ListPlaylist(),
               // const ListPlaylist(),

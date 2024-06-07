@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:music_app/Pages/home.dart';
-import 'package:music_app/Pages/index.dart';
+import 'package:music_app/Screens/index.dart';
 import 'package:music_app/Pages/login.dart';
 import 'package:music_app/Pages/signup.dart';
 

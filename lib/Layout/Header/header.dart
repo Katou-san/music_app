@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:music_app/Components/Style/text_style.dart';
 
 class Header extends StatelessWidget {
-  const Header({Key? key}) : super(key: key);
+  const Header({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      height: double.maxFinite,
       width: double.infinity,
-      decoration: BoxDecoration(color: Colors.black),
-      padding: EdgeInsets.fromLTRB(20, 5, 20, 0),
+      decoration: const BoxDecoration(color: Colors.black),
+      padding: const EdgeInsets.fromLTRB(20, 5, 20, 0),
       // margin: const EdgeInsets.fromLTRB(24, 0, 24, 24),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
                 margin: const EdgeInsets.fromLTRB(0, 0, 0, 4),
@@ -79,6 +80,14 @@ class Header extends StatelessWidget {
                     height: 48,
                   ),
                 ),
+                Container(
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  child: Text(
+                    "Name",
+                    style: cusTextStyle(
+                        weight: FontWeight.bold, size: 16, color: Colors.white),
+                  ),
+                )
               ],
             ),
           ),
