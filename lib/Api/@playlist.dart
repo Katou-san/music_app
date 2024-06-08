@@ -16,8 +16,7 @@ class ApiPlaylist {
   ApiPlaylist();
 
   Future<dynamic> getId(String id) async {
-    http.Response res = await http.get(
-        Uri.parse('http://localhost:8080/api/v1/song/$id'),
+    http.Response res = await http.get(Uri.parse('$BACKENDURL/api/v1/song/$id'),
         headers: headers);
 
     if (res.statusCode == 200) {

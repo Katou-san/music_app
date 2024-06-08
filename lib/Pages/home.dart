@@ -3,9 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:music_app/Api/@playlist.dart';
 import 'package:music_app/Layout/Home/list.dart';
 import 'package:music_app/Model/Playlist.dart';
-import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:music_app/Layout/Home/category.dart';
 import 'package:music_app/Layout/Home/slider.dart';
 
 class Home extends StatefulWidget {
