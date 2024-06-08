@@ -2,12 +2,15 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:music_app/Configs/envConfig.dart';
 import 'package:music_app/Model/Error.dart';
 import 'package:music_app/Model/LoginM.dart';
 import 'package:music_app/Model/Playlist.dart';
 import 'package:music_app/Utils/convert.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Map<String, String> headers = {"Content-Type": "application/json"};
+dynamic BACKENDURL = EnvConfig().BACKENDURL;
 
 class ApiPlaylist {
   ApiPlaylist();
@@ -30,8 +33,7 @@ class ApiPlaylist {
   }
 
   Future<List<PlaylistRespone>> getAll() async {
-    http.Response res = await http.get(
-        Uri.parse('http://localhost:8080/api/v1/playlist'),
+    http.Response res = await http.get(Uri.parse('$BACKENDURL/api/v1/playlist'),
         headers: headers);
     if (res.statusCode == 200) {
       dynamic result = await jsonDecode(res.body);

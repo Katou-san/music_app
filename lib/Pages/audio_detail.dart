@@ -101,7 +101,9 @@ class _AudioDetailState extends State<AudioDetail> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Icon(Icons.keyboard_arrow_down_rounded),
           color: Colors.white,
         ),

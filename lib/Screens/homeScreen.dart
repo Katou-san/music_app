@@ -19,17 +19,19 @@ class _HomeScreenState extends State<HomeScreen> {
         length: ScreenConfig().tabsHomeScreen.length ?? 1,
         child: Scaffold(
             appBar: AppBar(
-              toolbarHeight: 60,
+              bottomOpacity: 0,
+              elevation: 0,
+              toolbarHeight: 61,
               backgroundColor: Color.fromARGB(255, 0, 0, 0),
               flexibleSpace: TabBar(
                 tabAlignment: TabAlignment.start,
                 isScrollable: true,
                 padding: const EdgeInsets.only(top: 10, left: 24, bottom: 10),
                 dividerHeight: 0,
-                indicatorColor: Colors.transparent,
+                indicatorColor: const Color.fromARGB(255, 0, 0, 0),
                 indicator: const BoxDecoration(color: Colors.transparent),
                 labelColor: Colors.white,
-                splashBorderRadius: BorderRadius.circular(15),
+                splashBorderRadius: BorderRadius.circular(25),
                 labelPadding: EdgeInsets.symmetric(horizontal: 2.0),
                 tabs: WigetTabs,
               ),

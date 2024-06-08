@@ -3,20 +3,21 @@ import 'package:google_fonts/google_fonts.dart' show GoogleFonts;
 import 'package:music_app/Components/Style/text_style.dart';
 
 class ButtonNavigation extends StatelessWidget {
-  const ButtonNavigation({
-    super.key,
-    required this.title,
-    this.margin,
-    this.titleColor,
-    this.bgColor,
-    required this.url,
-    this.height,
-    this.width,
-    this.icon,
-    this.radius,
-    this.padding,
-    this.function,
-  });
+  const ButtonNavigation(
+      {super.key,
+      required this.title,
+      this.margin,
+      this.titleColor,
+      this.bgColor,
+      required this.url,
+      this.height,
+      this.width,
+      this.icon,
+      this.radius,
+      this.padding,
+      this.function,
+      this.fontSize,
+      this.weight});
   final String title;
   final Color? bgColor;
   final Color? titleColor;
@@ -28,7 +29,8 @@ class ButtonNavigation extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
   final Function? function;
-
+  final double? fontSize;
+  final FontWeight? weight;
   @override
   Widget build(BuildContext context) {
     bool checkIcon = icon == null ? false : true;
@@ -61,8 +63,8 @@ class ButtonNavigation extends StatelessWidget {
                             alignment: Alignment.center,
                             child: Text(title.toString(),
                                 style: cusTextStyle(
-                                    weight: FontWeight.w700,
-                                    size: 22,
+                                    weight: FontWeight.bold,
+                                    size: fontSize ?? 22,
                                     color: titleColor ?? Colors.black)),
                           )),
                           Positioned(
