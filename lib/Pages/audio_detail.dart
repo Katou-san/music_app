@@ -14,6 +14,7 @@ class AudioDetail extends StatefulWidget {
 
 class _AudioDetailState extends State<AudioDetail> {
   late AudioPlayer _audioPlayer;
+
   final _playlist = ConcatenatingAudioSource(
       useLazyPreparation: true,
       shuffleOrder: DefaultShuffleOrder(),
