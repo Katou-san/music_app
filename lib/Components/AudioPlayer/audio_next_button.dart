@@ -7,10 +7,9 @@ class AudioNextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final audioModel = Provider.of<AudioProvider>(context, listen: false);
     return IconButton(
       onPressed: () {
-        audioModel.next();
+        context.read<AudioProvider>().next();
       },
       icon: const Icon(Icons.skip_next),
       iconSize: 50,
