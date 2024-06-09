@@ -26,6 +26,7 @@ class Playlist extends StatelessWidget {
                 forceElevated: innerBoxIsScrolled,
                 flexibleSpace: FlexibleSpaceBar(
                     // centerTitle: true,
+
                     collapseMode: CollapseMode.parallax,
                     stretchModes: [StretchMode.zoomBackground],
                     title: const Text("Collapsing Appbar",
@@ -56,17 +57,28 @@ class Playlist extends StatelessWidget {
               child: Column(
                 children: [
                   Container(
-                    padding: const EdgeInsets.fromLTRB(50, 10, 25, 0),
+                    padding: const EdgeInsets.fromLTRB(24, 10, 24, 0),
                     height: 80,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           "12 Songs",
-                          style: cusTextStyle(size: 20),
+                          style: cusTextStyle(size: 24),
                         ),
-                        const SizedBox(width: 250),
+                        IconButton(
+                          onPressed: () {},
+                          hoverColor: const Color.fromARGB(87, 111, 110, 110),
+                          icon: SvgPicture.asset(
+                            'assets/svg/Import.svg',
+                            color: Colors.white,
+                            alignment: Alignment.center,
+                            width: 30,
+                            height: 30,
+                          ),
+                        ),
+                        const SizedBox(width: 180),
                         Container(
                           height: 60,
                           width: 60,
@@ -131,6 +143,7 @@ class Playlist extends StatelessWidget {
                                   trailing: Container(
                                       width: 50,
                                       height: 50,
+                                      alignment: Alignment.centerRight,
                                       child: Transform.rotate(
                                         angle: 90 * math.pi / 180,
                                         child: IconButton(
