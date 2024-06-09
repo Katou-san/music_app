@@ -15,6 +15,7 @@ class AudioProvider extends ChangeNotifier {
   late LoopButtonState _loopButtonState;
   late ShuffleButtonState _shuffleButtonState;
 
+  AudioPlayer get audioPlayer => _audioPlayer;
   ProgressBarState get progressBarState => _progressBarState;
   PlayerButtonState get playerButtonState => _playerButtonState;
   LoopButtonState get loopButtonState => _loopButtonState;
@@ -134,6 +135,19 @@ class AudioProvider extends ChangeNotifier {
     });
   }
 
+  Future<void> setPlaylist(List<AudioSource> playlist) async {
+    try {
+      _playlist.clear();
+      playlist.forEach((element) {
+        try {
+          _playlist.add(element);
+        } catch (e) {}
+      });
+      await _audioPlayer.setAudioSource(_playlist);
+      notifyListeners();
+    } catch (e) {}
+  }
+
   void play() async {
     await _audioPlayer.play();
   }
@@ -158,11 +172,11 @@ class AudioProvider extends ChangeNotifier {
     await _audioPlayer.setLoopMode(LoopMode.one);
   }
 
-  void ShuffleOn() async {
+  void shuffleOn() async {
     await _audioPlayer.setShuffleModeEnabled(true);
   }
 
-  void ShuffleOff() async {
+  void shuffleOff() async {
     await _audioPlayer.setShuffleModeEnabled(false);
   }
 
@@ -172,6 +186,14 @@ class AudioProvider extends ChangeNotifier {
 
   void disposeAudioPlayer() async {
     await _audioPlayer.dispose();
+  }
+
+  void next() async {
+    await _audioPlayer.seekToNext();
+  }
+
+  void previous() async {
+    await _audioPlayer.seekToPrevious();
   }
 
   set playerButtonState(PlayerButtonState state) {

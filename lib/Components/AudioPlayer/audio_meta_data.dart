@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:music_app/Pages/artist.dart';
 
 class AudioMetaData extends StatelessWidget {
   const AudioMetaData(
