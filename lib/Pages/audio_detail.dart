@@ -22,7 +22,7 @@ class AudioDetail extends StatefulWidget {
 class _AudioDetailState extends State<AudioDetail> {
   final _playlist = [
     AudioSource.uri(
-      Uri.parse("http://localhost:8080/api/v1/send/audio/panko.mp3"),
+      Uri.parse("http://localhost:8080/api/v1/send/audio/2024411502744697.mp3"),
       tag: SongRespone(
           songId: "songId",
           songName: "Coconut",
@@ -107,7 +107,7 @@ class _AudioDetailState extends State<AudioDetail> {
           ],
         ),
         body: Container(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
           height: double.infinity,
           width: double.infinity,
           decoration: const BoxDecoration(
@@ -117,8 +117,9 @@ class _AudioDetailState extends State<AudioDetail> {
                 colors: [Colors.black, Color.fromARGB(255, 5, 71, 117)]),
           ),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              const SizedBox(height: 70),
               StreamBuilder(
                 stream: value.audioPlayer.sequenceStateStream,
                 builder: (context, snapshot) {
@@ -135,7 +136,11 @@ class _AudioDetailState extends State<AudioDetail> {
                 },
               ),
               const SizedBox(
-                height: 20,
+                height: 10,
+              ),
+              const AudioProgressBar(),
+              const SizedBox(
+                height: 10,
               ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -151,7 +156,6 @@ class _AudioDetailState extends State<AudioDetail> {
               const SizedBox(
                 height: 20,
               ),
-              const AudioProgressBar(),
             ],
           ),
         ),

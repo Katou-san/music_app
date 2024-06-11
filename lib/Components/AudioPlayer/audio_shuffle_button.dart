@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:music_app/Provider/AudioProvider.dart';
 import 'package:provider/provider.dart';
 
@@ -10,23 +12,18 @@ class AudioShuffleButton extends StatelessWidget {
     final buttonState = context.select<AudioProvider, ShuffleButtonState>(
       (provider) => provider.shuffleButtonState,
     );
-    switch (buttonState) {
-      case ShuffleButtonState.on:
-        return IconButton(
-            onPressed: () async {
-              context.read<AudioProvider>().shuffleOff();
-            },
-            iconSize: 30,
-            color: Colors.lightBlue,
-            icon: const Icon(Icons.shuffle));
-      case ShuffleButtonState.off:
-        return IconButton(
-            onPressed: () async {
-              context.read<AudioProvider>().shuffleOn();
-            },
-            iconSize: 30,
-            color: Colors.white,
-            icon: const Icon(Icons.shuffle));
-    }
+    double height = 30;
+    return IconButton(
+        onPressed: () async {
+          return buttonState == ShuffleButtonState.on
+              ? context.read<AudioProvider>().shuffleOff()
+              : context.read<AudioProvider>().shuffleOn();
+        },
+        icon: SvgPicture.asset(
+          'assets/svg/random.svg',
+          height: height,
+          color:
+              buttonState == ShuffleButtonState.on ? Colors.red : Colors.white,
+        ));
   }
 }

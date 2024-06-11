@@ -99,6 +99,13 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
     - .env
+    - assets/svg/loop.svg
+    - assets/svg/loop_1.svg
+    - assets/svg/stop.svg
+    - assets/svg/replay.svg
+    - assets/svg/random.svg
+    - assets/svg/share.svg
+    - assets/svg/link_alt.svg
     - assets/svg/Import.svg
     - assets/svg/Play_fill.svg
     - assets/svg/More.svg
