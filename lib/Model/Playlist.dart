@@ -42,29 +42,3 @@ class PlaylistRespone {
     return result;
   }
 }
-
-// class LoginRequest {
-//   String email;
-//   String password;
-
-//   LoginRequest({required this.email, required this.password});
-
-//   dynamic toJson() {
-//     return json.encode({"User_Email": email, "User_Pass": password});
-//   }
-// }
-
-// class SignupRequest {
-//   String email;
-//   String password;
-
-//   SignupRequest({required this.email, required this.password});
-
-//   Map<String, dynamic> toJson() {
-//     Map<String, dynamic> data = {
-//       "User_Email": email.trim(),
-//       "User_Pass": password.trim()
-//     };
-//     return data;
-//   }
-// }

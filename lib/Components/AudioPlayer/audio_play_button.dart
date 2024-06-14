@@ -23,20 +23,28 @@ class AudioPlayButton extends StatelessWidget {
             child: IconButton(
               icon: const Icon(Icons.play_arrow),
               color: Colors.white,
+              iconSize: 40,
               onPressed: () {
                 context.read<AudioProvider>().play();
               },
             ));
 
       case PlayerButtonState.playing:
-        return IconButton(
-          icon: const Icon(Icons.pause),
-          iconSize: 50,
-          color: Colors.white,
-          onPressed: () {
-            context.read<AudioProvider>().pause();
-          },
-        );
+        return Container(
+            alignment: Alignment.center,
+            width: 60,
+            height: 60,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(90),
+                color: const Color.fromARGB(167, 255, 255, 255)),
+            child: IconButton(
+              icon: const Icon(Icons.pause),
+              iconSize: 40,
+              color: Colors.white,
+              onPressed: () {
+                context.read<AudioProvider>().pause();
+              },
+            ));
 
       case PlayerButtonState.loading:
         return const Icon(

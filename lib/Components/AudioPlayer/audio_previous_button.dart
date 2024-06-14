@@ -12,7 +12,7 @@ class AudioPreviousButton extends StatelessWidget {
         context.read<AudioProvider>().previous();
       },
       icon: const Icon(Icons.skip_previous),
-      iconSize: 30,
+      iconSize: 35,
       color: Colors.white,
     );
   }
