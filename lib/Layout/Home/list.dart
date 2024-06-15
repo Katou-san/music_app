@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -75,12 +76,10 @@ class ListPlaylist extends StatelessWidget {
                                   child: Container(
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(8),
-                                      image: const DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: AssetImage(
-                                          'assets/images/image_44.png',
-                                        ),
-                                      ),
+                                      image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: CachedNetworkImageProvider(
+                                              "http://localhost:8080/api/v1/send/image_P/${listdata[index].Image}")),
                                     ),
                                   )),
                               Positioned(
