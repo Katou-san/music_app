@@ -1,9 +1,13 @@
 import 'dart:ui';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:music_app/Components/BottonSheet/item.dart';
 import 'package:music_app/Components/Style/text_style.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:music_app/Model/Song.dart';
+import 'package:music_app/Provider/AudioProvider.dart';
+import 'package:provider/provider.dart';
 
 class cusBottomSheet extends StatefulWidget {
   cusBottomSheet({super.key});
@@ -13,25 +17,31 @@ class cusBottomSheet extends StatefulWidget {
 
 class _cusBottomSheetState extends State<cusBottomSheet> {
   final sheet = GlobalKey();
-  late int indexSong;
+  late final sequenceStream;
 
+  late List<dynamic> _listsong;
   void SetValue(int index) async {
-    final current = await index;
-    setState(() {
-      indexSong = current;
-    });
+    final current = index;
   }
 
   @protected
   @mustCallSuper
   void initState() {
     super.initState();
-    indexSong = 0;
+
+    print("hello");
+    _init();
   }
 
-  List<int> ListSong = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  Future<void> _init() async {
+    final audioModel = Provider.of<AudioProvider>(context, listen: false);
+    _listsong = audioModel.audioPlaylist;
+    sequenceStream = audioModel.audioPlayer.sequenceStateStream;
+  }
+
   @override
   Widget build(BuildContext context) {
+    int currentIndex = context.read<AudioProvider>().getIndex() ?? -1;
     return Container(
       margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
       child: Column(
@@ -68,13 +78,13 @@ class _cusBottomSheetState extends State<cusBottomSheet> {
                                       Expanded(
                                           child: ListView.builder(
                                               shrinkWrap: true,
-                                              itemCount: ListSong.length,
+                                              itemCount: _listsong.length,
                                               itemBuilder: (context, index) {
                                                 return ItemBottomSheet(
                                                     indexs: index,
                                                     functions: SetValue,
-                                                    test: ListSong[index],
-                                                    current: indexSong,
+                                                    song: _listsong[index]!.tag
+                                                        as SongRespone,
                                                     icon:
                                                         Icon(Icons.play_arrow));
                                               }))
@@ -96,47 +106,58 @@ class _cusBottomSheetState extends State<cusBottomSheet> {
           const SizedBox(
             height: 10,
           ),
-          Container(
-              width: double.infinity,
-              height: 60,
-              decoration: BoxDecoration(
-                  color: Color.fromARGB(48, 35, 35, 35),
-                  borderRadius: BorderRadius.circular(10)),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(
-                            image:
-                                ExactAssetImage("assets/images/image_44.png"))),
+          StreamBuilder(
+              stream: sequenceStream,
+              builder: (context, snapshot) {
+                return Container(
+                    width: double.infinity,
                     height: 60,
-                    width: 60,
-                  ),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    flex: 2,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(48, 35, 35, 35),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Text(
-                          "Hello",
-                          style:
-                              cusTextStyle(size: 20, weight: FontWeight.bold),
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                  image: CachedNetworkImageProvider(
+                                      _listsong[currentIndex + 1]!
+                                          .tag
+                                          .songImage),
+                                  fit: BoxFit.cover)),
+                          height: 60,
+                          width: 60,
                         ),
-                        Text("singer",
-                            style: cusTextStyle(
-                                size: 20,
-                                color: Color.fromARGB(156, 169, 169, 169)))
+                        const SizedBox(width: 10),
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                _listsong[currentIndex + 1]?.tag!.songName ??
+                                    "unknown",
+                                style: cusTextStyle(
+                                    size: 20, weight: FontWeight.bold),
+                              ),
+                              Text(
+                                  _listsong[currentIndex + 1]?.tag!.userId ??
+                                      "unknown",
+                                  style: cusTextStyle(
+                                      size: 20,
+                                      color:
+                                          Color.fromARGB(156, 169, 169, 169)))
+                            ],
+                          ),
+                        ),
+                        Expanded(flex: 1, child: Icon(Icons.play_arrow))
                       ],
-                    ),
-                  ),
-                  Expanded(flex: 1, child: Icon(Icons.play_arrow))
-                ],
-              ))
+                    ));
+              })
         ],
       ),
     );

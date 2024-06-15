@@ -31,12 +31,11 @@ class AudioDetail extends StatefulWidget {
 class _AudioDetailState extends State<AudioDetail> {
   final _playlist = [
     AudioSource.uri(
-      Uri.parse("http://localhost:8080/api/v1/send/audio/2024411502744697.mp3"),
+      Uri.parse("http://localhost:8080/api/v1/send/audio/57534667333.mp3"),
       tag: SongRespone(
           songId: "songId",
           songName: "Coconut",
-          songImage:
-              "http://localhost:8080/api/v1/send/image/@Hung_babyの20のdoor_20241513344299830.png",
+          songImage: "http://localhost:8080/api/v1/send/image/57534667333.jpg",
           songSrc: "songSrc",
           like: "like",
           userId: "userId",
@@ -47,12 +46,11 @@ class _AudioDetailState extends State<AudioDetail> {
           isPublish: "isPublish"),
     ),
     AudioSource.uri(
-      Uri.parse("http://localhost:8080/api/v1/send/audio/2024411502744697.mp3"),
+      Uri.parse("http://localhost:8080/api/v1/send/audio/57534667333.mp3"),
       tag: SongRespone(
           songId: "songId",
           songName: "Out light",
-          songImage:
-              "http://localhost:8080/api/v1/send/image/2024462231595185.jpeg",
+          songImage: "http://localhost:8080/api/v1/send/image/57534667333.jpg",
           songSrc: "songSrc",
           like: "like",
           userId: "userId",
@@ -63,12 +61,11 @@ class _AudioDetailState extends State<AudioDetail> {
           isPublish: "isPublish"),
     ),
     AudioSource.uri(
-      Uri.parse("http://localhost:8080/api/v1/send/audio/2024411502744697.mp3"),
+      Uri.parse("http://localhost:8080/api/v1/send/audio/Panko.mp3"),
       tag: SongRespone(
           songId: "songId",
-          songName: "Test",
-          songImage:
-              "http://localhost:8080/api/v1/send/image/@Yuta_fs_20240212555235218.jpg",
+          songName: "3",
+          songImage: "http://localhost:8080/api/v1/send/image/57534667333.jpg",
           songSrc: "songSrc",
           like: "like",
           userId: "userId",
@@ -143,11 +140,7 @@ class _AudioDetailState extends State<AudioDetail> {
                     return const SizedBox();
                   }
                   final metaData = state!.currentSource!.tag as SongRespone;
-                  return AudioMetaData(
-                      image: metaData.songImage.toString(),
-                      title: metaData.songName,
-                      artist: metaData.userId,
-                      uploadBy: metaData.userId);
+                  return AudioMetaData(song: metaData);
                 },
               ),
               const SizedBox(

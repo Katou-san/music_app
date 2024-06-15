@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:music_app/Model/Song.dart';
 import 'package:provider/provider.dart';
 
 class AudioProvider extends ChangeNotifier {
@@ -16,6 +17,7 @@ class AudioProvider extends ChangeNotifier {
   late ShuffleButtonState _shuffleButtonState;
 
   AudioPlayer get audioPlayer => _audioPlayer;
+  List<AudioSource> get audioPlaylist => _playlist.children;
   ProgressBarState get progressBarState => _progressBarState;
   PlayerButtonState get playerButtonState => _playerButtonState;
   LoopButtonState get loopButtonState => _loopButtonState;
@@ -44,7 +46,6 @@ class AudioProvider extends ChangeNotifier {
 
   _init() async {
     _audioPlayer = AudioPlayer();
-    await _audioPlayer.setAudioSource(_playlist);
   }
 
   _initPlayerStateChanges() {
@@ -158,6 +159,30 @@ class AudioProvider extends ChangeNotifier {
 
   void stop() async {
     await _audioPlayer.stop();
+  }
+
+  SongRespone CurrentSong() {
+    dynamic a = _audioPlayer.sequenceState?.currentSource?.tag;
+    if (a != null) {
+      return _audioPlayer.sequenceState?.currentSource?.tag as SongRespone;
+    } else {
+      return SongRespone(
+          songId: "",
+          songName: "s",
+          songImage: "",
+          songSrc: "",
+          like: "",
+          userId: "",
+          categoryId: "",
+          lyrics: "",
+          tag: "",
+          color: "",
+          isPublish: "");
+    }
+  }
+
+  int? getIndex() {
+    return _audioPlayer.currentIndex;
   }
 
   void loopOff() async {
