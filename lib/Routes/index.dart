@@ -37,7 +37,8 @@ class AppRoutes {
         sigupPage: (context) => Signup(),
         initPage: (context) => IndexPage(),
         audioPage: (context) => AudioDetail(),
-        detailPlaylistPage: (context) => Playlist()
+        // detailPlaylistPage: (context) =>
+        //     Playlist(url: Uri.base.queryParameters['id'])
       };
 
   List<Widget> listPage = [Home(), Signup(), Login()];

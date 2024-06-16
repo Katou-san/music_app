@@ -1,13 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:music_app/Model/Playlist.dart';
+import 'package:music_app/Pages/playlist.dart';
 
 class ListPlaylist extends StatelessWidget {
-  const ListPlaylist({super.key, required this.listdata});
+  const ListPlaylist({super.key, required this.listdata, required this.title});
   final List<PlaylistRespone> listdata;
+  final String title;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,7 +28,7 @@ class ListPlaylist extends StatelessWidget {
                   child: SizedBox(
                     width: 224,
                     child: Text(
-                      'Recently Played',
+                      title,
                       style: GoogleFonts.getFont(
                         'Inter',
                         fontWeight: FontWeight.w500,
@@ -68,56 +69,69 @@ class ListPlaylist extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Stack(children: [
-                              Container(
-                                  width: 160,
-                                  height: 160,
-                                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: CachedNetworkImageProvider(
-                                              "http://localhost:8080/api/v1/send/image_P/${listdata[index].Image}")),
-                                    ),
-                                  )),
-                              Positioned(
-                                left: 5,
-                                bottom: 15,
-                                width: 40,
-                                height: 40,
-                                child: Container(
+                            InkWell(
+                              onTap: () {},
+                              child: Stack(children: [
+                                Container(
+                                    width: 160,
+                                    height: 160,
+                                    margin:
+                                        const EdgeInsets.fromLTRB(0, 0, 0, 8),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        image: DecorationImage(
+                                            fit: BoxFit.cover,
+                                            image: CachedNetworkImageProvider(
+                                                "http://localhost:8080/api/v1/send/image_P/${listdata[index].image}")),
+                                      ),
+                                    )),
+                                Positioned(
+                                  left: 5,
+                                  bottom: 15,
                                   width: 40,
                                   height: 40,
-                                  alignment: Alignment.center,
-                                  padding:
-                                      const EdgeInsets.fromLTRB(6, 2, 0, 0),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(90),
+                                  child: Container(
+                                    width: 40,
+                                    height: 40,
+                                    alignment: Alignment.center,
+                                    padding:
+                                        const EdgeInsets.fromLTRB(6, 2, 0, 0),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(90),
+                                      color: const Color(0xBFFFFFFF),
+                                    ),
+                                    child: SvgPicture.asset(
+                                      'assets/vectors/play_arrow_8_x2.svg',
+                                      height: 24,
+                                      width: 24,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+                            ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Playlist(
+                                            url: listdata[index].playlistId)));
+                              },
+                              child: Align(
+                                alignment: Alignment.topLeft,
+                                child: Text(
+                                  listdata[index].playlistName.toString(),
+                                  style: GoogleFonts.getFont(
+                                    'Inter',
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 12,
+                                    height: 1.2,
                                     color: const Color(0xBFFFFFFF),
                                   ),
-                                  child: SvgPicture.asset(
-                                    'assets/vectors/play_arrow_8_x2.svg',
-                                    height: 24,
-                                    width: 24,
-                                  ),
                                 ),
                               ),
-                            ]),
-                            Align(
-                              alignment: Alignment.topLeft,
-                              child: Text(
-                                listdata[index].Playlist_Name.toString(),
-                                style: GoogleFonts.getFont(
-                                  'Inter',
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 12,
-                                  height: 1.2,
-                                  color: const Color(0xBFFFFFFF),
-                                ),
-                              ),
-                            ),
+                            )
                           ],
                         ),
                       ),

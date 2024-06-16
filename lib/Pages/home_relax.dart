@@ -85,6 +85,7 @@ class _HomeRelaxState extends State<HomeRelax> {
                         );
                       })),
               ListPlaylist(
+                title: "Recommend",
                 listdata: [],
               ),
             ],

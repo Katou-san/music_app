@@ -1,43 +1,45 @@
-import 'dart:convert';
-
 class PlaylistRespone {
-  final String? Playlist_Id;
-  final String? Playlist_Name;
-  final String? Image;
-  final String? Thumbnail;
-  final String? User_Id;
-  final bool? Playlist_Is_Publish;
-  final List<dynamic>? List_Song;
+  final String? playlistId;
+  final String? playlistName;
+  final String? image;
+  final String? artist;
+  final String? thumbnail;
+  final String? userId;
+  final bool? isPublish;
+  final List<String>? tracks;
   PlaylistRespone(
-      {this.Playlist_Id,
-      this.Playlist_Name,
-      this.Image,
-      this.Thumbnail,
-      this.User_Id,
-      this.Playlist_Is_Publish,
-      this.List_Song});
+      {this.playlistId,
+      this.playlistName,
+      this.artist,
+      this.image,
+      this.thumbnail,
+      this.userId,
+      this.isPublish,
+      this.tracks});
 
   factory PlaylistRespone.fromJson(Map<String, dynamic> json) {
     return PlaylistRespone(
-        Playlist_Id: json['Playlist_Id'],
-        Playlist_Name: json['Playlist_Name'],
-        Image: json['Image'],
-        Thumbnail: json['Thumbnail'],
-        User_Id: json['User_Id'],
-        Playlist_Is_Publish: json['Playlist_Is_Publish'],
-        List_Song: json['List_Song']);
+        playlistId: json['Playlist_Id'],
+        playlistName: json['Playlist_Name'],
+        image: json['Image'],
+        artist: json['Artist'],
+        thumbnail: json['Thumbnail'],
+        userId: json['User_Id'],
+        isPublish: json['is_Publish'],
+        tracks: json['Tracks']);
   }
 
   List<PlaylistRespone> listJson(List<dynamic> json) {
-    List<PlaylistRespone> result = json.map((item) {
+    List<PlaylistRespone> result = json.map((json) {
       return PlaylistRespone(
-          Playlist_Id: item['Playlist_Id'],
-          Playlist_Name: item['Playlist_Name'],
-          Image: item['Image'],
-          Thumbnail: item['Thumbnail'],
-          User_Id: item['User_Id'],
-          Playlist_Is_Publish: item['Playlist_Is_Publish'],
-          List_Song: item['List_Song']);
+          playlistId: json['Playlist_Id'],
+          playlistName: json['Playlist_Name'],
+          artist: json['Artist'],
+          image: json['Image'],
+          thumbnail: json['Thumbnail'],
+          userId: json['User_Id'],
+          isPublish: true,
+          tracks: []);
     }).toList();
     return result;
   }

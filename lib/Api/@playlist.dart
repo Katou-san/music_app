@@ -16,13 +16,13 @@ class ApiPlaylist {
   ApiPlaylist();
 
   Future<dynamic> getId(String id) async {
-    http.Response res = await http.get(Uri.parse('$BACKENDURL/api/v1/song/$id'),
-        headers: headers);
+    http.Response res = await http
+        .get(Uri.parse('$BACKENDURL/api/v1/playlist/$id'), headers: headers);
 
     if (res.statusCode == 200) {
       dynamic result = await jsonDecode(res.body);
       if (result['status'] != 404) {
-        return LoginRespone.fromJson(result['data']);
+        return PlaylistRespone.fromJson(result['data']);
       } else {
         return ErrorResponse.formJson(result);
       }

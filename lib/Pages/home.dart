@@ -51,6 +51,7 @@ class _HomeState extends State<Home> {
               ),
               SliderFrame(),
               ListPlaylist(
+                title: "Replay",
                 listdata: listPlaylist,
               ),
             ],

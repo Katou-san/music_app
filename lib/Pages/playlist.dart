@@ -1,13 +1,36 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:music_app/Api/@playlist.dart';
 import 'package:music_app/Components/Style/text_style.dart';
+import 'package:music_app/Model/Playlist.dart';
 import 'package:music_app/Utils/utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Playlist extends StatelessWidget {
+class Playlist extends StatefulWidget {
+  Playlist({super.key, required this.url});
+  final dynamic url;
+
+  @override
+  State<Playlist> createState() => _PlaylistState();
+}
+
+class _PlaylistState extends State<Playlist> {
+  late PlaylistRespone playlist;
+  List<String> tracks = [];
+  void getPlaylist() {
+    final playlistrRes = ApiPlaylist().getId(widget.url) as PlaylistRespone;
+    // print(playlistrRes);
+    setState(() {
+      playlist = playlistrRes;
+      // tracks = playlistrRes.tracks ;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    getPlaylist();
+    print(playlist);
     return Scaffold(
       body: NestedScrollView(
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -25,8 +48,6 @@ class Playlist extends StatelessWidget {
                 snap: false,
                 forceElevated: innerBoxIsScrolled,
                 flexibleSpace: FlexibleSpaceBar(
-                    // centerTitle: true,
-
                     collapseMode: CollapseMode.parallax,
                     stretchModes: [StretchMode.zoomBackground],
                     title: const Text("Collapsing Appbar",
