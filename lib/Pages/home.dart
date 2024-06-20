@@ -34,7 +34,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
-          color: Color(0xFF0D0D0D),
+          color: Color.fromARGB(255, 31, 31, 31),
         ),
         child: ScrollConfiguration(
           behavior: const ScrollBehavior(),
