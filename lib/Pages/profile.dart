@@ -1,8 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:music_app/Components/Button/Button_Navigation.dart';
 import 'package:music_app/Components/Button/Button_Nomal.dart';
 import 'package:music_app/Components/Style/text_style.dart';
+import 'package:music_app/Layout/Profile/itemOption.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -10,15 +13,15 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Column(
+      body: ListView(
         children: [
+          SizedBox(height: 50),
           Container(
             height: 120,
             width: double.infinity,
             alignment: Alignment.center,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(90),
+                borderRadius: BorderRadius.circular(120),
                 color: const Color.fromARGB(0, 244, 244, 244)),
             child: Center(
                 child: ClipRRect(
@@ -37,7 +40,7 @@ class Profile extends StatelessWidget {
                 Text(
                   "Name",
                   style: cusTextStyle(
-                      size: 30, weight: FontWeight.bold, color: Colors.black),
+                      size: 49, weight: FontWeight.bold, color: Colors.black),
                 ),
                 Text("Create day")
               ],
@@ -46,80 +49,83 @@ class Profile extends StatelessWidget {
           const SizedBox(height: 20),
           Container(
               width: double.infinity,
-              margin: const EdgeInsets.all(10),
+              margin: const EdgeInsets.all(30),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(25),
                   border: Border.all(
                       color: const Color.fromARGB(255, 173, 173, 173),
                       width: 0.5)),
-              padding: const EdgeInsets.only(bottom: 20),
-              child: Row(
-                children: [
-                  Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Row(children: [
-                          Container(
-                            alignment: Alignment.centerLeft,
-                            padding: const EdgeInsets.only(
-                                top: 20, bottom: 20, left: 20),
-                            child: Text(
-                              "Title",
-                              style: cusTextStyle(
-                                  size: 25,
-                                  weight: FontWeight.bold,
-                                  color: Colors.black),
-                            ),
-                          )
-                        ]),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                                margin: const EdgeInsets.only(left: 20),
-                                decoration: const BoxDecoration(
-                                    border: Border(
-                                        bottom: BorderSide(
-                                            color: Color.fromARGB(
-                                                255, 173, 173, 173),
-                                            width: 0.5))),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      margin: const EdgeInsets.only(left: 20),
-                                      child: const Icon(
-                                        Icons.people,
-                                        size: 25,
-                                      ),
-                                    ),
-                                    const SizedBox(width: 30),
-                                    Container(
-                                      child: Text("HELLO"),
-                                    )
-                                  ],
-                                )),
-                          ],
-                        )
-                      ]),
-                ],
-              )),
+              padding: const EdgeInsets.only(left: 20, right: 20, bottom: 30),
+              child: Column(children: [
+                Container(
+                  alignment: Alignment.centerLeft,
+                  padding: const EdgeInsets.only(top: 20, bottom: 20, left: 20),
+                  child: Text(
+                    "Title",
+                    style: cusTextStyle(
+                        size: 25, weight: FontWeight.bold, color: Colors.black),
+                  ),
+                ),
+                ItemOption(
+                    title: "UserName", icon: const Icon(Icons.people_alt)),
+                ItemOption(title: "Email", icon: const Icon(Icons.email)),
+                ItemOption(title: "Phone", icon: const Icon(Icons.phone)),
+                ItemOption(
+                    title: "Feedback",
+                    icon: const Icon(Icons.message),
+                    borders: false)
+              ])),
+          Container(
+              width: double.infinity,
+              margin: const EdgeInsets.all(30),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  border: Border.all(
+                      color: const Color.fromARGB(255, 173, 173, 173),
+                      width: 0.5)),
+              padding: const EdgeInsets.only(left: 20, right: 20, bottom: 30),
+              child: Column(children: [
+                Container(
+                  alignment: Alignment.centerLeft,
+                  padding: const EdgeInsets.only(top: 20, bottom: 20, left: 20),
+                  child: Text(
+                    "Noitifications",
+                    style: cusTextStyle(
+                        size: 25, weight: FontWeight.bold, color: Colors.black),
+                  ),
+                ),
+                ItemOption(
+                    title: "Push noitifications",
+                    icon: const Icon(Icons.email)),
+                ItemOption(
+                    title: "SMS noitifications",
+                    icon: const Icon(Icons.phone),
+                    borders: false)
+              ])),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Column(
-                children: [
-                  Row(children: [Text("Setting")]),
-                  Row(children: [Icon(Icons.verified_user), Text("Name")]),
-                  Row(children: [Icon(Icons.verified_user), Text("Email")]),
-                  Row(children: [Icon(Icons.verified_user), Text("Phone")])
-                ],
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: const Color.fromARGB(255, 61, 61, 61)),
+                  padding: const EdgeInsets.fromLTRB(80, 10, 80, 10),
+                  child: Text(
+                    "Sign out",
+                    style: cusTextStyle(
+                        size: 18,
+                        color: const Color.fromARGB(255, 240, 240, 240),
+                        weight: FontWeight.bold),
+                  ),
+                ),
               )
             ],
           ),
-          Container(
-            child: ButtonNomal(title: "Sign out"),
-          )
+          const SizedBox(height: 90)
         ],
       ),
     );
