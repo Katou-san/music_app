@@ -42,6 +42,7 @@ class _cusBottomSheetState extends State<cusBottomSheet> {
   @override
   Widget build(BuildContext context) {
     int currentIndex = context.read<AudioProvider>().getIndex() ?? -1;
+    int nextIndex = context.read<AudioProvider>().getNextIndex() ?? -1;
     return Container(
       margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
       child: Column(
@@ -66,8 +67,8 @@ class _cusBottomSheetState extends State<cusBottomSheet> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Container(
-                                        padding:
-                                            EdgeInsets.fromLTRB(0, 10, 0, 10),
+                                        padding: const EdgeInsets.fromLTRB(
+                                            0, 10, 0, 10),
                                         height: 5,
                                         width: 80,
                                         decoration: BoxDecoration(
@@ -85,8 +86,9 @@ class _cusBottomSheetState extends State<cusBottomSheet> {
                                                     functions: SetValue,
                                                     song: _listsong[index]!.tag
                                                         as SongRespone,
-                                                    icon:
-                                                        Icon(Icons.play_arrow));
+                                                    icon: const Icon(
+                                                      Icons.play_arrow,
+                                                    ));
                                               }))
                                     ],
                                   )));
@@ -109,12 +111,16 @@ class _cusBottomSheetState extends State<cusBottomSheet> {
           StreamBuilder(
               stream: sequenceStream,
               builder: (context, snapshot) {
-                if (_listsong.length > currentIndex + 1) {
+                final buttonState =
+                    context.select<AudioProvider, LoopButtonState>(
+                  (provider) => provider.loopButtonState,
+                );
+                if (buttonState == LoopButtonState.one) {
                   return Container(
                       width: double.infinity,
                       height: 60,
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(48, 35, 35, 35),
+                          color: const Color.fromARGB(48, 35, 35, 35),
                           borderRadius: BorderRadius.circular(10)),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -125,7 +131,7 @@ class _cusBottomSheetState extends State<cusBottomSheet> {
                                 borderRadius: BorderRadius.circular(10),
                                 image: DecorationImage(
                                     image: CachedNetworkImageProvider(
-                                        "${EnvConfig().BACKENDURL}/api/v1/send/image/${_listsong[currentIndex + 1]!.tag.songImage}"),
+                                        "${EnvConfig().BACKENDURL}/api/v1/send/image/${_listsong[currentIndex]!.tag.songImage}"),
                                     fit: BoxFit.cover)),
                             height: 60,
                             width: 60,
@@ -138,30 +144,155 @@ class _cusBottomSheetState extends State<cusBottomSheet> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  _listsong[currentIndex + 1]?.tag!.songName ??
+                                  _listsong[currentIndex]?.tag!.songName ??
                                       "unknown",
                                   style: cusTextStyle(
                                       size: 20, weight: FontWeight.bold),
                                 ),
                                 Text(
-                                    _listsong[currentIndex + 1]?.tag!.artist ??
+                                    _listsong[currentIndex]?.tag!.artist ??
                                         "unknown",
                                     overflow: TextOverflow.ellipsis,
                                     style: cusTextStyle(
                                         size: 18,
-                                        color:
-                                            Color.fromARGB(156, 169, 169, 169)))
+                                        color: const Color.fromARGB(
+                                            156, 169, 169, 169)))
                               ],
                             ),
                           ),
-                          Expanded(
-                            flex: 1,
-                            child: Icon(Icons.arrow_right_outlined),
-                          )
+                          IconButton(
+                            iconSize: 40,
+                            padding: const EdgeInsets.only(right: 10),
+                            onPressed: () {
+                              context.read<AudioProvider>().next();
+                            },
+                            icon: const Icon(
+                              Icons.play_arrow,
+                              color: Colors.white,
+                            ),
+                          ),
                         ],
                       ));
                 } else {
-                  return const SizedBox(height: 20);
+                  if (!nextIndex.isNegative) {
+                    return Container(
+                        width: double.infinity,
+                        height: 60,
+                        decoration: BoxDecoration(
+                            color: const Color.fromARGB(48, 35, 35, 35),
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                      image: CachedNetworkImageProvider(
+                                          "${EnvConfig().BACKENDURL}/api/v1/send/image/${_listsong[nextIndex]!.tag.songImage}"),
+                                      fit: BoxFit.cover)),
+                              height: 60,
+                              width: 60,
+                            ),
+                            const SizedBox(width: 10),
+                            Expanded(
+                              flex: 2,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    _listsong[nextIndex]?.tag!.songName ??
+                                        "unknown",
+                                    style: cusTextStyle(
+                                        size: 20, weight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                      _listsong[nextIndex]?.tag!.artist ??
+                                          "unknown",
+                                      overflow: TextOverflow.ellipsis,
+                                      style: cusTextStyle(
+                                          size: 18,
+                                          color: const Color.fromARGB(
+                                              156, 169, 169, 169)))
+                                ],
+                              ),
+                            ),
+                            IconButton(
+                              iconSize: 40,
+                              padding: const EdgeInsets.only(right: 10),
+                              onPressed: () {
+                                context.read<AudioProvider>().next();
+                              },
+                              icon: const Icon(
+                                Icons.play_arrow,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ));
+                  } else if (buttonState == LoopButtonState.all) {
+                    return Container(
+                        width: double.infinity,
+                        height: 60,
+                        decoration: BoxDecoration(
+                            color: const Color.fromARGB(48, 35, 35, 35),
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                      image: CachedNetworkImageProvider(
+                                          "${EnvConfig().BACKENDURL}/api/v1/send/image/${_listsong[nextIndex]!.tag.songImage}"),
+                                      fit: BoxFit.cover)),
+                              height: 60,
+                              width: 60,
+                            ),
+                            const SizedBox(width: 10),
+                            Expanded(
+                              flex: 2,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    _listsong[nextIndex]?.tag!.songName ??
+                                        "unknown",
+                                    style: cusTextStyle(
+                                        size: 20, weight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                      _listsong[nextIndex]?.tag!.artist ??
+                                          "unknown",
+                                      overflow: TextOverflow.ellipsis,
+                                      style: cusTextStyle(
+                                          size: 18,
+                                          color: const Color.fromARGB(
+                                              156, 169, 169, 169)))
+                                ],
+                              ),
+                            ),
+                            IconButton(
+                              iconSize: 40,
+                              padding: const EdgeInsets.only(right: 10),
+                              onPressed: () {
+                                context.read<AudioProvider>().next();
+                              },
+                              icon: const Icon(
+                                Icons.play_arrow,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ));
+                  } else {
+                    return const SizedBox(height: 20);
+                  }
                 }
               })
         ],

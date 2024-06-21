@@ -87,8 +87,14 @@ class _ItemBottomSheetState extends State<ItemBottomSheet> {
                     Expanded(
                         flex: 1,
                         child: widget.indexs == current
-                            ? const Icon(Icons.pause)
-                            : const Icon(Icons.play_arrow))
+                            ? const Icon(
+                                Icons.pause,
+                                color: Colors.white,
+                              )
+                            : const Icon(
+                                Icons.play_arrow,
+                                color: Colors.white,
+                              ))
                   ],
                 )));
       },

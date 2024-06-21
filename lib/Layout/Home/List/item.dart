@@ -22,7 +22,7 @@ class Item extends StatelessWidget {
             subtitle: Text(
               song.artist,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(color: Color.fromARGB(255, 150, 149, 149)),
+              style: const TextStyle(color: Color.fromARGB(255, 150, 149, 149)),
             ),
             leading: Container(
               width: 48,

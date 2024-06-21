@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 class AudioProvider extends ChangeNotifier {
   late AudioPlayer _audioPlayer;
 
-  final _playlist = ConcatenatingAudioSource(
+  var _playlist = ConcatenatingAudioSource(
       useLazyPreparation: true,
       shuffleOrder: DefaultShuffleOrder(),
       children: []);
@@ -139,6 +139,10 @@ class AudioProvider extends ChangeNotifier {
   Future<void> setPlaylist(List<AudioSource> playlist) async {
     try {
       _playlist.clear();
+      _playlist = ConcatenatingAudioSource(
+          useLazyPreparation: true,
+          shuffleOrder: DefaultShuffleOrder(),
+          children: []);
       playlist.forEach((element) {
         try {
           _playlist.add(element);
@@ -186,6 +190,10 @@ class AudioProvider extends ChangeNotifier {
     return _audioPlayer.currentIndex;
   }
 
+  int? getNextIndex() {
+    return _audioPlayer.nextIndex;
+  }
+
   void loopOff() async {
     await _audioPlayer.setLoopMode(LoopMode.off);
   }
@@ -199,7 +207,10 @@ class AudioProvider extends ChangeNotifier {
   }
 
   void shuffleOn() async {
+    await _audioPlayer.shuffle();
     await _audioPlayer.setShuffleModeEnabled(true);
+    print(_playlist.shuffleIndices);
+    print(_audioPlayer.currentIndexStream.toList());
   }
 
   void shuffleOff() async {

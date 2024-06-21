@@ -52,7 +52,7 @@ class _PlaylistState extends State<Playlist> {
                 collapsedHeight: 70,
                 elevation: 0,
                 expandedHeight: 300.0,
-                backgroundColor: Color.fromARGB(255, 0, 0, 0),
+                backgroundColor: const Color.fromARGB(255, 0, 0, 0),
                 pinned: true,
                 floating: true,
                 scrolledUnderElevation: 35,
@@ -61,9 +61,9 @@ class _PlaylistState extends State<Playlist> {
                 forceElevated: innerBoxIsScrolled,
                 flexibleSpace: FlexibleSpaceBar(
                     collapseMode: CollapseMode.parallax,
-                    stretchModes: [StretchMode.zoomBackground],
+                    stretchModes: const [StretchMode.zoomBackground],
                     title: Text(playlist.playlistName.toString(),
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 20.0,
                         )),
@@ -88,7 +88,7 @@ class _PlaylistState extends State<Playlist> {
           },
           body: Container(
               height: double.infinity,
-              padding: EdgeInsets.only(bottom: 30, top: 60),
+              padding: const EdgeInsets.only(bottom: 30, top: 60),
               decoration: BoxDecoration(
                   color: Colors.black, borderRadius: BorderRadius.circular(5)),
               child: Column(
@@ -125,14 +125,16 @@ class _PlaylistState extends State<Playlist> {
                               color: const Color.fromARGB(199, 244, 244, 244)),
                           child: IconButton(
                             onPressed: () {
-                              final audioModel = Provider.of<AudioProvider>(
-                                  context,
-                                  listen: false);
-                              audioModel
-                                  .setPlaylist(Convert().listSongUri(tracks));
-                              audioModel.play();
+                              if (tracks.isNotEmpty) {
+                                final audioModel = Provider.of<AudioProvider>(
+                                    context,
+                                    listen: false);
+                                audioModel
+                                    .setPlaylist(Convert().listSongUri(tracks));
+                                audioModel.play();
+                              }
                             },
-                            hoverColor: Color.fromARGB(159, 110, 61, 61),
+                            hoverColor: const Color.fromARGB(159, 110, 61, 61),
                             icon: SvgPicture.asset(
                               'assets/svg/Play_fill.svg',
                               alignment: Alignment.centerLeft,
@@ -144,13 +146,17 @@ class _PlaylistState extends State<Playlist> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Expanded(
                     child: ListView.builder(
                         shrinkWrap: true,
                         itemCount: playlist.tracks!.length,
                         itemBuilder: (content, index) {
-                          return Item(song: tracks[index]);
+                          if (tracks.isNotEmpty) {
+                            return Item(song: tracks[index]);
+                          } else {
+                            return SizedBox();
+                          }
                         }),
                   )
                 ],
