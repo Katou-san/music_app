@@ -23,10 +23,6 @@ class _IndexPageState extends State<IndexPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   flexibleSpace: Header(),
-      //   toolbarHeight: 80,
-      // ),
       body: ScreenConfig().FooterIndexScreen[_selectedIndex]["key"],
       bottomNavigationBar: SalomonBottomBar(
           key: bottomNavigationBar,

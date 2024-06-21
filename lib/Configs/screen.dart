@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:music_app/Pages/home.dart';
 import 'package:music_app/Pages/home_relax.dart';
 import 'package:music_app/Pages/login.dart';
+import 'package:music_app/Pages/profile.dart';
 import 'package:music_app/Pages/search.dart';
 import 'package:music_app/Pages/signup.dart';
 import 'package:music_app/Screens/homeScreen.dart';
@@ -34,7 +35,7 @@ class ScreenConfig {
       "selectedColor": Colors.orange
     },
     {
-      "key": Signup(),
+      "key": Profile(),
       "icon": const Icon(Icons.person),
       "title": const Text("Profile"),
       "selectedColor": Colors.teal
