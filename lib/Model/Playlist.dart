@@ -6,7 +6,7 @@ class PlaylistRespone {
   final String? thumbnail;
   final String? userId;
   final bool? isPublish;
-  final List<String>? tracks;
+  final List<dynamic>? tracks;
   PlaylistRespone(
       {this.playlistId,
       this.playlistName,
@@ -31,6 +31,7 @@ class PlaylistRespone {
 
   List<PlaylistRespone> listJson(List<dynamic> json) {
     List<PlaylistRespone> result = json.map((json) {
+      final tracks = json['Tracks'];
       return PlaylistRespone(
           playlistId: json['Playlist_Id'],
           playlistName: json['Playlist_Name'],
@@ -39,7 +40,7 @@ class PlaylistRespone {
           thumbnail: json['Thumbnail'],
           userId: json['User_Id'],
           isPublish: true,
-          tracks: []);
+          tracks: tracks);
     }).toList();
     return result;
   }

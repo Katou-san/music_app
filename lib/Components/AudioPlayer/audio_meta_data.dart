@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:music_app/Components/Style/text_style.dart';
+import 'package:music_app/Configs/envConfig.dart';
 import 'package:music_app/Model/Song.dart';
 
 class AudioMetaData extends StatelessWidget {
@@ -21,7 +22,8 @@ class AudioMetaData extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(15),
           child: CachedNetworkImage(
-            imageUrl: song.songImage.toString(),
+            imageUrl:
+                "${EnvConfig().BACKENDURL}/api/v1/send/image/${song.songImage}",
             fit: BoxFit.cover,
           ),
         ),

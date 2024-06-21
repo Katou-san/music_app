@@ -170,14 +170,15 @@ class AudioProvider extends ChangeNotifier {
           songId: "",
           songName: "s",
           songImage: "",
-          songSrc: "",
-          like: "",
+          songAudio: "",
+          artist: "",
+          createDate: "",
           userId: "",
           categoryId: "",
           lyrics: "",
           tag: "",
           color: "",
-          isPublish: "");
+          isPublish: true);
     }
   }
 

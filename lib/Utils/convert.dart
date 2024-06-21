@@ -1,3 +1,7 @@
+import 'package:just_audio/just_audio.dart';
+import 'package:music_app/Configs/envConfig.dart';
+import 'package:music_app/Model/Song.dart';
+
 class Convert {
   Map<String, String> formData(Map data, List<String> deny) {
     Map<String, String> result = {};
@@ -9,5 +13,14 @@ class Convert {
       }
     });
     return result;
+  }
+
+  List<UriAudioSource> listSongUri(List<SongRespone> arraySong) {
+    return arraySong.map((song) {
+      return AudioSource.uri(
+          Uri.parse(
+              "${EnvConfig().BACKENDURL}/api/v1/send/audio/${song.songAudio}"),
+          tag: song);
+    }).toList();
   }
 }

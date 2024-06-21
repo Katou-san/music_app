@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:music_app/Components/Button/Button_Navigation.dart';
 import 'package:music_app/Components/Button/Button_Nomal.dart';
 import 'package:music_app/Configs/screen.dart';
-import 'package:music_app/Pages/home.dart';
-import 'package:music_app/Pages/home_player.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

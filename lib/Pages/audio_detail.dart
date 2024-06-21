@@ -29,66 +29,6 @@ class AudioDetail extends StatefulWidget {
 }
 
 class _AudioDetailState extends State<AudioDetail> {
-  final _playlist = [
-    AudioSource.uri(
-      Uri.parse("http://localhost:8080/api/v1/send/audio/57534667333.mp3"),
-      tag: SongRespone(
-          songId: "songId",
-          songName: "Coconut",
-          songImage: "http://localhost:8080/api/v1/send/image/57534667333.jpg",
-          songSrc: "songSrc",
-          like: "like",
-          userId: "userId",
-          categoryId: "categoryId",
-          lyrics: "lyrics",
-          tag: "tag",
-          color: "color",
-          isPublish: "isPublish"),
-    ),
-    AudioSource.uri(
-      Uri.parse("http://localhost:8080/api/v1/send/audio/57534667333.mp3"),
-      tag: SongRespone(
-          songId: "songId",
-          songName: "Out light",
-          songImage: "http://localhost:8080/api/v1/send/image/57534667333.jpg",
-          songSrc: "songSrc",
-          like: "like",
-          userId: "userId",
-          categoryId: "categoryId",
-          lyrics: "lyrics",
-          tag: "tag",
-          color: "color",
-          isPublish: "isPublish"),
-    ),
-    AudioSource.uri(
-      Uri.parse("http://localhost:8080/api/v1/send/audio/Panko.mp3"),
-      tag: SongRespone(
-          songId: "songId",
-          songName: "3",
-          songImage: "http://localhost:8080/api/v1/send/image/57534667333.jpg",
-          songSrc: "songSrc",
-          like: "like",
-          userId: "userId",
-          categoryId: "categoryId",
-          lyrics: "lyrics",
-          tag: "tag",
-          color: "color",
-          isPublish: "isPublish"),
-    ),
-  ];
-
-  @override
-  void initState() {
-    super.initState();
-
-    _init();
-  }
-
-  Future<void> _init() async {
-    final audioModel = Provider.of<AudioProvider>(context, listen: false);
-    audioModel.setPlaylist(_playlist);
-  }
-
   @override
   Widget build(BuildContext context) {
     Widget cusIcons = SvgPicture.asset(
@@ -150,7 +90,7 @@ class _AudioDetailState extends State<AudioDetail> {
               const SizedBox(
                 height: 10,
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [

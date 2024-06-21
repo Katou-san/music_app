@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:music_app/Components/Style/text_style.dart';
+import 'package:music_app/Configs/envConfig.dart';
 import 'package:music_app/Model/Song.dart';
 import 'package:music_app/Provider/AudioProvider.dart';
 import 'package:provider/provider.dart';
@@ -59,7 +60,7 @@ class _ItemBottomSheetState extends State<ItemBottomSheet> {
                           borderRadius: BorderRadius.circular(10),
                           image: DecorationImage(
                               image: CachedNetworkImageProvider(
-                                  widget.song.songImage),
+                                  "${EnvConfig().BACKENDURL}/api/v1/send/image/${widget.song.songImage}"),
                               fit: BoxFit.cover)),
                       height: 80,
                       width: 80,
@@ -78,7 +79,7 @@ class _ItemBottomSheetState extends State<ItemBottomSheet> {
                           ),
                           Text(widget.song.userId,
                               style: cusTextStyle(
-                                  size: 20,
+                                  size: 16,
                                   color: Color.fromARGB(156, 169, 169, 169)))
                         ],
                       ),

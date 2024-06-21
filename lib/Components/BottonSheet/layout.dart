@@ -2,9 +2,11 @@ import 'dart:ui';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:music_app/Components/AudioPlayer/audio_play_button.dart';
 import 'package:music_app/Components/BottonSheet/item.dart';
 import 'package:music_app/Components/Style/text_style.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:music_app/Configs/envConfig.dart';
 import 'package:music_app/Model/Song.dart';
 import 'package:music_app/Provider/AudioProvider.dart';
 import 'package:provider/provider.dart';
@@ -28,8 +30,6 @@ class _cusBottomSheetState extends State<cusBottomSheet> {
   @mustCallSuper
   void initState() {
     super.initState();
-
-    print("hello");
     _init();
   }
 
@@ -109,54 +109,60 @@ class _cusBottomSheetState extends State<cusBottomSheet> {
           StreamBuilder(
               stream: sequenceStream,
               builder: (context, snapshot) {
-                return Container(
-                    width: double.infinity,
-                    height: 60,
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(48, 35, 35, 35),
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
-                                  image: CachedNetworkImageProvider(
-                                      _listsong[currentIndex + 1]!
-                                          .tag
-                                          .songImage),
-                                  fit: BoxFit.cover)),
-                          height: 60,
-                          width: 60,
-                        ),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          flex: 2,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                _listsong[currentIndex + 1]?.tag!.songName ??
-                                    "unknown",
-                                style: cusTextStyle(
-                                    size: 20, weight: FontWeight.bold),
-                              ),
-                              Text(
-                                  _listsong[currentIndex + 1]?.tag!.userId ??
+                if (_listsong.length > currentIndex + 1) {
+                  return Container(
+                      width: double.infinity,
+                      height: 60,
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(48, 35, 35, 35),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                image: DecorationImage(
+                                    image: CachedNetworkImageProvider(
+                                        "${EnvConfig().BACKENDURL}/api/v1/send/image/${_listsong[currentIndex + 1]!.tag.songImage}"),
+                                    fit: BoxFit.cover)),
+                            height: 60,
+                            width: 60,
+                          ),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            flex: 2,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  _listsong[currentIndex + 1]?.tag!.songName ??
                                       "unknown",
                                   style: cusTextStyle(
-                                      size: 20,
-                                      color:
-                                          Color.fromARGB(156, 169, 169, 169)))
-                            ],
+                                      size: 20, weight: FontWeight.bold),
+                                ),
+                                Text(
+                                    _listsong[currentIndex + 1]?.tag!.artist ??
+                                        "unknown",
+                                    overflow: TextOverflow.ellipsis,
+                                    style: cusTextStyle(
+                                        size: 18,
+                                        color:
+                                            Color.fromARGB(156, 169, 169, 169)))
+                              ],
+                            ),
                           ),
-                        ),
-                        Expanded(flex: 1, child: Icon(Icons.play_arrow))
-                      ],
-                    ));
+                          Expanded(
+                            flex: 1,
+                            child: Icon(Icons.arrow_right_outlined),
+                          )
+                        ],
+                      ));
+                } else {
+                  return const SizedBox(height: 20);
+                }
               })
         ],
       ),

@@ -3,8 +3,9 @@ import 'package:music_app/Provider/AudioProvider.dart';
 import 'package:provider/provider.dart';
 
 class AudioPlayButton extends StatelessWidget {
-  const AudioPlayButton({super.key});
-
+  AudioPlayButton({super.key, this.color, this.size});
+  Color? color;
+  double? size;
   @override
   Widget build(BuildContext context) {
     final buttonState = context.select<AudioProvider, PlayerButtonState>(
@@ -22,8 +23,8 @@ class AudioPlayButton extends StatelessWidget {
                 color: const Color.fromARGB(167, 255, 255, 255)),
             child: IconButton(
               icon: const Icon(Icons.play_arrow),
-              color: Colors.white,
-              iconSize: 40,
+              color: color ?? Color.fromARGB(255, 255, 255, 255),
+              iconSize: size ?? 40,
               onPressed: () {
                 context.read<AudioProvider>().play();
               },
@@ -39,8 +40,8 @@ class AudioPlayButton extends StatelessWidget {
                 color: const Color.fromARGB(167, 255, 255, 255)),
             child: IconButton(
               icon: const Icon(Icons.pause),
-              iconSize: 40,
-              color: Colors.white,
+              iconSize: size ?? 40,
+              color: color ?? Color.fromARGB(255, 255, 255, 255),
               onPressed: () {
                 context.read<AudioProvider>().pause();
               },

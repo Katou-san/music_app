@@ -2,8 +2,12 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:music_app/Api/@track.dart';
 import 'package:music_app/Model/Playlist.dart';
 import 'package:music_app/Pages/playlist.dart';
+import 'package:music_app/Provider/AudioProvider.dart';
+import 'package:music_app/Utils/convert.dart';
+import 'package:provider/provider.dart';
 
 class ListPlaylist extends StatelessWidget {
   const ListPlaylist({super.key, required this.listdata, required this.title});
@@ -87,27 +91,42 @@ class ListPlaylist extends StatelessWidget {
                                       ),
                                     )),
                                 Positioned(
-                                  left: 5,
-                                  bottom: 15,
-                                  width: 40,
-                                  height: 40,
-                                  child: Container(
+                                    left: 5,
+                                    bottom: 15,
                                     width: 40,
                                     height: 40,
-                                    alignment: Alignment.center,
-                                    padding:
-                                        const EdgeInsets.fromLTRB(6, 2, 0, 0),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(90),
-                                      color: const Color(0xBFFFFFFF),
-                                    ),
-                                    child: SvgPicture.asset(
-                                      'assets/vectors/play_arrow_8_x2.svg',
-                                      height: 24,
-                                      width: 24,
-                                    ),
-                                  ),
-                                ),
+                                    child: InkWell(
+                                      onTap: () async {
+                                        final trackRequest = await ApiTrack()
+                                            .getId(listdata[index]
+                                                .playlistId
+                                                .toString());
+
+                                        final audioModel =
+                                            Provider.of<AudioProvider>(context,
+                                                listen: false);
+                                        audioModel.setPlaylist(Convert()
+                                            .listSongUri(trackRequest));
+                                        audioModel.play();
+                                      },
+                                      child: Container(
+                                        width: 40,
+                                        height: 40,
+                                        alignment: Alignment.center,
+                                        padding: const EdgeInsets.fromLTRB(
+                                            6, 2, 0, 0),
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(90),
+                                          color: const Color(0xBFFFFFFF),
+                                        ),
+                                        child: SvgPicture.asset(
+                                          'assets/vectors/play_arrow_8_x2.svg',
+                                          height: 24,
+                                          width: 24,
+                                        ),
+                                      ),
+                                    )),
                               ]),
                             ),
                             InkWell(
@@ -116,7 +135,9 @@ class ListPlaylist extends StatelessWidget {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => Playlist(
-                                            url: listdata[index].playlistId)));
+                                              url: listdata[index].playlistId,
+                                              playlist: listdata[index],
+                                            )));
                               },
                               child: Align(
                                 alignment: Alignment.topLeft,

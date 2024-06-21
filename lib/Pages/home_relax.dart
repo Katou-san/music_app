@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:music_app/Components/Button/Button_Navigation.dart';
 import 'package:music_app/Components/Style/text_style.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:music_app/Layout/Home/list.dart';
+import 'package:music_app/Layout/Home/List/list.dart';
 import 'package:music_app/Layout/Home_Relax/childItemPlaylist.dart';
 import 'package:music_app/Layout/Home_Relax/headerItemPlaylist.dart';
 

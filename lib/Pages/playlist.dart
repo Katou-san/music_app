@@ -1,36 +1,48 @@
 import 'dart:math' as math;
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:music_app/Api/@playlist.dart';
+import 'package:music_app/Api/@track.dart';
 import 'package:music_app/Components/Style/text_style.dart';
+import 'package:music_app/Configs/envConfig.dart';
+import 'package:music_app/Layout/Home/List/item.dart';
 import 'package:music_app/Model/Playlist.dart';
+import 'package:music_app/Model/Song.dart';
+import 'package:music_app/Provider/AudioProvider.dart';
+import 'package:music_app/Utils/convert.dart';
 import 'package:music_app/Utils/utils.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class Playlist extends StatefulWidget {
-  Playlist({super.key, required this.url});
+  Playlist({super.key, required this.url, required this.playlist});
   final dynamic url;
-
+  final PlaylistRespone playlist;
   @override
-  State<Playlist> createState() => _PlaylistState();
+  State<Playlist> createState() => _PlaylistState(playlist: playlist);
 }
 
 class _PlaylistState extends State<Playlist> {
-  late PlaylistRespone playlist;
-  List<String> tracks = [];
-  void getPlaylist() {
-    final playlistrRes = ApiPlaylist().getId(widget.url) as PlaylistRespone;
-    // print(playlistrRes);
+  _PlaylistState({required this.playlist});
+  final PlaylistRespone playlist;
+  List<SongRespone> tracks = [];
+
+  void getListTrack() async {
+    final trackRequest = await ApiTrack().getId(playlist.playlistId.toString());
     setState(() {
-      playlist = playlistrRes;
-      // tracks = playlistrRes.tracks ;
+      tracks = trackRequest as List<SongRespone>;
     });
   }
 
   @override
+  void initState() {
+    super.initState();
+    getListTrack();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    getPlaylist();
-    print(playlist);
     return Scaffold(
       body: NestedScrollView(
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -50,7 +62,7 @@ class _PlaylistState extends State<Playlist> {
                 flexibleSpace: FlexibleSpaceBar(
                     collapseMode: CollapseMode.parallax,
                     stretchModes: [StretchMode.zoomBackground],
-                    title: const Text("Collapsing Appbar",
+                    title: Text(playlist.playlistName.toString(),
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20.0,
@@ -61,9 +73,13 @@ class _PlaylistState extends State<Playlist> {
                         Container(
                           height: 400,
                           width: double.infinity,
-                          child: Image.network(
-                              "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                              fit: BoxFit.cover),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: CachedNetworkImageProvider(
+                                    "${EnvConfig().BACKENDURL}/api/v1/send/image_P/${playlist.image}")),
+                          ),
                         )
                       ],
                     )),
@@ -85,7 +101,7 @@ class _PlaylistState extends State<Playlist> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "12 Songs",
+                          '${playlist.tracks!.length} songs',
                           style: cusTextStyle(size: 24),
                         ),
                         IconButton(
@@ -108,7 +124,14 @@ class _PlaylistState extends State<Playlist> {
                               borderRadius: BorderRadius.circular(90),
                               color: const Color.fromARGB(199, 244, 244, 244)),
                           child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              final audioModel = Provider.of<AudioProvider>(
+                                  context,
+                                  listen: false);
+                              audioModel
+                                  .setPlaylist(Convert().listSongUri(tracks));
+                              audioModel.play();
+                            },
                             hoverColor: Color.fromARGB(159, 110, 61, 61),
                             icon: SvgPicture.asset(
                               'assets/svg/Play_fill.svg',
@@ -125,61 +148,9 @@ class _PlaylistState extends State<Playlist> {
                   Expanded(
                     child: ListView.builder(
                         shrinkWrap: true,
-                        itemCount: 15,
+                        itemCount: playlist.tracks!.length,
                         itemBuilder: (content, index) {
-                          return Container(
-                              alignment: Alignment.center,
-                              margin: const EdgeInsets.only(
-                                  bottom: 5, left: 24, right: 24),
-                              width: double.maxFinite,
-                              height: 48,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8)),
-                              child: ListTile(
-                                  mouseCursor: MouseCursor.defer,
-                                  subtitle: const Text(
-                                    "hello",
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 150, 149, 149)),
-                                  ),
-                                  leading: Container(
-                                    width: 48,
-                                    height: 48,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      image: const DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: AssetImage(
-                                          'assets/images/image_44.png',
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  title: Text(
-                                    "hello",
-                                    style: cusTextStyle(size: 20),
-                                  ),
-                                  trailing: Container(
-                                      width: 50,
-                                      height: 50,
-                                      alignment: Alignment.centerRight,
-                                      child: Transform.rotate(
-                                        angle: 90 * math.pi / 180,
-                                        child: IconButton(
-                                          onPressed: () {},
-                                          hoverColor: const Color.fromARGB(
-                                              87, 111, 110, 110),
-                                          icon: SvgPicture.asset(
-                                            'assets/svg/More.svg',
-                                            color: Colors.white,
-                                            alignment: Alignment.center,
-                                            width: 70,
-                                            height: 70,
-                                          ),
-                                        ),
-                                      ))));
+                          return Item(song: tracks[index]);
                         }),
                   )
                 ],
