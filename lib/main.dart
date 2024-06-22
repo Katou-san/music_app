@@ -17,7 +17,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => AudioProvider(),
         ),
-        ChangeNotifierProvider(create: (context) => AuthProvider())
+        ChangeNotifierProvider(
+          create: (context) => AuthProvider(),
+        )
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,

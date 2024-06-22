@@ -37,7 +37,7 @@ class ScreenConfig {
       "selectedColor": Colors.orange
     },
     {
-      "key": AuthProvider().getAuth().isLogin ? Profile() : Noprofile(),
+      "key": AuthProvider().auth.isLogin ? Profile() : Noprofile(),
       "icon": const Icon(Icons.person),
       "title": const Text("Profile"),
       "selectedColor": Colors.teal

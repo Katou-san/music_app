@@ -19,14 +19,17 @@ class ApiUser {
         headers: headers);
     if (res.statusCode == 200) {
       dynamic result = await jsonDecode(res.body);
-      if (result['status'] != 200) {
-        ErrorResponse.formJson(result);
-        print(result);
-        return AuthProvider().setAuth(AuthRespone.init());
-      } else {
-        print(result);
-        return AuthProvider().setAuth(AuthRespone.fromJson(result['data']));
-      }
+      print(result);
+      //xu ly trong widget
+
+      // if (result['status'] != 200) {
+      //   ErrorResponse.formJson(result);
+      //   print(result);
+      //   return AuthProvider().setAuth(AuthRespone.init());
+      // } else {
+      //   print(result);
+      //   return AuthProvider().setAuth(AuthRespone.fromJson(result['data']));
+      // }
     } else {
       throw Exception('Has Error when requesting ');
     }

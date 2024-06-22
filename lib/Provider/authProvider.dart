@@ -2,30 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:music_app/Model/auth.dart';
 
 class AuthProvider extends ChangeNotifier {
-  bool isLogin;
-  String accessToken;
-  String userName;
-  String avatar;
+  late AuthRespone _auth;
 
-  AuthProvider(
-      {this.isLogin = false,
-      this.accessToken = "",
-      this.userName = "",
-      this.avatar = ""});
+  AuthRespone get auth => _auth;
 
-  void setAuth(AuthRespone newAuth) async {
-    isLogin = newAuth.isLogin;
-    accessToken = newAuth.accessToken;
-    userName = newAuth.userName;
-    avatar = newAuth.avatar;
+  AuthProvider() {
+    _initStates();
+  }
+
+  _initStates() {
+    _auth =
+        AuthRespone(isLogin: false, accessToken: "", avatar: "", userName: "");
     notifyListeners();
   }
 
-  AuthRespone getAuth() {
-    return AuthRespone(
-        isLogin: isLogin,
-        accessToken: accessToken,
-        userName: userName,
-        avatar: avatar);
+  set auth(AuthRespone value) {
+    _auth = value;
+    notifyListeners();
   }
 }

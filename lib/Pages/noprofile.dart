@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/Components/Style/text_style.dart';
+import 'package:music_app/Model/auth.dart';
 import 'package:music_app/Pages/login.dart';
+import 'package:music_app/Provider/AuthProvider.dart';
+import 'package:provider/provider.dart';
 
 class Noprofile extends StatelessWidget {
   const Noprofile({super.key});
@@ -58,6 +61,26 @@ class Noprofile extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(80, 10, 80, 10),
               child: Text(
                 "Go to login",
+                style: cusTextStyle(
+                    size: 18,
+                    color: const Color.fromARGB(255, 240, 240, 240),
+                    weight: FontWeight.bold),
+              ),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              AuthRespone a = context.read<AuthProvider>().auth;
+              print(a.isLogin);
+            },
+            child: Container(
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  color: const Color.fromARGB(255, 61, 61, 61)),
+              padding: const EdgeInsets.fromLTRB(80, 10, 80, 10),
+              child: Text(
+                "print",
                 style: cusTextStyle(
                     size: 18,
                     color: const Color.fromARGB(255, 240, 240, 240),
