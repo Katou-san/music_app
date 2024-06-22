@@ -1,12 +1,5 @@
-import 'dart:ui';
-
-import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:just_audio/just_audio.dart';
 import 'package:music_app/Components/AudioPlayer/audio_loop_button.dart';
 import 'package:music_app/Components/AudioPlayer/audio_meta_data.dart';
 import 'package:music_app/Components/AudioPlayer/audio_next_button.dart';
@@ -14,13 +7,10 @@ import 'package:music_app/Components/AudioPlayer/audio_play_button.dart';
 import 'package:music_app/Components/AudioPlayer/audio_previous_button.dart';
 import 'package:music_app/Components/AudioPlayer/audio_progrees_bar.dart';
 import 'package:music_app/Components/AudioPlayer/audio_shuffle_button.dart';
-import 'package:music_app/Components/BottonSheet/item.dart';
 import 'package:music_app/Components/BottonSheet/layout.dart';
-import 'package:music_app/Components/Style/text_style.dart';
-import 'package:music_app/Model/Song.dart';
+import 'package:music_app/Model/song.dart';
 import 'package:music_app/Provider/AudioProvider.dart';
 import 'package:provider/provider.dart';
-import 'package:rxdart/rxdart.dart';
 
 class AudioDetail extends StatefulWidget {
   const AudioDetail({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:music_app/Model/Song.dart';
+import 'package:music_app/Model/song.dart';
 import 'package:provider/provider.dart';
 
 class AudioProvider extends ChangeNotifier {

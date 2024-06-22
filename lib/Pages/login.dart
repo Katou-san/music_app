@@ -6,9 +6,9 @@ import 'package:music_app/Components/Form_data/Or_line.dart';
 import 'package:music_app/Components/Form_data/button_Form.dart';
 import 'package:music_app/Components/Form_data/button_fill_Form.dart';
 import 'package:music_app/Components/Form_data/input_Form.dart';
-import 'package:music_app/Model/LoginM.dart';
+import 'package:music_app/Model/auth.dart';
 import 'package:music_app/Routes/index.dart';
-// import 'package:music_app/Model/User.dart';
+import 'package:music_app/Screens/index.dart';
 
 class Login extends StatelessWidget {
   Login({super.key});
@@ -61,6 +61,10 @@ class Login extends StatelessWidget {
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             submitForm(_email.text, _password.text);
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => IndexPage()));
                           }
                         },
                         child: ButtonForm(

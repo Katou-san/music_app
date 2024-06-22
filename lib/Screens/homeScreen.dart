@@ -13,7 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: ScreenConfig().tabsHomeScreen.length ?? 1,
+        length: ScreenConfig().tabsHomeScreen.length,
         child: Scaffold(
             appBar: AppBar(
               bottomOpacity: 0,

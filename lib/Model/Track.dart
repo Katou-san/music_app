@@ -1,4 +1,4 @@
-import 'package:music_app/Model/Song.dart';
+import 'package:music_app/Model/song.dart';
 
 class TrackRespone {
   final String? playlistId;

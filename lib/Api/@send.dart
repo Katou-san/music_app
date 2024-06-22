@@ -2,8 +2,8 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:music_app/Model/auth.dart';
 import 'package:music_app/Model/Error.dart';
-import 'package:music_app/Model/LoginM.dart';
 
 Map<String, String> headers = {"Content-Type": "application/json"};
 
@@ -18,7 +18,7 @@ class ApiSend {
     if (res.statusCode == 200) {
       dynamic result = await jsonDecode(res.body);
       if (result['status'] != 404) {
-        return LoginRespone.fromJson(result['data']);
+        return AuthRespone.fromJson(result['data']);
       } else {
         return ErrorResponse.formJson(result);
       }

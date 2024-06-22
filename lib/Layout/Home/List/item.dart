@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:music_app/Components/Style/text_style.dart';
-import 'package:music_app/Model/Song.dart';
+import 'package:music_app/Model/song.dart';
 import 'dart:math' as math;
 
 class Item extends StatelessWidget {

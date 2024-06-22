@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:music_app/Api/@playlist.dart';
 import 'package:music_app/Layout/Home/List/list.dart';
-import 'package:music_app/Model/Playlist.dart';
+import 'package:music_app/Model/playlist.dart';
 import 'package:music_app/Layout/Home/slider.dart';
 
 class Home extends StatefulWidget {

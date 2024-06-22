@@ -15,7 +15,7 @@ class Profile extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          SizedBox(height: 50),
+          const SizedBox(height: 50),
           Container(
             height: 120,
             width: double.infinity,

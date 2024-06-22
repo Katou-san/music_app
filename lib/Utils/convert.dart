@@ -1,6 +1,6 @@
 import 'package:just_audio/just_audio.dart';
 import 'package:music_app/Configs/envConfig.dart';
-import 'package:music_app/Model/Song.dart';
+import 'package:music_app/Model/song.dart';
 
 class Convert {
   Map<String, String> formData(Map data, List<String> deny) {

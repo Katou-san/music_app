@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:music_app/Components/AudioPlayer/audio_play_button.dart';
 import 'package:music_app/Components/Style/text_style.dart';
 import 'package:music_app/Configs/envConfig.dart';
-import 'package:music_app/Model/Song.dart';
+import 'package:music_app/Model/song.dart';
 import 'package:music_app/Provider/AudioProvider.dart';
 import 'package:music_app/Utils/convert.dart';
 import 'package:provider/provider.dart';

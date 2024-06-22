@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:music_app/Components/Style/text_style.dart';
 import 'package:music_app/Configs/envConfig.dart';
-import 'package:music_app/Model/Song.dart';
+import 'package:music_app/Model/song.dart';
 
 class AudioMetaData extends StatelessWidget {
   const AudioMetaData({
