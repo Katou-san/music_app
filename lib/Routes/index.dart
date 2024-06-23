@@ -41,5 +41,5 @@ class AppRoutes {
         //     Playlist(url: Uri.base.queryParameters['id'])
       };
 
-  List<Widget> listPage = [Home(), Signup(), Login()];
+  // List<Widget> listPage = [Home(), Signup(), Login()];
 }

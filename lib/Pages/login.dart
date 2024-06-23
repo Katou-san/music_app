@@ -7,16 +7,22 @@ import 'package:music_app/Components/Form_data/button_Form.dart';
 import 'package:music_app/Components/Form_data/button_fill_Form.dart';
 import 'package:music_app/Components/Form_data/input_Form.dart';
 import 'package:music_app/Model/auth.dart';
+import 'package:music_app/Model/error.dart';
+import 'package:music_app/Provider/AuthProvider.dart';
+
 import 'package:music_app/Routes/index.dart';
 import 'package:music_app/Screens/index.dart';
+import 'package:provider/provider.dart';
 
 class Login extends StatelessWidget {
   Login({super.key});
+
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    final authModel = Provider.of<AuthProvider>(context, listen: false);
     return Scaffold(
         body: Container(
             width: double.infinity,
@@ -58,9 +64,11 @@ class Login extends StatelessWidget {
                     ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             padding: const EdgeInsets.all(0)),
-                        onPressed: () {
+                        onPressed: () async {
                           if (_formKey.currentState!.validate()) {
-                            submitForm(_email.text, _password.text);
+                            authModel.auth =
+                                await submitForm(_email.text, _password.text);
+
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -96,8 +104,15 @@ class Login extends StatelessWidget {
   }
 }
 
-dynamic submitForm(dynamic email, dynamic password) async {
+Future<AuthRespone> submitForm(dynamic email, dynamic password) async {
+  // final audioModel = Provider.of<AuthProvider>(context, listen: false);
   final userAPI = ApiUser();
   dynamic response =
       await userAPI.login(LoginRequest(email: email, password: password));
+  if (response['status'] != 200) {
+    ErrorResponse.formJson(response);
+    return AuthRespone.init();
+  } else {
+    return AuthRespone.fromJson(response['data']);
+  }
 }

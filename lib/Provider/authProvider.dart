@@ -7,13 +7,11 @@ class AuthProvider extends ChangeNotifier {
   AuthRespone get auth => _auth;
 
   AuthProvider() {
-    _initStates();
+    _init();
   }
 
-  _initStates() {
-    _auth =
-        AuthRespone(isLogin: false, accessToken: "", avatar: "", userName: "");
-    notifyListeners();
+  _init() async {
+    _auth = AuthRespone.init();
   }
 
   set auth(AuthRespone value) {

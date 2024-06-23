@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:music_app/Components/AudioPlayer/audio_loop_button.dart';
 import 'package:music_app/Components/AudioPlayer/audio_meta_data.dart';
 import 'package:music_app/Components/AudioPlayer/audio_next_button.dart';
@@ -21,12 +20,6 @@ class AudioDetail extends StatefulWidget {
 class _AudioDetailState extends State<AudioDetail> {
   @override
   Widget build(BuildContext context) {
-    Widget cusIcons = SvgPicture.asset(
-      "assets/svg/Play_fill.svg",
-      colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
-      height: 40,
-    );
-
     return Consumer<AudioProvider>(
       builder: (context, value, child) => Scaffold(
         extendBodyBehindAppBar: true,
@@ -84,11 +77,11 @@ class _AudioDetailState extends State<AudioDetail> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  AudioShuffleButton(),
-                  AudioPreviousButton(),
+                  const AudioShuffleButton(),
+                  const AudioPreviousButton(),
                   AudioPlayButton(),
-                  AudioNextButton(),
-                  AudioLoopButton(),
+                  const AudioNextButton(),
+                  const AudioLoopButton(),
                 ],
               ),
               const SizedBox(height: 40),

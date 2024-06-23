@@ -19,7 +19,8 @@ class ApiUser {
         headers: headers);
     if (res.statusCode == 200) {
       dynamic result = await jsonDecode(res.body);
-      print(result);
+
+      return result;
       //xu ly trong widget
 
       // if (result['status'] != 200) {

@@ -5,13 +5,15 @@ import 'package:music_app/Pages/login.dart';
 import 'package:music_app/Pages/noprofile.dart';
 import 'package:music_app/Pages/profile.dart';
 import 'package:music_app/Pages/search.dart';
-import 'package:music_app/Pages/signup.dart';
-import 'package:music_app/Provider/AuthProvider.dart';
+
 import 'package:music_app/Screens/homeScreen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ScreenConfig {
-  List<Map<String, dynamic>> FooterIndexScreen = [
+  bool is_login;
+  ScreenConfig({required this.is_login});
+
+  late List<Map<String, dynamic>> FooterIndexScreen = [
     {
       "key": HomeScreen(),
       "icon": const Icon(Icons.home),
@@ -37,7 +39,7 @@ class ScreenConfig {
       "selectedColor": Colors.orange
     },
     {
-      "key": AuthProvider().auth.isLogin ? Profile() : Noprofile(),
+      "key": is_login ? Profile() : Noprofile(),
       "icon": const Icon(Icons.person),
       "title": const Text("Profile"),
       "selectedColor": Colors.teal

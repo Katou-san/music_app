@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/Components/Button/Button_Nomal.dart';
 import 'package:music_app/Configs/screen.dart';
+import 'package:music_app/Provider/AuthProvider.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,13 +15,16 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: ScreenConfig().tabsHomeScreen.length,
+        length:
+            ScreenConfig(is_login: context.read<AuthProvider>().auth.isLogin)
+                .tabsHomeScreen
+                .length,
         child: Scaffold(
             appBar: AppBar(
               bottomOpacity: 0,
               elevation: 0,
               toolbarHeight: 61,
-              backgroundColor: Color.fromARGB(255, 0, 0, 0),
+              backgroundColor: const Color.fromARGB(255, 0, 0, 0),
               flexibleSpace: TabBar(
                 tabAlignment: TabAlignment.start,
                 isScrollable: true,
@@ -29,12 +34,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 indicator: const BoxDecoration(color: Colors.transparent),
                 labelColor: Colors.white,
                 splashBorderRadius: BorderRadius.circular(25),
-                labelPadding: EdgeInsets.symmetric(horizontal: 2.0),
-                tabs: WigetTabs,
+                labelPadding: const EdgeInsets.symmetric(horizontal: 2.0),
+                tabs: WigetTabs(context.read<AuthProvider>().auth.isLogin),
               ),
             ),
             body: TabBarView(
-              children: ScreenTab,
+              children: ScreenTab(context.read<AuthProvider>().auth.isLogin),
             )));
   }
 }
@@ -54,16 +59,20 @@ class RepeatedTab extends StatelessWidget {
   }
 }
 
-List<Widget> WigetTabs = ScreenConfig()
-    .tabsHomeScreen
-    .map((e) => RepeatedTab(
-          label: e['title'],
-        ))
-    .toList();
+List<Widget> WigetTabs(bool is_login) {
+  return ScreenConfig(is_login: is_login)
+      .tabsHomeScreen
+      .map((e) => RepeatedTab(
+            label: e['title'],
+          ))
+      .toList();
+}
 
-List<Widget> ScreenTab = ScreenConfig()
-    .tabsHomeScreen
-    .map(
-      (e) => e['Widget'] as Widget,
-    )
-    .toList();
+List<Widget> ScreenTab(bool is_login) {
+  return ScreenConfig(is_login: is_login)
+      .tabsHomeScreen
+      .map(
+        (e) => e['Widget'] as Widget,
+      )
+      .toList();
+}
