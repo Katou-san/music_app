@@ -47,7 +47,7 @@ class AudioMetaData extends StatelessWidget {
                 ),
                 const SizedBox(width: 5),
                 const Text(
-                  "Connect to a device",
+                  "share",
                   style: TextStyle(fontSize: 12, color: Colors.white),
                 )
               ],

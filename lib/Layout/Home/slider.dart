@@ -39,16 +39,6 @@ class SliderFrame extends StatelessWidget {
                   margin: const EdgeInsets.only(right: 20),
                   height: 140,
                   width: 280,
-                  child: Container(
-                    margin: EdgeInsets.all(30),
-                    child: Text(
-                      "hello",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 203, 199, 199),
-                          fontSize: 32,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
                   decoration: BoxDecoration(
                       image: const DecorationImage(
                           fit: BoxFit.cover,
@@ -57,6 +47,16 @@ class SliderFrame extends StatelessWidget {
                           )),
                       color: Colors.blue,
                       borderRadius: BorderRadius.circular(10)),
+                  child: Container(
+                    margin: const EdgeInsets.all(30),
+                    child: const Text(
+                      "hello",
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 203, 199, 199),
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
                 );
               },
             ),

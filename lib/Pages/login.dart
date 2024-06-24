@@ -24,10 +24,20 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     final authModel = Provider.of<AuthProvider>(context, listen: false);
     return Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color(0xFF0D0D0D),
+          elevation: 0,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.keyboard_arrow_down_rounded),
+            color: Colors.white,
+          ),
+        ),
         body: Container(
             width: double.infinity,
             height: double.infinity,
-            padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
             decoration: const BoxDecoration(
               color: Color(0xFF0D0D0D),
             ),
@@ -68,11 +78,12 @@ class Login extends StatelessWidget {
                           if (_formKey.currentState!.validate()) {
                             authModel.auth =
                                 await submitForm(_email.text, _password.text);
-
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => IndexPage()));
+                            if (authModel.auth.isLogin) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const IndexPage()));
+                            }
                           }
                         },
                         child: ButtonForm(

@@ -53,8 +53,8 @@ class RepeatedTab extends StatelessWidget {
     return Tab(
         child: ButtonNomal(
       title: label,
-      bgColor: Color(0x1FFFFFFF),
-      titleColor: Color.fromARGB(255, 139, 139, 139),
+      bgColor: const Color(0x1FFFFFFF),
+      titleColor: const Color.fromARGB(255, 139, 139, 139),
     ));
   }
 }

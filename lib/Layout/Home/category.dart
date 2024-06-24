@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:music_app/Components/Button/Button_Navigation.dart';
 
 class CateFrame extends StatefulWidget {
@@ -11,7 +10,7 @@ class CateFrame extends StatefulWidget {
 }
 
 class _CateFrameState extends State<CateFrame> {
-  int _indexSeletct = 0;
+  // int _indexSeletct = 0;
   final List<Map<String, String>> _list = [
     {'title': 'For you', 'url': '/'},
     {'title': 'Relax', 'url': '/login'}
@@ -19,7 +18,7 @@ class _CateFrameState extends State<CateFrame> {
 
   void setIndex(int index) {
     setState(() {
-      _indexSeletct = index;
+      // _indexSeletct = index;
     });
   }
 
@@ -43,9 +42,9 @@ class _CateFrameState extends State<CateFrame> {
                     child: ButtonNavigation(
                       title: _list[index]['title'].toString(),
                       url: _list[index]['url'].toString(),
-                      padding: EdgeInsets.all(0),
-                      bgColor: Color(0x1FFFFFFF),
-                      titleColor: Color.fromARGB(255, 139, 139, 139),
+                      padding: const EdgeInsets.all(0),
+                      bgColor: const Color(0x1FFFFFFF),
+                      titleColor: const Color.fromARGB(255, 139, 139, 139),
                     ))
               ],
             );

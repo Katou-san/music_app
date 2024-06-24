@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:music_app/Api/@playlist.dart';
+import 'package:music_app/Api/@song.dart';
 import 'package:music_app/Layout/Home/List/list.dart';
+import 'package:music_app/Model/Song.dart';
 import 'package:music_app/Model/playlist.dart';
 import 'package:music_app/Layout/Home/slider.dart';
 
@@ -13,8 +14,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _selectedIndex = 0;
+  // int _selectedIndex = 0;
   List<PlaylistRespone> listPlaylist = [];
+  List<SongRespone> listSong = [];
 
   @override
   void initState() {
@@ -24,8 +26,10 @@ class _HomeState extends State<Home> {
 
   Future<void> fecthPlaylists() async {
     final res = await ApiPlaylist().getAll();
+    // final songs = await ApiSong().getAll();
     setState(() {
       listPlaylist = res;
+      // listSong = songs;
     });
   }
 
@@ -51,7 +55,11 @@ class _HomeState extends State<Home> {
               ),
               SliderFrame(),
               ListPlaylist(
-                title: "Replay",
+                title: "Playlist",
+                listdata: listPlaylist,
+              ),
+              ListPlaylist(
+                title: "Song",
                 listdata: listPlaylist,
               ),
             ],

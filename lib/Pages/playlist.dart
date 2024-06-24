@@ -1,8 +1,6 @@
-import 'dart:math' as math;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:music_app/Api/@playlist.dart';
 import 'package:music_app/Api/@track.dart';
 import 'package:music_app/Components/Style/text_style.dart';
 import 'package:music_app/Configs/envConfig.dart';
@@ -11,12 +9,10 @@ import 'package:music_app/Model/playlist.dart';
 import 'package:music_app/Model/song.dart';
 import 'package:music_app/Provider/AudioProvider.dart';
 import 'package:music_app/Utils/convert.dart';
-import 'package:music_app/Utils/utils.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class Playlist extends StatefulWidget {
-  Playlist({super.key, required this.url, required this.playlist});
+  const Playlist({super.key, required this.url, required this.playlist});
   final dynamic url;
   final PlaylistRespone playlist;
   @override
@@ -109,7 +105,6 @@ class _PlaylistState extends State<Playlist> {
                           hoverColor: const Color.fromARGB(87, 111, 110, 110),
                           icon: SvgPicture.asset(
                             'assets/svg/Import.svg',
-                            color: Colors.white,
                             alignment: Alignment.center,
                             width: 30,
                             height: 30,
@@ -155,7 +150,7 @@ class _PlaylistState extends State<Playlist> {
                           if (tracks.isNotEmpty) {
                             return Item(song: tracks[index]);
                           } else {
-                            return SizedBox();
+                            return const SizedBox();
                           }
                         }),
                   )

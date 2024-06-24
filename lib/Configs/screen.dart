@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/Pages/home.dart';
 import 'package:music_app/Pages/home_relax.dart';
+import 'package:music_app/Pages/like.dart';
 import 'package:music_app/Pages/login.dart';
 import 'package:music_app/Pages/noprofile.dart';
 import 'package:music_app/Pages/profile.dart';
@@ -15,31 +16,25 @@ class ScreenConfig {
 
   late List<Map<String, dynamic>> FooterIndexScreen = [
     {
-      "key": HomeScreen(),
+      "key": const HomeScreen(),
       "icon": const Icon(Icons.home),
       "title": const Text("Home"),
       "selectedColor": Colors.purple
     },
     {
-      "key": Search(),
-      "icon": SvgPicture.asset(
-        'assets/svg/Search.svg',
-        color: Colors.pink,
-        alignment: Alignment.center,
-        width: 24,
-        height: 24,
-      ),
+      "key": const Search(),
+      "icon": const Icon(Icons.search),
       "title": const Text("Search"),
       "selectedColor": Colors.pink
     },
     {
-      "key": Login(),
+      "key": const LikePage(),
       "icon": const Icon(Icons.favorite_border),
-      "title": const Text("Search"),
+      "title": const Text("Like"),
       "selectedColor": Colors.orange
     },
     {
-      "key": is_login ? Profile() : Noprofile(),
+      "key": is_login ? const Profile() : const Noprofile(),
       "icon": const Icon(Icons.person),
       "title": const Text("Profile"),
       "selectedColor": Colors.teal
@@ -47,7 +42,7 @@ class ScreenConfig {
   ];
 
   List<Map<String, dynamic>> tabsHomeScreen = [
-    {"title": "For you", "Widget": Home()},
+    {"title": "For you", "Widget": const Home()},
     {"title": "Relax", "Widget": HomeRelax()},
     // {"title": "Test", "Widget": AudioDetail()},
   ];

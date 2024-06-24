@@ -1,17 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'dart:ui';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:music_app/Components/Style/text_style.dart';
-import 'package:music_app/Utils/utils.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Search extends StatelessWidget {
-  Search({super.key});
+  const Search({super.key});
   @override
   Widget build(BuildContext context) {
-    TextEditingController _controllerInput = TextEditingController();
+    TextEditingController controllerInput = TextEditingController();
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,
@@ -33,7 +27,7 @@ class Search extends StatelessWidget {
                           child: Container(
                             padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
                             child: TextFormField(
-                              controller: _controllerInput,
+                              controller: controllerInput,
                               decoration: const InputDecoration(
                                   border: InputBorder.none,
                                   hintText: "HELLO",
@@ -59,15 +53,15 @@ class Search extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Container(
-                    padding: EdgeInsets.only(left: 24),
-                    margin: EdgeInsets.only(bottom: 20),
+                    padding: const EdgeInsets.only(left: 24),
+                    margin: const EdgeInsets.only(bottom: 20),
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "Trending",
                       style: cusTextStyle(size: 20, weight: FontWeight.bold),
                     ),
                   ),
-                  Container(
+                  SizedBox(
                       height: 140,
                       child: ListView.builder(
                         shrinkWrap: true,
@@ -97,15 +91,15 @@ class Search extends StatelessWidget {
                           );
                         },
                       )),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Container(
-                      padding: EdgeInsets.only(left: 24, right: 24),
+                      padding: const EdgeInsets.only(left: 24, right: 24),
                       child: Column(
                         children: [
                           Container(
-                            margin: EdgeInsets.only(bottom: 10),
+                            margin: const EdgeInsets.only(bottom: 10),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
