@@ -62,7 +62,7 @@ class _FloatSongTrackState extends State<FloatSongTrack> {
                                     Navigator.of(context).pushNamed("/audio");
                                   },
                                   child: Text(
-                                    song.songName,
+                                    song.songName ?? "unkown",
                                     overflow: TextOverflow.ellipsis,
                                     style: cusTextStyle(
                                         size: 18,
@@ -71,7 +71,7 @@ class _FloatSongTrackState extends State<FloatSongTrack> {
                                   ),
                                 ),
                                 Text(
-                                  song.artist,
+                                  song.artist ?? "unkown",
                                   overflow: TextOverflow.ellipsis,
                                 )
                               ],

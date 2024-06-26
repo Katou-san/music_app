@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:just_audio_background/just_audio_background.dart';
 import 'package:music_app/Provider/AudioProvider.dart';
 import 'package:music_app/Provider/AuthProvider.dart';
 import 'package:music_app/Routes/index.dart';
 import 'package:provider/provider.dart';
 
-void main() async {
+Future<void> main() async {
+  // await JustAudioBackground.init(
+  //   androidNotificationChannelId: 'com.ryanheise.bg_demo.channel.audio',
+  //   androidNotificationChannelName: 'Audio playback',
+  //   androidNotificationOngoing: true,
+  // );
+
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(

@@ -248,7 +248,7 @@ class _cusBottomSheetState extends State<cusBottomSheet> {
                                   borderRadius: BorderRadius.circular(10),
                                   image: DecorationImage(
                                       image: CachedNetworkImageProvider(
-                                          "${EnvConfig().BACKENDURL}/api/v1/send/image/${_listsong[nextIndex]!.tag.songImage}"),
+                                          "${EnvConfig().BACKENDURL}/api/v1/send/image/${_listsong[nextIndex == -1 ? 0 : nextIndex]!.tag.songImage}"),
                                       fit: BoxFit.cover)),
                               height: 60,
                               width: 60,
@@ -261,13 +261,17 @@ class _cusBottomSheetState extends State<cusBottomSheet> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    _listsong[nextIndex]?.tag!.songName ??
+                                    _listsong[nextIndex == -1 ? 0 : nextIndex]
+                                            ?.tag!
+                                            .songName ??
                                         "unknown",
                                     style: cusTextStyle(
                                         size: 20, weight: FontWeight.bold),
                                   ),
                                   Text(
-                                      _listsong[nextIndex]?.tag!.artist ??
+                                      _listsong[nextIndex == -1 ? 0 : nextIndex]
+                                              ?.tag!
+                                              .artist ??
                                           "unknown",
                                       overflow: TextOverflow.ellipsis,
                                       style: cusTextStyle(

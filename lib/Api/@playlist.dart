@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:http/http.dart' as http;
 import 'package:music_app/Configs/envConfig.dart';
 import 'package:music_app/Model/auth.dart';
@@ -24,7 +25,7 @@ class ApiPlaylist {
         return ErrorResponse.formJson(result);
       }
     } else {
-      throw Exception('Has Error');
+      log('Has Error when requesting ');
     }
   }
 
@@ -38,10 +39,12 @@ class ApiPlaylist {
         final playlists = PlaylistRespone().listJson(listRespone);
         return playlists;
       } else {
-        throw Exception('Has Error');
+        log('Has Error when requesting ');
+        return [];
       }
     } else {
-      throw Exception('Has Error');
+      log('Has Error when requesting ');
+      return [];
     }
   }
 
@@ -57,7 +60,7 @@ class ApiPlaylist {
         return ErrorResponse.formJson(result);
       }
     } else {
-      throw Exception('Has Error');
+      log('Has Error when requesting ');
     }
   }
 }

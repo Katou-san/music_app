@@ -14,12 +14,27 @@ import 'package:music_app/Routes/index.dart';
 import 'package:music_app/Screens/index.dart';
 import 'package:provider/provider.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   Login({super.key});
 
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
+
   final TextEditingController _email = TextEditingController();
+
   final TextEditingController _password = TextEditingController();
+
+  late bool isLoading;
+  @override
+  void initState() {
+    isLoading = false;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final authModel = Provider.of<AuthProvider>(context, listen: false);
@@ -70,26 +85,34 @@ class Login extends StatelessWidget {
                       lables: 'Password',
                       textinput: 'this is the password',
                       inputCTL: _password,
+                      hide: true,
                     ),
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            padding: const EdgeInsets.all(0)),
-                        onPressed: () async {
-                          if (_formKey.currentState!.validate()) {
-                            authModel.auth =
-                                await submitForm(_email.text, _password.text);
-                            if (authModel.auth.isLogin) {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const IndexPage()));
-                            }
+                    InkWell(
+                      onTap: () async {
+                        setState(() {
+                          isLoading = true;
+                        });
+                        if (_formKey.currentState!.validate()) {
+                          authModel.auth =
+                              await submitForm(_email.text, _password.text);
+                          if (authModel.auth.isLogin) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const IndexPage()));
                           }
-                        },
-                        child: ButtonForm(
-                            title: "Login",
-                            titleColor: const Color(0xFF000000),
-                            bgColor: const Color(0xFFD9D9D9))),
+                        }
+                        setState(() {
+                          isLoading = false;
+                        });
+                      },
+                      child: !isLoading
+                          ? ButtonForm(
+                              title: "Login",
+                              titleColor: const Color(0xFF000000),
+                              bgColor: const Color(0xFFD9D9D9))
+                          : const CircularProgressIndicator.adaptive(),
+                    ),
                     const OrLine(),
                     const ButtonFillForm(
                         title: "Continue with Google", icon: "icon"),

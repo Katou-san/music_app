@@ -8,11 +8,13 @@ class InputForm extends StatelessWidget {
       required this.lables,
       required this.textinput,
       required this.inputCTL,
-      this.margin});
+      this.margin,
+      this.hide});
   final String lables;
   final String textinput;
   final EdgeInsetsGeometry? margin;
   final TextEditingController inputCTL;
+  final bool? hide;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -48,6 +50,7 @@ class InputForm extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
                   child: TextFormField(
+                    obscureText: hide ?? false,
                     controller: inputCTL,
                     decoration: InputDecoration(
                         border: InputBorder.none,

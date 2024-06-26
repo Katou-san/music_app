@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:music_app/Components/Style/text_style.dart';
+import 'package:music_app/Configs/envConfig.dart';
 import 'package:music_app/Model/song.dart';
 import 'dart:math' as math;
 
@@ -20,7 +21,7 @@ class Item extends StatelessWidget {
         child: ListTile(
             mouseCursor: MouseCursor.defer,
             subtitle: Text(
-              song.artist,
+              song.artist ?? "unkown",
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(color: Color.fromARGB(255, 150, 149, 149)),
             ),
@@ -32,11 +33,11 @@ class Item extends StatelessWidget {
                 image: DecorationImage(
                     fit: BoxFit.cover,
                     image: CachedNetworkImageProvider(
-                        "http://localhost:8080/api/v1/send/image/${song.songImage}")),
+                        "${EnvConfig().BACKENDURL}/api/v1/send/image/${song.songImage}")),
               ),
             ),
             title: Text(
-              song.songName,
+              song.songName ?? "unkown",
               style: cusTextStyle(size: 20),
             ),
             trailing: Container(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:music_app/Api/@track.dart';
+import 'package:music_app/Configs/envConfig.dart';
 import 'package:music_app/Model/playlist.dart';
 import 'package:music_app/Pages/playlist.dart';
 import 'package:music_app/Provider/AudioProvider.dart';
@@ -97,7 +98,7 @@ class ListPlaylist extends StatelessWidget {
                                         image: DecorationImage(
                                             fit: BoxFit.cover,
                                             image: CachedNetworkImageProvider(
-                                                "http://localhost:8080/api/v1/send/image_P/${listdata[index].image}")),
+                                                "${EnvConfig().BACKENDURL}/api/v1/send/image_P/${listdata[index].image}")),
                                       ),
                                     )),
                                 Positioned(

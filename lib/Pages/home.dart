@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/Api/@playlist.dart';
 import 'package:music_app/Api/@song.dart';
-import 'package:music_app/Layout/Home/List/list.dart';
-import 'package:music_app/Model/Song.dart';
-import 'package:music_app/Model/playlist.dart';
+
+import 'package:music_app/Layout/Home/List/listPlaylist.dart';
+import 'package:music_app/Layout/Home/List/listSong.dart';
 import 'package:music_app/Layout/Home/slider.dart';
+
+import 'package:music_app/Model/playlist.dart';
+import 'package:music_app/Model/song.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -22,14 +25,20 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
     fecthPlaylists();
+    fecthSongs();
   }
 
   Future<void> fecthPlaylists() async {
     final res = await ApiPlaylist().getAll();
-    // final songs = await ApiSong().getAll();
     setState(() {
       listPlaylist = res;
-      // listSong = songs;
+    });
+  }
+
+  Future<void> fecthSongs() async {
+    final songs = await ApiSong().getAll();
+    setState(() {
+      listSong = songs;
     });
   }
 
@@ -58,10 +67,7 @@ class _HomeState extends State<Home> {
                 title: "Playlist",
                 listdata: listPlaylist,
               ),
-              ListPlaylist(
-                title: "Song",
-                listdata: listPlaylist,
-              ),
+              ListSongs(listdata: listSong, title: "Songs"),
             ],
           ),
         ),

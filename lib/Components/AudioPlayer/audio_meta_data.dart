@@ -61,7 +61,7 @@ class AudioMetaData extends StatelessWidget {
           Expanded(
             flex: 4,
             child: Text(
-              song.songName,
+              song.songName ?? "unkown",
               overflow: TextOverflow.ellipsis,
               style: cusTextStyle(weight: FontWeight.bold, size: 24),
             ),
@@ -109,7 +109,7 @@ class AudioMetaData extends StatelessWidget {
       Container(
           alignment: Alignment.centerLeft,
           child: Text(
-            song.userId,
+            song.userId ?? "unkown",
             style: cusTextStyle(
                 size: 16, color: const Color.fromARGB(120, 255, 255, 255)),
           ))

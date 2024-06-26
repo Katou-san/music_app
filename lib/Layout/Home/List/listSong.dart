@@ -2,9 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:music_app/Api/@track.dart';
+import 'package:music_app/Configs/envConfig.dart';
 import 'package:music_app/Model/song.dart';
-import 'package:music_app/Pages/playlist.dart';
 import 'package:music_app/Provider/AudioProvider.dart';
 import 'package:music_app/Utils/convert.dart';
 import 'package:provider/provider.dart';
@@ -75,14 +74,13 @@ class ListSongs extends StatelessWidget {
                           children: [
                             InkWell(
                               onTap: () async {
-                                final trackRequest = await ApiTrack()
-                                    .getId(listdata[index].songId.toString());
-
                                 final audioModel = Provider.of<AudioProvider>(
                                     context,
                                     listen: false);
-                                audioModel.setPlaylist(
-                                    Convert().listSongUri(trackRequest));
+                                List<SongRespone> a = [];
+                                a.add(listdata[index]);
+                                audioModel
+                                    .setPlaylist(Convert().listSongUri(a));
                                 audioModel.play();
                               },
                               child: Stack(children: [
@@ -97,7 +95,7 @@ class ListSongs extends StatelessWidget {
                                         image: DecorationImage(
                                             fit: BoxFit.cover,
                                             image: CachedNetworkImageProvider(
-                                                "http://localhost:8080/api/v1/send/image_P/${listdata[index].songImage}")),
+                                                "${EnvConfig().BACKENDURL}/api/v1/send/image/${listdata[index].songImage}")),
                                       ),
                                     )),
                                 Positioned(
@@ -124,31 +122,30 @@ class ListSongs extends StatelessWidget {
                                 ),
                               ]),
                             ),
-                            ////////////////////////////////////////////////////////////////////
-                            // InkWell(
-                            //   onTap: () {
-                            //     Navigator.push(
-                            //         context,
-                            //         MaterialPageRoute(
-                            //             builder: (context) => Playlist(
-                            //                   url: listdata[index].songId,
-                            //                   playlist: listdata[index],
-                            //                 )));
-                            //   },
-                            //   child: Align(
-                            //     alignment: Alignment.topLeft,
-                            //     child: Text(
-                            //       listdata[index].playlistName.toString(),
-                            //       style: GoogleFonts.getFont(
-                            //         'Inter',
-                            //         fontWeight: FontWeight.w500,
-                            //         fontSize: 12,
-                            //         height: 1.2,
-                            //         color: const Color(0xBFFFFFFF),
-                            //       ),
-                            //     ),
-                            //   ),
-                            // )
+                            InkWell(
+                              onTap: () {
+                                // Navigator.push(
+                                //     context,
+                                //     MaterialPageRoute(
+                                //         builder: (context) => Playlist(
+                                //               url: listdata[index].songId,
+                                //               playlist: listdata[index],
+                                //             )));
+                              },
+                              child: Align(
+                                alignment: Alignment.topLeft,
+                                child: Text(
+                                  listdata[index].songName.toString(),
+                                  style: GoogleFonts.getFont(
+                                    'Inter',
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 12,
+                                    height: 1.2,
+                                    color: const Color(0xBFFFFFFF),
+                                  ),
+                                ),
+                              ),
+                            )
                           ],
                         ),
                       ),

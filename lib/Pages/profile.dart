@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:music_app/Components/Style/text_style.dart';
 import 'package:music_app/Configs/envConfig.dart';
 import 'package:music_app/Layout/Profile/itemOption.dart';
+import 'package:music_app/Model/auth.dart';
 import 'package:music_app/Provider/AuthProvider.dart';
+import 'package:music_app/Screens/index.dart';
 import 'package:provider/provider.dart';
 
 class Profile extends StatelessWidget {
@@ -109,7 +111,13 @@ class Profile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  context.read<AuthProvider>().auth = AuthRespone.init();
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const IndexPage()));
+                },
                 child: Container(
                   alignment: Alignment.center,
                   decoration: BoxDecoration(

@@ -153,7 +153,9 @@ class AudioProvider extends ChangeNotifier {
   }
 
   void play() async {
-    await _audioPlayer.play();
+    try {
+      await _audioPlayer.play();
+    } catch (e) {}
   }
 
   void pause() async {
@@ -171,7 +173,7 @@ class AudioProvider extends ChangeNotifier {
     } else {
       return SongRespone(
           songId: "",
-          songName: "s",
+          songName: "",
           songImage: "",
           songAudio: "",
           artist: "",

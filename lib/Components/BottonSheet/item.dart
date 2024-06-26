@@ -73,11 +73,11 @@ class _ItemBottomSheetState extends State<ItemBottomSheet> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            widget.song.songName,
+                            widget.song.songName ?? "unkown",
                             style:
                                 cusTextStyle(size: 20, weight: FontWeight.bold),
                           ),
-                          Text(widget.song.userId,
+                          Text(widget.song.userId ?? "unkown",
                               style: cusTextStyle(
                                   size: 16,
                                   color: Color.fromARGB(156, 169, 169, 169)))
