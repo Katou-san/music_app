@@ -18,6 +18,7 @@ class ApiSong {
 
     if (res.statusCode == 200) {
       dynamic result = await jsonDecode(res.body);
+
       if (result['status'] != 404) {
         return SongRespone.fromJson(result['data']);
       } else {

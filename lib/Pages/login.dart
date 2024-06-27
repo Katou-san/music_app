@@ -13,6 +13,7 @@ import 'package:music_app/Provider/AuthProvider.dart';
 import 'package:music_app/Routes/index.dart';
 import 'package:music_app/Screens/index.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Login extends StatefulWidget {
   Login({super.key});
@@ -96,6 +97,11 @@ class _LoginState extends State<Login> {
                           authModel.auth =
                               await submitForm(_email.text, _password.text);
                           if (authModel.auth.isLogin) {
+                            SharedPreferences prefs =
+                                await SharedPreferences.getInstance();
+                            prefs.setBool('isLogin', authModel.auth.isLogin);
+                            prefs.setString(
+                                'accessToken', authModel.auth.accessToken);
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(

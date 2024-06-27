@@ -13,12 +13,25 @@ class ApiUser {
 
   Future<dynamic> login(LoginRequest loginRequest) async {
     http.Response res = await http.post(
-        Uri.parse('${EnvConfig().BACKENDURL}/api/v1/user/login'),
+        Uri.parse('${EnvConfig().BACKENDURL}/api/v1/user/login/client'),
         body: loginRequest.toJson(),
         headers: headers);
     if (res.statusCode == 200) {
       dynamic result = await jsonDecode(res.body);
+      return result;
+    } else {
+      log('Has Error when requesting ');
+    }
+  }
 
+  Future<dynamic> auth(String token) async {
+    final value = {"x-access-token": token};
+    headers.addEntries(value.entries);
+    http.Response res = await http.get(
+        Uri.parse('${EnvConfig().BACKENDURL}/api/v1/user/Oauth'),
+        headers: headers);
+    if (res.statusCode == 200) {
+      dynamic result = await jsonDecode(res.body);
       return result;
     } else {
       log('Has Error when requesting ');

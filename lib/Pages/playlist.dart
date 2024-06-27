@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -12,8 +14,7 @@ import 'package:music_app/Utils/convert.dart';
 import 'package:provider/provider.dart';
 
 class Playlist extends StatefulWidget {
-  const Playlist({super.key, required this.url, required this.playlist});
-  final dynamic url;
+  const Playlist({super.key, required this.playlist});
   final PlaylistRespone playlist;
   @override
   State<Playlist> createState() => _PlaylistState(playlist: playlist);
@@ -97,7 +98,7 @@ class _PlaylistState extends State<Playlist> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          '${playlist.tracks!.length} songs',
+                          '${tracks.length} songs',
                           style: cusTextStyle(size: 24),
                         ),
                         IconButton(
@@ -145,7 +146,7 @@ class _PlaylistState extends State<Playlist> {
                   Expanded(
                     child: ListView.builder(
                         shrinkWrap: true,
-                        itemCount: playlist.tracks!.length,
+                        itemCount: tracks.length,
                         itemBuilder: (content, index) {
                           if (tracks.isNotEmpty) {
                             return Item(song: tracks[index]);

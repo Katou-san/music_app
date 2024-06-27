@@ -29,6 +29,25 @@ class ApiPlaylist {
     }
   }
 
+  Future<dynamic> getToken(String token) async {
+    final value = {"x-access-token": token};
+    headers.addEntries(value.entries);
+    http.Response res = await http
+        .get(Uri.parse('$BACKENDURL/api/v1/playlists/user'), headers: headers);
+    if (res.statusCode == 200) {
+      dynamic result = await jsonDecode(res.body);
+      if (result['status'] != 404) {
+        final playlists =
+            PlaylistRespone().listJson(result['data'] as List<dynamic>);
+        return playlists;
+      } else {
+        return [];
+      }
+    } else {
+      log('Has Error when requesting ');
+    }
+  }
+
   Future<List<PlaylistRespone>> getAll() async {
     http.Response res = await http
         .get(Uri.parse('$BACKENDURL/api/v1/playlist/1'), headers: headers);

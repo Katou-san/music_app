@@ -131,7 +131,6 @@ class ListPlaylist extends StatelessWidget {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => Playlist(
-                                              url: listdata[index].playlistId,
                                               playlist: listdata[index],
                                             )));
                               },
