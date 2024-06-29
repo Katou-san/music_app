@@ -7,6 +7,7 @@ import 'package:music_app/Model/auth.dart';
 import 'package:music_app/Provider/AuthProvider.dart';
 import 'package:music_app/Screens/index.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -111,7 +112,11 @@ class Profile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               InkWell(
-                onTap: () {
+                onTap: () async {
+                  final SharedPreferences prefs =
+                      await SharedPreferences.getInstance();
+                  await prefs.remove('isLogin');
+                  await prefs.remove('accessToken');
                   context.read<AuthProvider>().auth = AuthRespone.init();
                   Navigator.push(
                       context,

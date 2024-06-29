@@ -24,7 +24,7 @@ class ApiUser {
     }
   }
 
-  Future<dynamic> auth(String token) async {
+  Future<AuthRespone> auth(String token) async {
     final value = {"x-access-token": token};
     headers.addEntries(value.entries);
     http.Response res = await http.get(
@@ -32,9 +32,11 @@ class ApiUser {
         headers: headers);
     if (res.statusCode == 200) {
       dynamic result = await jsonDecode(res.body);
-      return result;
+      AuthRespone value = AuthRespone.fromJson(result["data"]);
+      return value;
     } else {
       log('Has Error when requesting ');
+      return AuthRespone.init();
     }
   }
 

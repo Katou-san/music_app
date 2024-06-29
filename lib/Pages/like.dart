@@ -97,13 +97,15 @@ class _LikePageState extends State<LikePage> {
                       Row(
                         children: [
                           const Icon(
-                            Icons.heart_broken_outlined,
+                            Icons.favorite,
+                            color: Colors.pink,
                             size: 30,
                           ),
                           const SizedBox(width: 5),
                           Text(
                             "Liked songs",
-                            style: cusTextStyle(size: 17, color: Colors.black),
+                            style: cusTextStyle(
+                                size: 17, color: Colors.pink.shade900),
                           )
                         ],
                       ),
@@ -159,12 +161,14 @@ class _LikePageState extends State<LikePage> {
                         children: [
                           const Icon(
                             Icons.person,
+                            color: Colors.purple,
                             size: 30,
                           ),
                           const SizedBox(width: 5),
                           Text(
                             "Your songs",
-                            style: cusTextStyle(size: 17, color: Colors.black),
+                            style: cusTextStyle(
+                                size: 17, color: Colors.purple.shade900),
                           )
                         ],
                       ),
@@ -217,13 +221,15 @@ class _LikePageState extends State<LikePage> {
                         children: [
                           const Icon(
                             Icons.playlist_add,
+                            color: Colors.blueAccent,
                             size: 30,
                           ),
                           const SizedBox(width: 5),
-                          Text(
-                            "Playlist",
-                            style: cusTextStyle(size: 17, color: Colors.black),
-                          )
+                          Text("Playlist",
+                              style: cusTextStyle(
+                                size: 17,
+                                color: Colors.blue.shade900,
+                              ))
                         ],
                       ),
                       const SizedBox(height: 10),
@@ -268,13 +274,15 @@ class _LikePageState extends State<LikePage> {
                       Row(
                         children: [
                           const Icon(
-                            Icons.person,
+                            Icons.list_alt,
+                            color: Colors.teal,
                             size: 30,
                           ),
                           const SizedBox(width: 5),
                           Text(
                             "Albums",
-                            style: cusTextStyle(size: 17, color: Colors.black),
+                            style: cusTextStyle(
+                                size: 17, color: Colors.teal.shade900),
                           )
                         ],
                       ),

@@ -25,13 +25,13 @@ class ScreenConfig {
       "key": const Search(),
       "icon": const Icon(Icons.search),
       "title": const Text("Search"),
-      "selectedColor": Colors.pink
+      "selectedColor": Colors.orange
     },
     {
       "key": const LikePage(),
-      "icon": const Icon(Icons.favorite_border),
+      "icon": const Icon(Icons.favorite),
       "title": const Text("Like"),
-      "selectedColor": Colors.orange
+      "selectedColor": Colors.pink
     },
     {
       "key": is_login ? const Profile() : const Noprofile(),
