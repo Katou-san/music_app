@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:audio_service/audio_service.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:music_app/Components/AudioPlayer/audio_play_button.dart';
@@ -84,8 +85,8 @@ class _cusBottomSheetState extends State<cusBottomSheet> {
                                                 return ItemBottomSheet(
                                                     indexs: index,
                                                     functions: SetValue,
-                                                    song: _listsong[index]!.tag
-                                                        as SongRespone,
+                                                    media: _listsong[index]!.tag
+                                                        as MediaItem,
                                                     icon: const Icon(
                                                       Icons.play_arrow,
                                                     ));
@@ -263,7 +264,7 @@ class _cusBottomSheetState extends State<cusBottomSheet> {
                                   Text(
                                     _listsong[nextIndex == -1 ? 0 : nextIndex]
                                             ?.tag!
-                                            .songName ??
+                                            .title ??
                                         "unknown",
                                     style: cusTextStyle(
                                         size: 20, weight: FontWeight.bold),

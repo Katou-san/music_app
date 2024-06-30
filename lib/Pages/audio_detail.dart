@@ -1,3 +1,4 @@
+import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
 import 'package:music_app/Components/AudioPlayer/audio_loop_button.dart';
 import 'package:music_app/Components/AudioPlayer/audio_meta_data.dart';
@@ -62,8 +63,8 @@ class _AudioDetailState extends State<AudioDetail> {
                   if (state?.sequence.isEmpty ?? true) {
                     return const SizedBox();
                   }
-                  final metaData = state!.currentSource!.tag as SongRespone;
-                  return AudioMetaData(song: metaData);
+                  final metaData = state!.currentSource!.tag as MediaItem;
+                  return AudioMetaData(media: metaData);
                 },
               ),
               const SizedBox(

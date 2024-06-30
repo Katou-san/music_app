@@ -1,3 +1,4 @@
+import 'package:audio_service/audio_service.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -10,14 +11,14 @@ import 'package:provider/provider.dart';
 class ItemBottomSheet extends StatefulWidget {
   ItemBottomSheet(
       {super.key,
-      required this.song,
+      required this.media,
       required this.icon,
       required this.indexs,
       this.test,
       required this.functions});
   int? test;
   final void Function(int) functions;
-  SongRespone song;
+  MediaItem media;
   final int indexs;
 
   Icon icon;
@@ -60,7 +61,7 @@ class _ItemBottomSheetState extends State<ItemBottomSheet> {
                           borderRadius: BorderRadius.circular(10),
                           image: DecorationImage(
                               image: CachedNetworkImageProvider(
-                                  "${EnvConfig().BACKENDURL}/api/v1/send/image/${widget.song.songImage}"),
+                                  "${widget.media.artUri}"),
                               fit: BoxFit.cover)),
                       height: 80,
                       width: 80,
@@ -73,11 +74,11 @@ class _ItemBottomSheetState extends State<ItemBottomSheet> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            widget.song.songName ?? "unkown",
+                            widget.media.title ?? "unkown",
                             style:
                                 cusTextStyle(size: 20, weight: FontWeight.bold),
                           ),
-                          Text(widget.song.userId ?? "unkown",
+                          Text(widget.media.artist ?? "unkown",
                               style: cusTextStyle(
                                   size: 16,
                                   color: Color.fromARGB(156, 169, 169, 169)))

@@ -1,3 +1,4 @@
+import 'package:audio_service/audio_service.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:music_app/Components/AudioPlayer/audio_play_button.dart';
@@ -21,7 +22,7 @@ class _FloatSongTrackState extends State<FloatSongTrack> {
     return Consumer<AudioProvider>(builder: (context, value, child) {
       final isPlaying = value.audioPlayer.playing;
       final bool hasPlaylist = value.audioPlaylist.isEmpty ? false : true;
-      SongRespone song = value.CurrentSong();
+      MediaItem media = value.CurrentSong();
 
       return AnimatedContainer(
           duration: const Duration(milliseconds: 500),
@@ -46,7 +47,7 @@ class _FloatSongTrackState extends State<FloatSongTrack> {
                             borderRadius: BorderRadius.circular(8),
                             image: DecorationImage(
                                 image: CachedNetworkImageProvider(
-                                    "${EnvConfig().BACKENDURL}/api/v1/send/image/${song.songImage}"),
+                                    "${media.artUri}"),
                                 fit: BoxFit.cover)),
                       ),
                       Expanded(
@@ -62,7 +63,7 @@ class _FloatSongTrackState extends State<FloatSongTrack> {
                                     Navigator.of(context).pushNamed("/audio");
                                   },
                                   child: Text(
-                                    song.songName ?? "unkown",
+                                    media.title,
                                     overflow: TextOverflow.ellipsis,
                                     style: cusTextStyle(
                                         size: 18,
@@ -71,7 +72,7 @@ class _FloatSongTrackState extends State<FloatSongTrack> {
                                   ),
                                 ),
                                 Text(
-                                  song.artist ?? "unkown",
+                                  media.artist ?? "unkown",
                                   overflow: TextOverflow.ellipsis,
                                 )
                               ],

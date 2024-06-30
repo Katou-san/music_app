@@ -264,6 +264,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.9.38"
+  just_audio_background:
+    dependency: "direct main"
+    description:
+      name: just_audio_background
+      sha256: "0a8815284b22756d447c9d616d6c4c022dfcc390f23814b637ef891e51279c69"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1-beta.12"
   just_audio_platform_interface:
     dependency: transitive
     description:

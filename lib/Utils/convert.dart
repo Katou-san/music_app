@@ -1,3 +1,4 @@
+import 'package:audio_service/audio_service.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:music_app/Configs/envConfig.dart';
 import 'package:music_app/Model/song.dart';
@@ -20,7 +21,21 @@ class Convert {
       return AudioSource.uri(
           Uri.parse(
               "${EnvConfig().BACKENDURL}/api/v1/send/audio/${song.songAudio}"),
-          tag: song);
+          tag: songToMediaItem(song));
     }).toList();
+  }
+
+  MediaItem songToMediaItem(SongRespone song) {
+    try {
+      return MediaItem(
+          id: song.songId ?? "unknown",
+          title: song.songName ?? "unknown",
+          artist: song.userId ?? "unknown",
+          displaySubtitle: song.artist ?? "unknown",
+          artUri: Uri.parse(
+              "${EnvConfig().BACKENDURL}/api/v1/send/image/${song.songImage}"));
+    } catch (e) {
+      return const MediaItem(id: "unknown", title: "unknown");
+    }
   }
 }

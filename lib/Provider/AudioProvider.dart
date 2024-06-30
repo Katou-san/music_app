@@ -1,3 +1,4 @@
+import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:music_app/Model/song.dart';
@@ -166,24 +167,12 @@ class AudioProvider extends ChangeNotifier {
     await _audioPlayer.stop();
   }
 
-  SongRespone CurrentSong() {
+  MediaItem CurrentSong() {
     dynamic a = _audioPlayer.sequenceState?.currentSource?.tag;
     if (a != null) {
-      return _audioPlayer.sequenceState?.currentSource?.tag as SongRespone;
+      return _audioPlayer.sequenceState?.currentSource?.tag as MediaItem;
     } else {
-      return SongRespone(
-          songId: "",
-          songName: "",
-          songImage: "",
-          songAudio: "",
-          artist: "",
-          createDate: "",
-          userId: "",
-          categoryId: "",
-          lyrics: "",
-          tag: "",
-          color: "",
-          isPublish: true);
+      return const MediaItem(id: "unknown", title: "unknown");
     }
   }
 

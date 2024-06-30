@@ -1,3 +1,4 @@
+import 'package:audio_service/audio_service.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -8,10 +9,10 @@ import 'package:music_app/Model/song.dart';
 class AudioMetaData extends StatelessWidget {
   const AudioMetaData({
     super.key,
-    required this.song,
+    required this.media,
   });
 
-  final SongRespone song;
+  final MediaItem media;
   @override
   Widget build(BuildContext context) {
     return Column(children: [
@@ -22,8 +23,7 @@ class AudioMetaData extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(15),
           child: CachedNetworkImage(
-            imageUrl:
-                "${EnvConfig().BACKENDURL}/api/v1/send/image/${song.songImage}",
+            imageUrl: "${media.artUri}",
             fit: BoxFit.cover,
           ),
         ),
@@ -61,7 +61,7 @@ class AudioMetaData extends StatelessWidget {
           Expanded(
             flex: 4,
             child: Text(
-              song.songName ?? "unkown",
+              media.title,
               overflow: TextOverflow.ellipsis,
               style: cusTextStyle(weight: FontWeight.bold, size: 24),
             ),
@@ -109,7 +109,7 @@ class AudioMetaData extends StatelessWidget {
       Container(
           alignment: Alignment.centerLeft,
           child: Text(
-            song.userId ?? "unkown",
+            media.artist ?? "unkown",
             style: cusTextStyle(
                 size: 16, color: const Color.fromARGB(120, 255, 255, 255)),
           ))
