@@ -14,6 +14,7 @@ import 'package:music_app/Layout/Home/slider.dart';
 import 'package:music_app/Model/playlist.dart';
 import 'package:music_app/Model/song.dart';
 import 'package:music_app/Provider/AudioProvider.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -74,6 +75,24 @@ class _HomeState extends State<Home> {
                 listdata: listPlaylist,
               ),
               ListSongs(listdata: listSong, title: "Songs"),
+              ElevatedButton(
+                  onPressed: () {
+                    var item = MediaItem(
+                      id: 'http://localhost:8080/api/v1/send/audio/57534667333.mp3',
+                      album: 'Album name',
+                      title: 'Track title',
+                      artist: 'Artist name',
+                      duration: const Duration(milliseconds: 123456),
+                      artUri: Uri.parse(
+                          'http://localhost:8080/api/v1/send/image/57534667333.jpg'),
+                    );
+
+                    context
+                        .read<AudioProvider>()
+                        .audioHandler
+                        .playMediaItem(item);
+                  },
+                  child: Text("test"))
             ],
           ),
         ),
