@@ -8,7 +8,7 @@ import 'package:music_app/Components/AudioPlayer/audio_previous_button.dart';
 import 'package:music_app/Components/AudioPlayer/audio_progrees_bar.dart';
 import 'package:music_app/Components/AudioPlayer/audio_shuffle_button.dart';
 import 'package:music_app/Components/BottonSheet/layout.dart';
-import 'package:music_app/Model/song.dart';
+
 import 'package:music_app/Provider/AudioProvider.dart';
 import 'package:provider/provider.dart';
 

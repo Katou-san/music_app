@@ -1,7 +1,6 @@
 import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:music_app/Model/song.dart';
 
 class AudioProvider extends ChangeNotifier {
   late AudioPlayer _audioPlayer;

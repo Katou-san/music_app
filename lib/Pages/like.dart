@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:music_app/Api/@playlist.dart';
 import 'package:music_app/Components/Style/text_style.dart';
 import 'package:music_app/Layout/Library/itemSong.dart';
-import 'package:music_app/Model/Song.dart';
+
 import 'package:music_app/Model/playlist.dart';
 import 'package:music_app/Pages/playlist.dart';
 import 'package:music_app/Pages/playlistManage.dart';
-import 'package:music_app/Provider/authProvider.dart';
-import 'package:provider/provider.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LikePage extends StatefulWidget {

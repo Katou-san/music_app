@@ -1,9 +1,5 @@
-import 'dart:js';
-
-import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'package:just_audio/just_audio.dart';
+
 import 'package:music_app/Api/@playlist.dart';
 import 'package:music_app/Api/@song.dart';
 
@@ -13,7 +9,6 @@ import 'package:music_app/Layout/Home/slider.dart';
 
 import 'package:music_app/Model/playlist.dart';
 import 'package:music_app/Model/song.dart';
-import 'package:music_app/Provider/AudioProvider.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

@@ -2,13 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:music_app/Pages/home.dart';
 import 'package:music_app/Pages/home_relax.dart';
 import 'package:music_app/Pages/like.dart';
-import 'package:music_app/Pages/login.dart';
 import 'package:music_app/Pages/noprofile.dart';
 import 'package:music_app/Pages/profile.dart';
 import 'package:music_app/Pages/search.dart';
-
 import 'package:music_app/Screens/homeScreen.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class ScreenConfig {
   bool is_login;
