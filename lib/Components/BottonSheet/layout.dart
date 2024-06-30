@@ -3,12 +3,12 @@ import 'dart:ui';
 import 'package:audio_service/audio_service.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:music_app/Components/AudioPlayer/audio_play_button.dart';
+
 import 'package:music_app/Components/BottonSheet/item.dart';
 import 'package:music_app/Components/Style/text_style.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:music_app/Configs/envConfig.dart';
-import 'package:music_app/Model/song.dart';
+
 import 'package:music_app/Provider/AudioProvider.dart';
 import 'package:provider/provider.dart';
 
@@ -132,7 +132,7 @@ class _cusBottomSheetState extends State<cusBottomSheet> {
                                 borderRadius: BorderRadius.circular(10),
                                 image: DecorationImage(
                                     image: CachedNetworkImageProvider(
-                                        "${EnvConfig().BACKENDURL}/api/v1/send/image/${_listsong[currentIndex]!.tag.songImage}"),
+                                        "${_listsong[currentIndex]!.tag.artUri}"),
                                     fit: BoxFit.cover)),
                             height: 60,
                             width: 60,
@@ -145,7 +145,7 @@ class _cusBottomSheetState extends State<cusBottomSheet> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  _listsong[currentIndex]?.tag!.songName ??
+                                  _listsong[currentIndex]?.tag!.title ??
                                       "unknown",
                                   style: cusTextStyle(
                                       size: 20, weight: FontWeight.bold),
@@ -191,7 +191,7 @@ class _cusBottomSheetState extends State<cusBottomSheet> {
                                   borderRadius: BorderRadius.circular(10),
                                   image: DecorationImage(
                                       image: CachedNetworkImageProvider(
-                                          "${EnvConfig().BACKENDURL}/api/v1/send/image/${_listsong[nextIndex]!.tag.songImage}"),
+                                          "${_listsong[nextIndex]!.tag.artUri}"),
                                       fit: BoxFit.cover)),
                               height: 60,
                               width: 60,
@@ -204,7 +204,7 @@ class _cusBottomSheetState extends State<cusBottomSheet> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    _listsong[nextIndex]?.tag!.songName ??
+                                    _listsong[nextIndex]?.tag!.title ??
                                         "unknown",
                                     style: cusTextStyle(
                                         size: 20, weight: FontWeight.bold),
@@ -249,7 +249,7 @@ class _cusBottomSheetState extends State<cusBottomSheet> {
                                   borderRadius: BorderRadius.circular(10),
                                   image: DecorationImage(
                                       image: CachedNetworkImageProvider(
-                                          "${EnvConfig().BACKENDURL}/api/v1/send/image/${_listsong[nextIndex == -1 ? 0 : nextIndex]!.tag.songImage}"),
+                                          "${_listsong[nextIndex == -1 ? 0 : nextIndex]!.tag.artUri}"),
                                       fit: BoxFit.cover)),
                               height: 60,
                               width: 60,
