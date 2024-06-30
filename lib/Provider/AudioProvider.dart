@@ -1,13 +1,9 @@
-import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:music_app/Model/audioHandler.dart';
 import 'package:music_app/Model/song.dart';
 
 class AudioProvider extends ChangeNotifier {
   late AudioPlayer _audioPlayer;
-
-  late AudioHandler _audioHandler;
 
   var _playlist = ConcatenatingAudioSource(
       useLazyPreparation: true,
@@ -20,7 +16,6 @@ class AudioProvider extends ChangeNotifier {
   late ShuffleButtonState _shuffleButtonState;
 
   AudioPlayer get audioPlayer => _audioPlayer;
-  AudioHandler get audioHandler => _audioHandler;
   List<AudioSource> get audioPlaylist => _playlist.children;
   ProgressBarState get progressBarState => _progressBarState;
   PlayerButtonState get playerButtonState => _playerButtonState;
@@ -29,23 +24,11 @@ class AudioProvider extends ChangeNotifier {
 
   AudioProvider() {
     _init();
-    _initHandlerService();
     _initStates();
     _initPlayerStateChanges();
     _initLoopStateChanges();
     _initShuffleStateChanges();
     _initProgressStateChanges();
-  }
-
-  _initHandlerService() async {
-    _audioHandler = await AudioService.init(
-      builder: () => MyAudioHandler(),
-      config: const AudioServiceConfig(
-        androidNotificationChannelId: 'com.example.myapp.channel.audio',
-        androidNotificationChannelName: 'Audio playback',
-        androidNotificationOngoing: true,
-      ),
-    );
   }
 
   _initStates() {
